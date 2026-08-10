@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mozé · centro de eventos — Tuxtla Gutiérrez, Chiapas</title>
+<meta name="description" content="mozé centro de eventos. Salón climatizado y jardín arbolado para bodas, XV años y celebraciones en Tuxtla Gutiérrez, Chiapas. Banquete propio.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="FOTOS/hero.jpg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <span class="loader__word" data-loader-word>mozé</span>
+    <span class="loader__count" id="loaderCount">00</span>
+  </div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo" data-magnetic>mozé<em>·</em></a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#espacio">Espacio</a>
+    <a href="#galeria">Galería</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#ubicacion">Ubicación</a>
+  </nav>
+  <a href="#contacto" class="nav__cta" data-magnetic>Agenda una visita</a>
+  <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu__list">
+    <a href="#espacio"><span>01</span>Espacio</a>
+    <a href="#galeria"><span>02</span>Galería</a>
+    <a href="#eventos"><span>03</span>Eventos</a>
+    <a href="#servicios"><span>04</span>Servicios</a>
+    <a href="#ubicacion"><span>05</span>Ubicación</a>
+    <a href="#contacto"><span>06</span>Contacto</a>
+  </div>
+  <div class="menu__foot">
+    <p>Tuxtla Gutiérrez, Chiapas</p>
+    <a href="tel:+529611465809">961 146 5809</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="hero" data-sec="hero">
+    <div class="hero__media">
+      <div class="hero__frame">
+        <img id="heroImg" alt="Salón principal de mozé con drapeado y candelabros" fetchpriority="high">
+      </div>
+      <div class="hero__scrim"></div>
+    </div>
+
+    <div class="hero__type">
+      <p class="eyebrow" data-hero="1"><span>Tuxtla Gutiérrez · Chiapas</span></p>
+      <h1 class="hero__title">
+        <span class="line"><span data-hero="2">El lugar donde</span></span>
+        <span class="line"><span data-hero="2">tu día se vuelve</span></span>
+        <span class="line"><span data-hero="2"><em>memoria</em></span></span>
+      </h1>
+      <div class="hero__meta">
+        <p data-hero="3">Salón climatizado y jardín arbolado, con banquete propio y producción completa. Dos ambientes, una sola noche.</p>
+        <div class="hero__actions" data-hero="4">
+          <a href="#contacto" class="btn btn--solid" data-magnetic>Solicitar información</a>
+          <a href="#galeria" class="btn btn--ghost" data-magnetic>Ver el espacio</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__foot">
+      <span class="scrollcue" data-hero="4"><i></i>Desliza</span>
+      <span class="hero__idx" data-hero="4">Est. Chiapas</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ MANIFIESTO ═══════════ -->
+  <section class="manifesto" id="espacio">
+    <p class="sectionlabel"><span>01</span> El espacio</p>
+    <h2 class="manifesto__text" data-split>
+      No rentamos un salón. Preparamos el lugar donde va a ocurrir
+      la noche que tu familia va a contar durante años.
+    </h2>
+  </section>
+
+  <!-- ═══════════ ABOUT / EDITORIAL ═══════════ -->
+  <section class="about" data-sec="sobre">
+    <figure class="about__tall" data-reveal>
+      <img data-src-key="about1" alt="Mesa larga montada en el jardín bajo los árboles">
+    </figure>
+
+    <div class="about__body">
+      <h3 data-fade>Dos ambientes.<br>Una misma noche.</h3>
+      <p data-fade>Afuera, un jardín con árboles maduros y luces colgantes para la recepción o la ceremonia. Adentro, un salón climatizado con candelabros, drapeado y pantallas para el banquete y la fiesta.</p>
+      <p data-fade>El salón es de planta libre: sin columnas que estorben, con altura para montar lo que tu evento pida — desde una cena de gala hasta una graduación de generación completa.</p>
+      <dl class="about__facts">
+        <div data-fade><dt>Capacidad</dt><dd><span class="num" data-count="500">0</span> invitados</dd></div>
+        <div data-fade><dt>Superficie</dt><dd><span class="num" data-count="1200">0</span> m²</dd></div>
+        <div data-fade><dt>Ubicación</dt><dd>Tuxtla Gutiérrez</dd></div>
+        <div data-fade><dt>Servicio</dt><dd>Banquete propio</dd></div>
+      </dl>
+    </div>
+
+    <figure class="about__wide" data-reveal>
+      <img data-src-key="about2" alt="Salón principal vacío, planta libre y candelabros">
+      <figcaption>Salón principal · planta libre</figcaption>
+    </figure>
+  </section>
+
+  <!-- ═══════════ GALERÍA HORIZONTAL ═══════════ -->
+  <section class="gallery" id="galeria" data-sec="galeria">
+    <div class="gallery__pin" id="galleryPin">
+      <div class="gallery__track" id="galleryTrack">
+        <div class="gal-intro">
+          <p class="sectionlabel"><span>02</span> Galería</p>
+          <h2>Recorre<br>el lugar.</h2>
+          <p class="gal-intro__note">Del salón al jardín, tal como lo encuentran tus invitados.</p>
+        </div>
+
+        <figure class="gal gal--m"><div class="gal__f"><img data-src-key="g1" alt="Salón montado con drapeado y candelabros"></div><figcaption><span>01</span>Salón principal</figcaption></figure>
+        <figure class="gal gal--l"><div class="gal__f"><img data-src-key="g2" alt="Salón con el aforo completo durante una ceremonia"></div><figcaption><span>02</span>Aforo</figcaption></figure>
+        <figure class="gal gal--s"><div class="gal__f"><img data-src-key="g3" alt="Detalle de montaje de mesa en tonos oro"></div><figcaption><span>03</span>Detalle</figcaption></figure>
+        <figure class="gal gal--m"><div class="gal__f"><img data-src-key="g4" alt="Mesa principal iluminada con letrero de neón"></div><figcaption><span>04</span>Mesa principal</figcaption></figure>
+        <figure class="gal gal--m"><div class="gal__f"><img data-src-key="g5" alt="Pista de baile en el jardín durante la noche"></div><figcaption><span>05</span>Jardín</figcaption></figure>
+        <figure class="gal gal--s"><div class="gal__f"><img data-src-key="g6" alt="Plato emplatado del servicio de banquete"></div><figcaption><span>06</span>Cocina</figcaption></figure>
+
+        <div class="gal-end">
+          <p>¿Prefieres verlo<br>en persona?</p>
+          <a href="#contacto" class="btn btn--solid" data-magnetic>Agenda una visita</a>
+        </div>
+      </div>
+      <div class="gallery__progress"><i id="galProgress"></i></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CINTA CINETICA ═══════════ -->
+  <div class="ribbon" data-marquee data-speed="26" data-dir="-1">
+    <div class="ribbon__track">
+      <span>mozé</span><i>·</i><span>centro de eventos</span><i>·</i><span>tuxtla gutiérrez</span><i>·</i><span>salón &amp; jardín</span><i>·</i>
+    </div>
+  </div>
+
+  <!-- ═══════════ EVENTOS ═══════════ -->
+  <section class="events" id="eventos" data-sec="eventos">
+    <div class="events__head">
+      <p class="sectionlabel"><span>03</span> Eventos</p>
+      <h2 data-fade>Seis maneras<br>de usar el lugar.</h2>
+      <p class="events__hint" data-fade>Pasa el cursor sobre cada banda.</p>
+    </div>
+    <div class="bands" id="bands">
+      <a class="band" href="#contacto" data-img="e1" data-dir="1" data-speed="18">
+        <div class="band__media"><img data-src-key="e1" alt="Bodas en mozé" loading="lazy"></div>
+        <div class="band__scrim"></div>
+        <div class="band__marquee"><div class="band__track"><span>Bodas</span><i>·</i><span>Bodas</span><i>·</i><span>Bodas</span><i>·</i><span>Bodas</span><i>·</i></div></div>
+        <div class="band__meta"><span class="band__n">01</span><p>Ceremonia en el jardín, banquete y fiesta en el salón.</p><i class="band__go">Cotizar →</i></div>
+      </a>
+      <a class="band" href="#contacto" data-img="e2" data-dir="-1" data-speed="20">
+        <div class="band__media"><img data-src-key="e2" alt="XV Años en mozé" loading="lazy"></div>
+        <div class="band__scrim"></div>
+        <div class="band__marquee"><div class="band__track"><span>XV Años</span><i>·</i><span>XV Años</span><i>·</i><span>XV Años</span><i>·</i><span>XV Años</span><i>·</i></div></div>
+        <div class="band__meta"><span class="band__n">02</span><p>Vals, baile sorpresa y pista. Producción completa.</p><i class="band__go">Cotizar →</i></div>
+      </a>
+      <a class="band" href="#contacto" data-img="e3" data-dir="1" data-speed="22">
+        <div class="band__media"><img data-src-key="e3" alt="Corporativos en mozé" loading="lazy"></div>
+        <div class="band__scrim"></div>
+        <div class="band__marquee"><div class="band__track"><span>Corporativos</span><i>·</i><span>Corporativos</span><i>·</i><span>Corporativos</span><i>·</i><span>Corporativos</span><i>·</i></div></div>
+        <div class="band__meta"><span class="band__n">03</span><p>Cenas de fin de año, convenciones y presentaciones.</p><i class="band__go">Cotizar →</i></div>
+      </a>
+      <a class="band" href="#contacto" data-img="e4" data-dir="-1" data-speed="24">
+        <div class="band__media"><img data-src-key="e4" alt="Cumpleaños en mozé" loading="lazy"></div>
+        <div class="band__scrim"></div>
+        <div class="band__marquee"><div class="band__track"><span>Cumpleaños</span><i>·</i><span>Cumpleaños</span><i>·</i><span>Cumpleaños</span><i>·</i><span>Cumpleaños</span><i>·</i></div></div>
+        <div class="band__meta"><span class="band__n">04</span><p>Desde comidas íntimas hasta fiestas de trescientos.</p><i class="band__go">Cotizar →</i></div>
+      </a>
+      <a class="band" href="#contacto" data-img="e5" data-dir="1" data-speed="26">
+        <div class="band__media"><img data-src-key="e5" alt="Graduaciones en mozé" loading="lazy"></div>
+        <div class="band__scrim"></div>
+        <div class="band__marquee"><div class="band__track"><span>Graduaciones</span><i>·</i><span>Graduaciones</span><i>·</i><span>Graduaciones</span><i>·</i><span>Graduaciones</span><i>·</i></div></div>
+        <div class="band__meta"><span class="band__n">05</span><p>Ceremonia de generación completa, cena y baile.</p><i class="band__go">Cotizar →</i></div>
+      </a>
+      <a class="band" href="#contacto" data-img="e6" data-dir="-1" data-speed="28">
+        <div class="band__media"><img data-src-key="e6" alt="Privados en mozé" loading="lazy"></div>
+        <div class="band__scrim"></div>
+        <div class="band__marquee"><div class="band__track"><span>Privados</span><i>·</i><span>Privados</span><i>·</i><span>Privados</span><i>·</i><span>Privados</span><i>·</i></div></div>
+        <div class="band__meta"><span class="band__n">06</span><p>Bautizos, baby showers y reuniones familiares.</p><i class="band__go">Cotizar →</i></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════ SERVICIOS ═══════════ -->
+  <section class="specs" id="servicios" data-sec="servicios">
+    <div class="specs__head">
+      <p class="sectionlabel sectionlabel--light"><span>04</span> Servicios</p>
+      <h2 data-fade>Todo lo que ya<br>está resuelto.</h2>
+    </div>
+
+    <div class="ticker" data-marquee data-speed="34" data-dir="1">
+      <div class="ticker__track"><b>500</b><em>invitados</em><i>·</i><b>1200</b><em>m² de salón</em><i>·</i><b>120</b><em>cajones</em><i>·</i><b>12</b><em>años</em><i>·</i></div>
+    </div>
+
+    <div class="pile" id="pile">
+      <article class="pile__item" style="--i:0">
+        <span class="pile__ghost" aria-hidden="true">01</span>
+        <div class="pile__body">
+          <span class="pile__n">01</span>
+          <h3>Cocina y banquete</h3>
+          <p>Cocina profesional dentro del predio. Menú degustable antes de que firmes nada.</p>
+        </div>
+        <figure class="pile__media"><img src="FOTOS/servicio-cocina.jpg" alt="Cocina y banquete" loading="lazy"></figure>
+      </article>
+      <article class="pile__item" style="--i:1">
+        <span class="pile__ghost" aria-hidden="true">02</span>
+        <div class="pile__body">
+          <span class="pile__n">02</span>
+          <h3>Audio e iluminación</h3>
+          <p>Sonido, iluminación arquitectónica y escénica. Pantallas y pista intervenible.</p>
+        </div>
+        <figure class="pile__media"><img src="FOTOS/servicio-iluminacion.jpg" alt="Audio e iluminación" loading="lazy"></figure>
+      </article>
+      <article class="pile__item" style="--i:2">
+        <span class="pile__ghost" aria-hidden="true">03</span>
+        <div class="pile__body">
+          <span class="pile__n">03</span>
+          <h3>Mobiliario y montaje</h3>
+          <p>Sillas, mesas redondas e imperiales, mantelería y lounge. Montamos nosotros.</p>
+        </div>
+        <figure class="pile__media"><img src="FOTOS/servicio-mobiliario.jpg" alt="Mobiliario y montaje" loading="lazy"></figure>
+      </article>
+      <article class="pile__item" style="--i:3">
+        <span class="pile__ghost" aria-hidden="true">04</span>
+        <div class="pile__body">
+          <span class="pile__n">04</span>
+          <h3>Coordinación</h3>
+          <p>Un responsable asignado a tu evento desde la firma hasta que se apaga la última luz.</p>
+        </div>
+        <figure class="pile__media"><img src="FOTOS/servicio-coordinacion.jpg" alt="Coordinación" loading="lazy"></figure>
+      </article>
+      <article class="pile__item" style="--i:4">
+        <span class="pile__ghost" aria-hidden="true">05</span>
+        <div class="pile__body">
+          <span class="pile__n">05</span>
+          <h3>Salón climatizado</h3>
+          <p>Planta libre sin columnas, altura para producción y clima controlado toda la noche.</p>
+        </div>
+        <figure class="pile__media"><img src="FOTOS/servicio-salon.jpg" alt="Salón climatizado" loading="lazy"></figure>
+      </article>
+      <article class="pile__item" style="--i:5">
+        <span class="pile__ghost" aria-hidden="true">06</span>
+        <div class="pile__body">
+          <span class="pile__n">06</span>
+          <h3>Jardín</h3>
+          <p>Árboles maduros y luces colgantes. Ceremonia, cóctel o fiesta al aire libre.</p>
+        </div>
+        <figure class="pile__media"><img src="FOTOS/servicio-jardin.jpg" alt="Jardín" loading="lazy"></figure>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════ UBICACIÓN ═══════════ -->
+  <section class="location" id="ubicacion">
+    <figure class="location__img" data-reveal>
+      <img data-src-key="loc" alt="Jardín de mozé al atardecer con mesas montadas">
+    </figure>
+    <div class="location__body">
+      <p class="sectionlabel"><span>05</span> Ubicación</p>
+      <h2 data-fade>Todo en un<br>mismo predio.</h2>
+      <address data-fade>
+        Tuxtla Gutiérrez<br>
+        Chiapas, México
+      </address>
+      <ul class="location__refs">
+        <li data-fade>Salón y jardín en la misma propiedad</li>
+        <li data-fade>Estacionamiento propio en el predio</li>
+        <li data-fade>Hoteles a menos de 10 minutos</li>
+      </ul>
+      <a class="btn btn--ghost" id="mapsBtn" target="_blank" rel="noopener" data-magnetic>Abrir en Google Maps</a>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACTO ═══════════ -->
+  <section class="contact" id="contacto">
+    <div class="contact__head">
+      <p class="sectionlabel sectionlabel--light"><span>06</span> Contacto</p>
+      <h2 class="contact__title"><span class="line"><span data-fade>Tu evento</span></span><span class="line"><span data-fade><em>empieza aquí.</em></span></span></h2>
+      <p class="contact__note" data-fade>Cuéntanos qué tienes en mente y te enviamos disponibilidad, capacidades y cotización. Sin compromiso.</p>
+      <div class="contact__direct">
+        <a href="#" id="waLink" data-fade data-magnetic>WhatsApp</a>
+        <a href="tel:+529611465809" data-fade data-magnetic>961 146 5809</a>
+      </div>
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <div class="f f--half"><label for="f-name">Nombre</label><input id="f-name" name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre completo"></div>
+      <div class="f f--half"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" required autocomplete="email" placeholder="tu@correo.com"></div>
+      <div class="f f--half"><label for="f-tel">Teléfono</label><input id="f-tel" name="telefono" type="tel" required autocomplete="tel" placeholder="961 000 0000"></div>
+      <div class="f f--half"><label for="f-type">Tipo de evento</label>
+        <select id="f-type" name="tipo" required>
+          <option value="" disabled selected>Selecciona</option>
+          <option>Boda</option><option>XV Años</option><option>Corporativo</option>
+          <option>Cumpleaños</option><option>Graduación</option><option>Evento privado</option>
+        </select>
+      </div>
+      <div class="f f--half"><label for="f-date">Fecha tentativa</label><input id="f-date" name="fecha" type="date"></div>
+      <div class="f f--half"><label for="f-guests">Invitados aprox.</label><input id="f-guests" name="invitados" type="number" min="1" placeholder="150"></div>
+      <div class="f f--full"><label for="f-msg">Mensaje</label><textarea id="f-msg" name="mensaje" rows="3" placeholder="Cuéntanos sobre tu evento…"></textarea></div>
+      <div class="f f--full form__send">
+        <button type="submit" class="btn btn--solid btn--lg" data-magnetic>Solicitar información</button>
+        <p class="form__status" id="formStatus" role="status"></p>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__mark">mozé</div>
+    <div class="footer__cols">
+      <div><p>Centro de eventos</p><p>Tuxtla Gutiérrez, Chiapas</p></div>
+      <div><a href="tel:+529611465809">961 146 5809</a><a href="https://instagram.com/mozecentrodeeventos" target="_blank" rel="noopener">@mozecentrodeeventos</a></div>
+      <div><p>Bodas · XV Años · Corporativos</p><p>Banquetes &amp; catering</p></div>
+    </div>
+    <div class="footer__legal"><span>© <span id="year"></span> mozé centro de eventos</span><a href="#top" data-magnetic>Volver arriba ↑</a></div>
+  </footer>
+
+</main>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     VARIANTES DE SECCIÓN
+     Viven dentro de <template>: el navegador NO descarga sus
+     imágenes salvo que se elija esa versión en content.js
+     ══════════════════════════════════════════════════════════ -->
+
+<template id="v-hero-b">
+  <section class="hero hero--split" id="hero" data-sec="hero">
+    <div class="hero__type">
+      <p class="eyebrow" data-hero="1"><span>Tuxtla Gutiérrez · Chiapas</span></p>
+      <h1 class="hero__title">
+        <span class="line"><span data-hero="2">El lugar</span></span>
+        <span class="line"><span data-hero="2">donde tu día</span></span>
+        <span class="line"><span data-hero="2">se vuelve <em>memoria</em></span></span>
+      </h1>
+      <p class="hero__lead" data-hero="3">Salón climatizado y jardín arbolado, con banquete propio y producción completa. Dos ambientes, una sola noche.</p>
+      <div class="hero__actions" data-hero="4">
+        <a href="#contacto" class="btn btn--solid" data-magnetic>Solicitar información</a>
+        <a href="#galeria" class="btn btn--ghost" data-magnetic>Ver el espacio</a>
+      </div>
+      <span class="scrollcue" data-hero="4"><i></i>Desliza</span>
+    </div>
+    <div class="hero__media">
+      <div class="hero__frame"><img id="heroImg" alt="Salón principal de mozé" fetchpriority="high"></div>
+    </div>
+  </section>
+</template>
+
+<template id="v-sobre-b">
+  <section class="sobre2" data-sec="sobre">
+    <p class="sectionlabel"><span>01</span> El espacio</p>
+    <h3 class="sobre2__lead" data-fade>Dos ambientes.<br>Una misma noche.</h3>
+    <div class="sobre2__cols">
+      <p data-fade>Afuera, un jardín con árboles maduros y luces colgantes para la recepción o la ceremonia. Adentro, un salón climatizado con candelabros, drapeado y pantallas para el banquete y la fiesta.</p>
+      <p data-fade>El salón es de planta libre: sin columnas que estorben, con altura para montar lo que tu evento pida — desde una cena de gala hasta una graduación de generación completa.</p>
+    </div>
+    <dl class="sobre2__cifras">
+      <div data-fade><dt>Capacidad</dt><dd><span class="num" data-count="500">0</span></dd><em>invitados</em></div>
+      <div data-fade><dt>Superficie</dt><dd><span class="num" data-count="1200">0</span></dd><em>m² de salón</em></div>
+      <div data-fade><dt>Ambientes</dt><dd>02</dd><em>salón y jardín</em></div>
+      <div data-fade><dt>Cocina</dt><dd>01</dd><em>banquete propio</em></div>
+    </dl>
+    <figure class="sobre2__img" data-reveal>
+      <img data-src-key="about2" alt="Salón principal vacío, planta libre" loading="lazy">
+      <figcaption>Salón principal · planta libre</figcaption>
+    </figure>
+  </section>
+</template>
+
+<template id="v-galeria-b">
+  <section class="colgal" id="galeria" data-sec="galeria">
+    <div class="colgal__head">
+      <p class="sectionlabel"><span>02</span> Galería</p>
+      <h2 data-fade>Del salón<br>al jardín.</h2>
+    </div>
+    <div class="colgal__grid" id="colgal">
+          <div class="colgal__col" data-speed="-13">
+            <figure class="colgal__f"><img width="1100" height="1100" data-src-key="g1" alt="Salón principal" loading="lazy"><figcaption>Salón principal</figcaption></figure>
+            <figure class="colgal__f"><img width="860" height="1150" data-src-key="c1" alt="Techo intervenido" loading="lazy"><figcaption>Techo intervenido</figcaption></figure>
+            <figure class="colgal__f"><img width="760" height="950" data-src-key="g3" alt="Detalle de mesa" loading="lazy"><figcaption>Detalle de mesa</figcaption></figure>
+          </div>
+          <div class="colgal__col" data-speed="7">
+            <figure class="colgal__f"><img width="900" height="1600" data-src-key="g5" alt="Jardín de noche" loading="lazy"><figcaption>Jardín de noche</figcaption></figure>
+            <figure class="colgal__f"><img width="1300" height="1015" data-src-key="g2" alt="Aforo completo" loading="lazy"><figcaption>Aforo completo</figcaption></figure>
+            <figure class="colgal__f"><img width="860" height="645" data-src-key="c2" alt="Salón en rosa" loading="lazy"><figcaption>Salón en rosa</figcaption></figure>
+          </div>
+          <div class="colgal__col" data-speed="-19">
+            <figure class="colgal__f"><img width="860" height="1075" data-src-key="c3" alt="Neón a medida" loading="lazy"><figcaption>Neón a medida</figcaption></figure>
+            <figure class="colgal__f"><img width="860" height="1075" data-src-key="g4" alt="Mesa principal" loading="lazy"><figcaption>Mesa principal</figcaption></figure>
+            <figure class="colgal__f"><img width="760" height="760" data-src-key="g6" alt="Cocina" loading="lazy"><figcaption>Cocina</figcaption></figure>
+          </div>
+    </div>
+  </section>
+</template>
+
+<template id="v-eventos-b">
+  <section class="events" id="eventos" data-sec="eventos">
+    <div class="events__head">
+      <p class="sectionlabel sectionlabel--light"><span>03</span> Eventos</p>
+      <h2 data-fade>Seis maneras<br>de usar el lugar.</h2>
+    </div>
+    <div class="bands bands--quiet" id="bands">
+        <a class="band band--quiet" href="#contacto" data-img="e1">
+          <div class="band__media"><img data-src-key="e1" alt="Bodas en mozé" loading="lazy"></div>
+          <div class="band__scrim"></div>
+          <div class="band__center">
+            <span class="band__n">01</span>
+            <h3>Bodas</h3>
+            <p>Ceremonia en el jardín, banquete y fiesta en el salón.</p>
+          </div>
+        </a>
+        <a class="band band--quiet" href="#contacto" data-img="e2">
+          <div class="band__media"><img data-src-key="e2" alt="XV Años en mozé" loading="lazy"></div>
+          <div class="band__scrim"></div>
+          <div class="band__center">
+            <span class="band__n">02</span>
+            <h3>XV Años</h3>
+            <p>Vals, baile sorpresa y pista. Producción completa.</p>
+          </div>
+        </a>
+        <a class="band band--quiet" href="#contacto" data-img="e3">
+          <div class="band__media"><img data-src-key="e3" alt="Corporativos en mozé" loading="lazy"></div>
+          <div class="band__scrim"></div>
+          <div class="band__center">
+            <span class="band__n">03</span>
+            <h3>Corporativos</h3>
+            <p>Cenas de fin de año, convenciones y presentaciones.</p>
+          </div>
+        </a>
+        <a class="band band--quiet" href="#contacto" data-img="e4">
+          <div class="band__media"><img data-src-key="e4" alt="Cumpleaños en mozé" loading="lazy"></div>
+          <div class="band__scrim"></div>
+          <div class="band__center">
+            <span class="band__n">04</span>
+            <h3>Cumpleaños</h3>
+            <p>Desde comidas íntimas hasta fiestas de trescientos.</p>
+          </div>
+        </a>
+        <a class="band band--quiet" href="#contacto" data-img="e5">
+          <div class="band__media"><img data-src-key="e5" alt="Graduaciones en mozé" loading="lazy"></div>
+          <div class="band__scrim"></div>
+          <div class="band__center">
+            <span class="band__n">05</span>
+            <h3>Graduaciones</h3>
+            <p>Ceremonia de generación completa, cena y baile.</p>
+          </div>
+        </a>
+        <a class="band band--quiet" href="#contacto" data-img="e6">
+          <div class="band__media"><img data-src-key="e6" alt="Privados en mozé" loading="lazy"></div>
+          <div class="band__scrim"></div>
+          <div class="band__center">
+            <span class="band__n">06</span>
+            <h3>Privados</h3>
+            <p>Bautizos, baby showers y reuniones familiares.</p>
+          </div>
+        </a>
+    </div>
+  </section>
+</template>
+
+<template id="v-servicios-b">
+  <section class="specs indice" id="servicios" data-sec="servicios">
+    <div class="specs__head">
+      <p class="sectionlabel sectionlabel--light"><span>04</span> Servicios</p>
+      <h2 data-fade>Todo lo que ya<br>está resuelto.</h2>
+    </div>
+    <div class="indice__cifras">
+      <div data-fade><span class="num" data-count="500">0</span><p>invitados</p></div>
+      <div data-fade><span class="num" data-count="1200">0</span><p>m² de salón</p></div>
+      <div data-fade><span class="num" data-count="120">0</span><p>cajones</p></div>
+      <div data-fade><span class="num" data-count="12">0</span><p>años</p></div>
+    </div>
+    <ol class="indice__lista">
+          <li data-fade><span class="indice__n">01</span><h3>Cocina y banquete</h3><p>Cocina profesional dentro del predio. Menú degustable antes de que firmes nada.</p></li>
+          <li data-fade><span class="indice__n">02</span><h3>Audio e iluminación</h3><p>Sonido, iluminación arquitectónica y escénica. Pantallas y pista intervenible.</p></li>
+          <li data-fade><span class="indice__n">03</span><h3>Mobiliario y montaje</h3><p>Sillas, mesas redondas e imperiales, mantelería y lounge. Montamos nosotros.</p></li>
+          <li data-fade><span class="indice__n">04</span><h3>Coordinación</h3><p>Un responsable asignado desde la firma hasta que se apaga la última luz.</p></li>
+          <li data-fade><span class="indice__n">05</span><h3>Salón climatizado</h3><p>Planta libre sin columnas, altura para producción y clima toda la noche.</p></li>
+          <li data-fade><span class="indice__n">06</span><h3>Jardín</h3><p>Árboles maduros y luces colgantes. Ceremonia, cóctel o fiesta al aire libre.</p></li>
+    </ol>
+  </section>
+</template>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
