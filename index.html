@@ -38,11 +38,11 @@ const SITE = {
   waMensaje: 'Hola, me interesa agendar una visita a Mozé.',
   instagram: 'mozecentrodeeventos',
 
-  /* PENDIENTE · el cliente aún no proporciona estos datos.
-     Al llenarlos aparecen solos en la sección de contacto.     */
+  /* Estos tres los encontré publicados en directorios. VERIFICAR
+     con el cliente antes de publicar. Vaciar el campo lo oculta.  */
   email:     '',
-  direccion: '',
-  horarios:  '',
+  direccion: 'Carr. Panamericana 5191, Plan de Ayala, 29110 Tuxtla Gutiérrez, Chis.',
+  horarios:  'Lunes a domingo · 9:00 a 19:00',
 
   /* ---- Ubicación ------------------------------------------
      mapaEmbed: pega aquí la URL de "Insertar un mapa" de Google
@@ -52,9 +52,17 @@ const SITE = {
   mapaBusqueda: 'Mozé Centro de Eventos, Tuxtla Gutiérrez, Chiapas',
   mapaEmbed:    '',
 
-  /* ---- Testimonios ----------------------------------------
-     Pega el enlace de las reseñas de Google cuando lo tengas.
-     Vacío = el botón abre la ficha del negocio en Maps.        */
+  /* ---- Reseñas de Google ----------------------------------
+     Google NO tiene widget gratuito para incrustar reseñas, así
+     que la calificación se escribe aquí a mano.
+
+     PENDIENTE VERIFICAR · 4.5 y 689 salen de directorios
+     públicos, no de la ficha oficial. Abre tu perfil de Google
+     Maps, comprueba las cifras reales y actualízalas. Se
+     recomienda revisarlas cada pocos meses.
+     Cualquier campo vacío desaparece de la sección.            */
+  googleRating:  '4.5',
+  googleTotal:   '689',
   googleReviews: '',
 
   /* ---- Tipografía -----------------------------------------
@@ -202,13 +210,19 @@ const SERVICIOS = [
     alt: 'Meseros sirviendo durante un evento en Mozé' }
 ];
 
-/* Confía en los expertos. 'hasta' null = no hay count-up. */
-const CIFRAS = [
-  { hasta: 13,  sufijo: '+', etiqueta: 'AÑOS EN EL MERCADO' },
-  { hasta: 800, sufijo: '',  etiqueta: 'PERSONAS DE CAPACIDAD' },
-  { hasta: 2,   sufijo: '',  etiqueta: 'SALONES' },
-  { hasta: 1,   sufijo: '',  etiqueta: 'JARDÍN' }
-];
+/* Reseñas de Google, transcritas a mano.
+   ---------------------------------------------------------------
+   CÓMO LLENARLAS: abre tu ficha de Google Maps, elige 3 o 4
+   reseñas reales y cópialas tal cual, sin editar el texto.
+   Usa el nombre tal como aparece publicado.
+
+   Mientras el arreglo esté vacío la sección muestra sólo la
+   calificación y el botón a Google. No se inventa ninguna.
+
+   const RESENAS = [
+     { texto: 'Texto exacto de la reseña.', autor: 'Nombre Apellido', fecha: 'marzo 2025' }
+   ];                                                              */
+const RESENAS = [];
 
 /* Tipos de evento del formulario. Se ordenan solos alfabéticamente. */
 const OPCIONES_FORM = [
@@ -721,24 +735,22 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .eventos > *:not(.eventos__fondo){position:relative;z-index:1}
 
 /* ═══════════════════════════════════════════════════════════════
-   CIFRAS · confía en los expertos
+   CONFÍA EN LOS EXPERTOS
+   ---------------------------------------------------------------
+   Antes eran cuatro números en fila: el único bloque con aire de
+   dashboard en un sitio editorial, y repetía datos ya dichos.
+   Ahora las cifras viven dentro de una frase, a escala de titular.
    ═══════════════════════════════════════════════════════════════ */
-.expertos{padding:clamp(5rem,12vh,9rem) var(--pad)}
-.expertos__grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,4vw,3rem);
-  padding-top:clamp(2rem,5vw,3.5rem);border-top:1px solid var(--line-light);
+.aval{padding:clamp(5rem,12vh,9rem) var(--pad)}
+.aval__frase{
+  max-width:26ch;line-height:1.16;
+  font-size:calc(var(--tscale) * clamp(1.9rem,4.6vw,3.8rem));
 }
-.cifra .num{font-size:calc(var(--tscale) * clamp(3rem,8vw,6.5rem));line-height:.95;display:block;color:var(--verde-alto)}
-.cifra p{
-  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(243,240,234,.65);margin-top:.7rem;max-width:16ch;
+.aval__n{
+  color:var(--verde-alto);
+  font-size:1.28em;line-height:.8;
+  padding-right:.04em;letter-spacing:-.02em;
 }
-.expertos__extra{
-  margin-top:clamp(2.5rem,6vw,4rem);padding-top:1.75rem;border-top:1px solid var(--line-light);
-  display:flex;align-items:center;gap:.9rem;
-  font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone);
-}
-.expertos__extra i{width:8px;height:8px;border-radius:50%;background:var(--verde-alto);flex:none}
 
 /* ═══════════════════════════════════════════════════════════════
    SERVICIOS · VITRINA
@@ -862,8 +874,64 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
    TESTIMONIOS
    ═══════════════════════════════════════════════════════════════ */
 .testi{padding:clamp(5rem,12vh,8rem) var(--pad);text-align:center}
-.testi h2{margin-bottom:1.25rem}
-.testi p{color:rgba(243,240,234,.7);max-width:44ch;margin:0 auto 2.25rem}
+.testi h2{margin-bottom:1.75rem}
+.testi__nota{
+  color:rgba(243,240,234,.5);font-size:.72rem;letter-spacing:.2em;
+  text-transform:uppercase;margin:0 auto 1.75rem;
+}
+
+/* Calificación de Google */
+.marca-g{
+  display:inline-flex;align-items:center;gap:clamp(.75rem,2vw,1.35rem);
+  padding:.9rem 1.5rem;border:1px solid var(--line-light);border-radius:100px;
+  margin-bottom:clamp(2rem,5vw,3rem);
+}
+.marca-g__nota{
+  font-family:var(--display);font-weight:var(--dweight-alto);
+  font-size:calc(var(--tscale) * clamp(1.9rem,3.6vw,2.9rem));line-height:1;
+}
+.marca-g__estrellas{display:flex;gap:.18rem;color:var(--verde-alto)}
+.marca-g__estrellas svg{width:15px;height:15px}
+.marca-g__estrellas .vacia{opacity:.28}
+.marca-g__txt{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(243,240,234,.6);text-align:left;line-height:1.5;
+}
+
+/* Citas · una a la vez, a escala de titular */
+.citas{position:relative;max-width:28ch;margin:0 auto clamp(1.75rem,4vw,2.5rem)}
+.citas:empty{display:none}
+.cita{
+  position:absolute;inset:0;opacity:0;pointer-events:none;
+  transition:opacity .5s var(--ease);
+}
+.cita.activa{position:relative;opacity:1;pointer-events:auto}
+.cita blockquote{
+  font-family:var(--display);font-weight:var(--dweight);
+  font-size:calc(var(--tscale) * clamp(1.35rem,2.9vw,2.2rem));
+  line-height:1.28;margin-bottom:1.1rem;
+}
+.cita blockquote::before{content:'\201C';color:var(--verde-alto);margin-right:.06em}
+.cita blockquote::after{content:'\201D';color:var(--verde-alto);margin-left:.06em}
+.cita figcaption{
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(243,240,234,.55);
+}
+.citas__mando{
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+  margin-top:clamp(1.25rem,3vw,1.75rem);
+}
+.citas__mando button{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(243,240,234,.1);color:var(--bone);
+  transition:background .3s var(--ease);
+}
+.citas__mando button:hover,.citas__mando button:focus-visible{background:var(--verde)}
+.citas__cuenta{
+  font-size:.68rem;letter-spacing:.2em;color:rgba(243,240,234,.55);
+  font-variant-numeric:tabular-nums;min-width:4.5em;
+}
 
 /* ═══════════════════════════════════════════════════════════════
    CONTACTO · §18
@@ -1009,7 +1077,6 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   .destacado,.destacado--invertido{grid-template-columns:1fr;gap:2rem}
   .destacado__media,.destacado--invertido .destacado__media{order:-1}
 
-  .expertos__grid{grid-template-columns:1fr 1fr;gap:2.5rem 1.5rem}
   .eventos__lista{grid-template-columns:repeat(2,minmax(0,1fr))}
   .contacto{grid-template-columns:1fr;gap:2.5rem}
   .ubic__head{grid-template-columns:1fr;gap:1rem;align-items:start}
@@ -1071,8 +1138,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   .ev__nombre{font-size:calc(var(--tscale) * clamp(.88rem,3.4vw,1.05rem));letter-spacing:.02em}
   .ev__n{font-size:.55rem}
 
-  .expertos__grid{grid-template-columns:1fr 1fr;gap:2rem 1rem}
-  .expertos__extra{font-size:.7rem;letter-spacing:.14em}
+  .aval__frase{max-width:none}
 
   .vp{flex:0 0 min(82%,300px)}
   .vp__nombre{font-size:calc(var(--tscale) * .82rem);letter-spacing:.08em}
@@ -1235,11 +1301,9 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   </section>
 
   <!-- ═══════════ CONFÍA EN LOS EXPERTOS ═══════════ -->
-  <section class="expertos oscuro" aria-labelledby="t-expertos">
-    <p class="rotulo rotulo--claro">Experiencia</p>
-    <h2 id="t-expertos" data-fade>Confía en<br>los expertos.</h2>
-    <div class="expertos__grid" id="cifrasGrid"></div>
-    <p class="expertos__extra" data-fade><i aria-hidden="true"></i>Estacionamiento propio</p>
+  <section class="aval oscuro" aria-labelledby="t-aval">
+    <p class="rotulo rotulo--claro">Confía en los expertos</p>
+    <h2 id="t-aval" class="aval__frase" data-fade></h2>
   </section>
 
   <!-- ═══════════ SERVICIOS · VITRINA ═══════════ -->
@@ -1311,8 +1375,10 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   <section class="testi oscuro" aria-labelledby="t-testi">
     <p class="rotulo rotulo--claro" style="justify-content:center">Testimonios</p>
     <h2 id="t-testi" data-fade>Lo que dicen<br>quienes ya celebraron.</h2>
-    <p data-fade>Las reseñas están publicadas en Google, sin editar. Léelas antes de decidir.</p>
-    <a class="btn btn--linea btn--grande" id="linkResenas" href="#" target="_blank" rel="noopener noreferrer" data-fade data-iman>Ver testimonios</a>
+    <div class="marca-g" id="marcaGoogle" data-fade></div>
+    <div class="citas" id="citas"></div>
+    <p class="testi__nota" data-fade>Publicadas en Google, sin editar.</p>
+    <a class="btn btn--linea btn--grande" id="linkResenas" href="#" target="_blank" rel="noopener noreferrer" data-fade data-iman>Leerlas en Google</a>
   </section>
 
   <!-- ═══════════ CONTACTO ═══════════ -->
@@ -1567,14 +1633,16 @@ function pintarVitrina() {
   }).join('');
 }
 
-function pintarCifras() {
-  const c = $('#cifrasGrid');
+function pintarAval() {
+  const c = $('#t-aval');
   if (!c) return;
-  c.innerHTML = CIFRAS.map(x => `
-    <div class="cifra" data-fade>
-      <span class="num" data-count="${x.hasta}" data-sufijo="${x.sufijo}">0</span>
-      <p>${esc(x.etiqueta)}</p>
-    </div>`).join('');
+  const cif = SITE.cifras;
+  // Las cifras salen de SITE.cifras: no se repiten en el markup.
+  const n = v => `<span class="num aval__n" data-count="${v}">0</span>`;
+  c.innerHTML =
+    `${n(cif.anios)} años montando eventos en Tuxtla Gutiérrez. ` +
+    `${n(cif.salones)} salones, ${n(cif.jardines)} jardín, ` +
+    `hasta ${n(cif.capacidad)} invitados y estacionamiento propio.`;
 }
 
 function pintarOpcionesForm() {
@@ -1584,6 +1652,57 @@ function pintarOpcionesForm() {
   const ord = [...OPCIONES_FORM].sort((a, b) => a.localeCompare(b, 'es'));
   sel.insertAdjacentHTML('beforeend',
     ord.map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join(''));
+}
+
+function pintarResenas() {
+  // ── Calificación ──
+  const marca = $('#marcaGoogle');
+  if (marca) {
+    const nota  = SITE.googleRating;
+    const total = SITE.googleTotal;
+    if (!nota) {
+      marca.remove();
+    } else {
+      const llenas = Math.round(parseFloat(nota));
+      const estrella = llena => `<svg viewBox="0 0 24 24" fill="currentColor" class="${llena ? '' : 'vacia'}" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>`;
+      marca.innerHTML = `
+        <span class="marca-g__nota">${esc(nota)}</span>
+        <span class="marca-g__txt">
+          <span class="marca-g__estrellas" role="img" aria-label="${esc(nota)} de 5 estrellas">
+            ${[1,2,3,4,5].map(k => estrella(k <= llenas)).join('')}
+          </span>
+          ${total ? `en Google · ${esc(total)} reseñas` : 'en Google'}
+        </span>`;
+    }
+  }
+
+  // ── Citas · sólo si hay reseñas reales transcritas ──
+  const cont = $('#citas');
+  if (!cont) return;
+  if (typeof RESENAS === 'undefined' || !RESENAS.length) return;
+
+  cont.innerHTML = RESENAS.map((r, i) => `
+    <figure class="cita${i === 0 ? ' activa' : ''}">
+      <blockquote>${esc(r.texto)}</blockquote>
+      <figcaption>${esc(r.autor)}${r.fecha ? ' · ' + esc(r.fecha) : ''}</figcaption>
+    </figure>`).join('') + (RESENAS.length < 2 ? '' : `
+    <div class="citas__mando">
+      <button type="button" data-cita="-1" aria-label="Reseña anterior">&#8592;</button>
+      <span class="citas__cuenta"><span data-cita-actual>01</span> / ${String(RESENAS.length).padStart(2, '0')}</span>
+      <button type="button" data-cita="1" aria-label="Reseña siguiente">&#8594;</button>
+    </div>`);
+
+  const citas = $$('.cita', cont);
+  if (citas.length < 2) return;
+  const cuenta = $('[data-cita-actual]', cont);
+  let i = 0;
+  const ir = n => {
+    i = (n + citas.length) % citas.length;
+    citas.forEach((c, k) => c.classList.toggle('activa', k === i));
+    cuenta.textContent = String(i + 1).padStart(2, '0');
+  };
+  $$('[data-cita]', cont).forEach(b =>
+    b.addEventListener('click', () => ir(i + +b.dataset.cita)));
 }
 
 function pintarContactoFotos() {
@@ -2262,8 +2381,9 @@ window.addEventListener('DOMContentLoaded', () => {
   pintarCristaleria();
   pintarEventos();
   pintarVitrina();
-  pintarCifras();
+  pintarAval();
   pintarOpcionesForm();
+  pintarResenas();
   pintarContactoFotos();
   hidratar();
 
