@@ -165,8 +165,38 @@ const SITE = {
     { src: 'FOTOS/cristaleria-4.jpg', alt: 'Menú impreso sobre plato con plaque' }
   ],
 
-  /* ---- Marca en el bloque de contacto -------------------- */
-  contactoMarca: { src: 'FOTOS/marca.png', alt: 'MOZÉ centro de eventos' }
+  /* ---- Fondo de "Confía en los expertos" -------------------
+     Cuatro columnas del mismo ancho. Cada una acepta imagen o
+     vídeo: si 'video' tiene ruta, se usa el vídeo; si está
+     vacío, se usa la imagen.
+
+     SOBRE EL PESO · un clip vertical de 5 s pesa unos 150 KB,
+     así que las cuatro en vídeo suman ~610 KB: menos que las
+     cuatro fotos. El archivo NO es el problema.
+     Lo que sí cuesta es que cuatro vídeos se decodifican a la
+     vez, y con el del hero serían cinco: en teléfonos de gama
+     media eso calienta y gasta batería. Por eso el vídeo aquí
+     nunca se carga en pantallas chicas, aunque lo actives.
+
+     PARA PROBAR CON VÍDEO: pon los archivos en VIDEO/ y escribe
+     la ruta, por ejemplo  video: 'VIDEO/aval-1.mp4'            */
+  avalColumnas: [
+    { img: 'FOTOS/aval-1.jpg', video: '', alt: 'Salón montado para una ceremonia' },
+    { img: 'FOTOS/aval-2.jpg', video: '', alt: 'Montaje con techo intervenido en dorado' },
+    { img: 'FOTOS/aval-3.jpg', video: '', alt: 'Ceremonia nocturna en el jardín' },
+    { img: 'FOTOS/aval-4.jpg', video: '', alt: 'Meseros sirviendo durante un evento' }
+  ],
+
+  /* ---- Logotipo -------------------------------------------
+     Dos versiones con usos distintos:
+     · logo   — blanco sobre transparente, para la barra, donde
+                se superpone al vídeo y necesita fondo libre.
+     · marca  — versión a color completa, para la intro y el
+                bloque de contacto.                             */
+  logo:  { src: 'FOTOS/logo.png',  alt: 'MOZÉ centro de eventos' },
+
+  /* ---- Marca a color · intro y bloque de contacto -------- */
+  marca: { src: 'FOTOS/marca.png', alt: 'MOZÉ centro de eventos' }
 };
 
 
@@ -176,28 +206,21 @@ const SITE = {
    ═══════════════════════════════════════════════════════════════ */
 
 /* Distintas maneras de usar los salones.
-   El resaltado al pasar el cursor es sólo de color: no hay imagen. */
+   Se muestran en retícula; el resaltado al pasar el cursor es
+   sólo de color. Para añadir o quitar, edita esta lista. */
 const TIPOS_EVENTO = [
   { nombre: 'XV AÑOS' },
   { nombre: 'WEDDINGS' },
   { nombre: 'BABY SHOWERS' },
-  { nombre: 'GENDER REVEALS' },
   { nombre: 'CUMPLEAÑOS' },
   { nombre: 'PRIMERA COMUNIÓN' },
   { nombre: 'BAUTIZO' },
-  { nombre: 'DESAYUNO EMPRESARIAL' },
-  { nombre: 'COMIDA EMPRESARIAL' },
-  { nombre: 'CENA EMPRESARIAL' },
   { nombre: 'REUNIONES EMPRESARIALES' },
   { nombre: 'BODAS' },
   { nombre: 'DESPEDIDA DE SOLTERA' },
   { nombre: 'FIESTA EN JARDÍN' },
-  { nombre: 'BRUNCH' },
   { nombre: 'PROM' },
-  { nombre: 'CENA PRE-PROM' },
-  { nombre: 'FIESTA DE GRADUACIÓN' },
-  { nombre: 'ENTREGA DE PAPELES' },
-  { nombre: 'Y MUCHAS MÁS',            suave: true }
+  { nombre: 'ENTREGA DE PAPELES' }
 ];
 
 /* Todo en un mismo lugar. Lista editorial con revelado de imagen.
@@ -243,10 +266,10 @@ const SERVICIOS = [
    ];                                                              */
 const RESENAS = [];
 
-/* Tipos de evento del formulario. Se ordenan solos alfabéticamente. */
-const OPCIONES_FORM = [
-  'BABY SHOWER', 'CENA', 'DESAYUNO', 'EVENTO PRIVADO', 'POSADA'
-];
+/* Opciones del formulario · salen de TIPOS_EVENTO, así que la
+   lista nunca se desincroniza de la sección de eventos.
+   Se ordenan alfabéticamente al pintarse.                        */
+const OPCIONES_FORM = TIPOS_EVENTO.map(e => e.nombre).concat('OTRO');
 
 
 /* ═══════════════════════════════════════════════════════════════
@@ -385,6 +408,7 @@ ul,ol{list-style:none}
 .rotulo--claro::before{background:var(--verde-alto)}
 .rotulo--claro{color:var(--bone);border-top-color:var(--sobre-osc-2)}
 .rotulo--claro span{color:var(--verde-alto)}
+.rotulo--centro{justify-content:center;max-width:46ch;margin-inline:auto}
 
 h1,h2,h3{font-family:var(--display);font-weight:var(--dweight);line-height:1.04;letter-spacing:var(--dtrack)}
 /* Los títulos de sección llevan volumen. El h1 del hero se queda
@@ -429,9 +453,13 @@ section{scroll-margin-top:var(--nav-h)}
   transition:background .4s var(--ease),padding .4s var(--ease);
 }
 .nav.solida{background:var(--ink);padding-top:.9rem;padding-bottom:.9rem}
-.nav__logo{font-family:var(--display);font-weight:var(--dweight-alto);font-size:1.5rem;letter-spacing:.08em;line-height:1}
-.nav__logo em{color:var(--verde-alto);font-style:normal}
-.hero .nav__logo em{color:var(--verde-alto)}
+/* Logotipo · alto fijo, ancho automático: no se deforma nunca */
+.nav__logo{display:flex;align-items:center;flex:none}
+.nav__logo img{
+  width:auto;height:clamp(30px,3.4vw,42px);object-fit:contain;
+  transition:height .4s var(--ease);
+}
+.nav.solida .nav__logo img{height:clamp(26px,2.8vw,34px)}
 .nav__links{display:flex;gap:1.9rem}
 .nav__links a{
   font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
@@ -495,20 +523,9 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   display:flex;align-items:center;justify-content:center;padding:var(--pad);
 }
 .loader__centro{display:flex;flex-direction:column;align-items:center;gap:clamp(.75rem,1.6vw,1.5rem)}
-/* La máscara recorta lo que sobresale al deslizar el texto. Con
-   line-height ajustado, la tilde de la É quedaba fuera de la caja.
-   El padding superior le da aire; el margen negativo devuelve el
-   bloque a su sitio para que siga centrado en pantalla. */
-.loader__linea{
-  display:block;overflow:hidden;
-  padding-top:.3em;margin-top:-.3em;
-  padding-bottom:.12em;
-}
-.loader__marca{
-  display:block;font-family:var(--display);font-weight:var(--dweight-alto);
-  font-size:calc(var(--tscale) * clamp(3.6rem,20vw,16rem));
-  line-height:1;letter-spacing:.02em;
-}
+/* Máscara de entrada: el logotipo se desliza desde abajo. */
+.loader__linea{display:block;overflow:hidden;line-height:0}
+.loader__logo{display:block;width:min(68vw,620px);height:auto;object-fit:contain}
 .loader__pie{
   font-size:clamp(.7rem,1.5vw,1rem);font-weight:500;
   letter-spacing:.3em;text-transform:uppercase;color:var(--verde-alto);
@@ -548,7 +565,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .hero__texto{max-width:1000px;margin-bottom:clamp(2rem,6vh,4rem)}
 .hero__titulo{
   font-family:var(--display);font-weight:var(--dweight);
-  font-size:calc(var(--tscale) * clamp(3.1rem,9.6vw,8.8rem));
+  font-size:calc(var(--tscale) * clamp(3.4rem,11vw,10.5rem));
   line-height:.99;letter-spacing:-.02em;margin:1.25rem 0 2rem;
 }
 .hero__titulo em{color:var(--bone);position:relative}
@@ -574,12 +591,19 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 /* ═══════════════════════════════════════════════════════════════
    MANIFIESTO
    ═══════════════════════════════════════════════════════════════ */
-.manif{padding:clamp(6rem,16vh,11rem) var(--pad)}
+.manif{padding:clamp(4rem,10vh,7rem) var(--pad)}
+/* Bloque ancho y bajo en vez de columna alta: el texto se lee
+   de corrido, centrado, y la sección ocupa menos altura. */
 .manif__t{
   font-family:var(--display);font-weight:var(--dweight);
-  font-size:calc(var(--tscale) * clamp(2rem,5vw,4.2rem));
-  line-height:1.12;max-width:20ch;letter-spacing:-.015em;
+  font-size:calc(var(--tscale) * clamp(1.4rem,2.9vw,2.5rem));
+  line-height:1.28;letter-spacing:-.01em;
+  max-width:46ch;margin:0 auto;text-align:center;
 }
+/* Las comillas van fuera del reparto por palabras del reveal:
+   así no cuentan como palabra ni alteran el escalonado. */
+.manif__t::before{content:'\201C';color:var(--verde);margin-right:.04em}
+.manif__t::after{content:'\201D';color:var(--verde);margin-left:.04em}
 .manif__t .w{display:inline-block;overflow:hidden;vertical-align:top;padding-top:.16em;margin-top:-.16em}
 .manif__t .w>i{display:inline-block;font-style:normal}
 
@@ -591,36 +615,21 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
    ocupa el doble.
    ═══════════════════════════════════════════════════════════════ */
 .espacios{padding:clamp(5rem,12vh,8rem) var(--pad) clamp(4rem,10vh,7rem)}
-.espacios__head{
-  display:flex;flex-wrap:wrap;gap:1.5rem 2rem;
-  align-items:flex-end;justify-content:space-between;margin-bottom:clamp(1.5rem,3vw,2.25rem);
-}
-.espacios__head .rotulo{margin-bottom:0;flex:1 1 240px}
-
-/* Selector de espacio */
-.selector{display:flex;gap:.4rem;flex:none}
-.selector button{
-  position:relative;padding:.7rem 1.4rem .8rem;
-  font-family:var(--display);font-weight:var(--dweight-alto);
-  font-size:calc(var(--tscale) * clamp(1.1rem,2vw,1.5rem));
-  letter-spacing:.06em;color:var(--muted);
-  transition:color .35s var(--ease);
-}
-.selector button::after{
-  content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
-  background:var(--verde);transform:scaleX(0);transform-origin:right;
-  transition:transform .5s var(--ease);
-}
-.selector button[aria-selected="true"]{color:var(--ink)}
-.selector button[aria-selected="true"]::after{transform:scaleX(1);transform-origin:left}
-.selector button:hover{color:var(--ink)}
 
 .espacio{
   display:grid;grid-template-columns:1.5fr .8fr;
   gap:clamp(1.75rem,4vw,3.5rem);align-items:start;
 }
-.espacio[hidden]{display:none}
+/* Los dos espacios se apilan; una regla fina los separa sin que
+   la composición de cada uno cambie. */
+.espacio + .espacio{
+  margin-top:clamp(3rem,7vw,5.5rem);
+  padding-top:clamp(3rem,7vw,5.5rem);
+  border-top:1px solid var(--line);
+}
 
+/* Contenedor de la galería del espacio: el formato lo pone .gal */
+.espacio__media{min-width:0}
 .espacio__ficha{padding-top:.5rem}
 .espacio__et{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
 .espacio__nombre{
@@ -762,7 +771,6 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   font-size:calc(var(--tscale) * clamp(1rem,1.55vw,1.35rem));
   line-height:1.15;letter-spacing:.03em;text-transform:uppercase;
 }
-.ev__mas .ev__nombre{color:var(--sobre-osc-2)}
 .ev__flecha{font-style:normal;font-size:.85rem;opacity:0;transition:opacity .35s var(--ease)}
 .ev:hover .ev__flecha,.ev:focus-visible .ev__flecha{opacity:1}
 .ev__linea{
@@ -780,7 +788,25 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
    dashboard en un sitio editorial, y repetía datos ya dichos.
    Ahora las cifras viven dentro de una frase, a escala de titular.
    ═══════════════════════════════════════════════════════════════ */
-.aval{padding:clamp(5rem,12vh,9rem) var(--pad)}
+.aval{position:relative;isolation:isolate;overflow:hidden;padding:clamp(5rem,12vh,9rem) var(--pad)}
+/* Cuatro columnas iguales de fondo. Cada celda admite imagen o
+   vídeo sin cambiar el maquetado. */
+.aval__fondo{
+  position:absolute;inset:0;z-index:-1;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+}
+.aval__col{position:relative;overflow:hidden;background:var(--ink)}
+.aval__col img,.aval__col video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+}
+.aval__col video{opacity:0;transition:opacity .8s var(--ease)}
+.aval__col video.corriendo{opacity:1}
+/* Velo: sin él la frase no se lee sobre fotografía clara */
+.aval__fondo::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(26,26,26,.88) 0%,rgba(26,26,26,.80) 45%,rgba(26,26,26,.90) 100%);
+}
+.aval__cuerpo{position:relative;z-index:1}
 .aval__frase{
   max-width:26ch;line-height:1.16;
   font-size:calc(var(--tscale) * clamp(1.9rem,4.6vw,3.8rem));
@@ -981,23 +1007,53 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .campo{display:flex;flex-direction:column}
 .campo--full{grid-column:1/-1}
 .campo label{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2);margin-bottom:.55rem}
-.campo input,.campo select,.campo textarea{
+.campo input,.campo textarea{
   width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-light);
   color:var(--bone);font-family:var(--sans);font-size:.95rem;font-weight:300;
   padding:.6rem 0;border-radius:0;transition:border-color .35s var(--ease);
 }
 .campo textarea{resize:vertical;min-height:66px}
 .campo input::placeholder,.campo textarea::placeholder{color:#A8A8A8;opacity:1}
-.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--verde-alto)}
-/* §19/§20 · el select no debe quedar lavado ni cortado */
-.campo select{
-  appearance:none;cursor:pointer;padding-right:1.75rem;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238FC3AB' stroke-width='1.5'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right .25rem center;
+.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--verde-alto)}
+/* Selector propio · el <select> nativo no permite limitar la
+   altura de su desplegable; con doce opciones aparecían todas de
+   golpe. Este muestra seis y desplaza el resto. */
+.campo__et{
+  font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--sobre-osc-2);margin-bottom:.55rem;display:block;
 }
-.campo select option{background:#14160F;color:#F3F0EA}
+.lista{position:relative}
+.lista__btn{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:transparent;border:0;border-bottom:1px solid var(--line-light);
+  color:var(--bone);font-family:var(--sans);font-size:.95rem;font-weight:300;
+  padding:.6rem 0;text-align:left;transition:border-color .35s var(--ease);
+}
+.lista__btn svg{width:12px;height:8px;flex:none;color:var(--verde-alto);transition:transform .35s var(--ease)}
+.lista__btn[aria-expanded="true"]{border-color:var(--verde-alto)}
+.lista__btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.lista__btn[data-vacio] span{color:#A8A8A8}
+.lista__menu{
+  position:absolute;top:calc(100% + .4rem);left:0;right:0;z-index:60;
+  background:#2A2A2A;border:1px solid var(--line-light);
+  max-height:calc(6 * 2.85rem);   /* seis opciones a la vista */
+  overflow-y:auto;overscroll-behavior:contain;
+}
+.lista__menu::-webkit-scrollbar{width:8px}
+.lista__menu::-webkit-scrollbar-track{background:rgba(255,255,255,.06)}
+.lista__menu::-webkit-scrollbar-thumb{background:var(--verde);border-radius:8px}
+.lista__menu{scrollbar-width:thin;scrollbar-color:var(--verde) rgba(255,255,255,.06)}
+.lista__menu li{
+  padding:.8rem 1rem;font-size:.88rem;color:var(--sobre-osc-2);cursor:pointer;
+  transition:background .2s var(--ease),color .2s var(--ease);
+}
+.lista__menu li:hover,.lista__menu li.marcada{background:var(--verde);color:var(--bone)}
+.lista__menu li[aria-selected="true"]{color:var(--bone);font-weight:500}
+.lista__menu li[aria-selected="true"]::after{content:' ✓';color:var(--verde-alto)}
+.campo.error .lista__btn{border-color:#D08A6A}
+
 .campo input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1);opacity:.5;cursor:pointer}
-.campo.error input,.campo.error select{border-color:#D08A6A}
+.campo.error input{border-color:#D08A6A}
 .campo__err{font-size:.68rem;color:#D08A6A;margin-top:.4rem}
 .form__enviar{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem;margin-top:.5rem}
 .form__nota{font-size:.72rem;color:var(--sobre-osc-2);max-width:34ch;line-height:1.6}
@@ -1107,7 +1163,6 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   .nav__cta{padding:.8rem 1.4rem;font-size:.66rem}
 
   .espacio{grid-template-columns:1fr;gap:1.75rem}
-  .espacios__head{align-items:flex-start;flex-direction:column;gap:1rem}
 
   .destacado,.destacado--invertido{grid-template-columns:1fr;gap:2rem}
   .destacado__media,.destacado--invertido .destacado__media{order:-1}
@@ -1161,7 +1216,6 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   .gal__prev{left:.5rem}
   .gal__next{right:.5rem}
   .gal__zoom{left:.6rem;bottom:.6rem;padding:.42rem .7rem;font-size:.56rem}
-  .selector button{padding:.5rem 1rem .6rem}
 
   .eventos__lista{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.1rem;margin-top:1.25rem}
   .ev{grid-template-columns:auto minmax(0,1fr);gap:.6rem;padding:.65rem 0}
@@ -1223,13 +1277,13 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 
 <div class="loader" id="loader">
   <div class="loader__centro">
-    <span class="loader__linea"><span class="loader__marca" data-marca>MOZÉ</span></span>
+    <span class="loader__linea"><img class="loader__logo" id="loaderLogo" data-marca alt=""></span>
     <span class="loader__pie" data-marca-pie>Centro de eventos · Tuxtla Gutiérrez</span>
   </div>
 </div>
 
 <header class="nav" id="nav">
-  <a href="#inicio" class="nav__logo" data-iman>MOZÉ<em>·</em></a>
+  <a href="#inicio" class="nav__logo" id="navLogo" aria-label="MOZÉ · inicio" data-iman></a>
   <nav class="nav__links" aria-label="Principal">
     <a href="#espacio">Espacios</a>
     <a href="#eventos">Eventos</a>
@@ -1270,12 +1324,11 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
     <div class="hero__texto">
       <p class="eyebrow" data-h="1"><span>Tuxtla Gutiérrez · Chiapas</span></p>
       <h1 class="hero__titulo">
-        <span class="line"><span data-h="2">Dos salones,</span></span>
-        <span class="line"><span data-h="2">un jardín y</span></span>
-        <span class="line"><span data-h="2">todo <em>en un mismo lugar</em></span></span>
+        <span class="line"><span data-h="2">Comparte</span></span>
+        <span class="line"><span data-h="2">tu <em>Sueño.</em></span></span>
       </h1>
       <div class="hero__meta">
-        <p data-h="3">Salón climatizado para 800 invitados, un espacio íntimo y un jardín arbolado. Con banquetera propia y servicio de profesionales.</p>
+        <p data-h="3">Dos Salones, Un jardín, versatilidad para cualquier tipo de evento.</p>
         <div class="hero__acciones" data-h="4">
           <a href="#contacto" class="btn btn--solido" data-iman>Agenda una visita</a>
           <a href="#espacio" class="btn btn--linea" data-iman>Conoce los espacios</a>
@@ -1290,20 +1343,14 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 
   <!-- ═══════════ MANIFIESTO ═══════════ -->
   <section class="manif">
-    <p class="rotulo">En un mismo lugar</p>
-    <h2 class="manif__t" data-split>
-      No rentamos un salón. Resolvemos la noche completa:
-      el espacio, la comida, el montaje y la gente que atiende.
-    </h2>
+    <p class="rotulo rotulo--centro">En un mismo lugar</p>
+    <h2 class="manif__t" data-split>En MOZÉ nos gusta tratar tus eventos como si fueran nuestros también. Estaremos cada momento para revisar cada detalle del espacio, la comida y nuestros servicios de primera calidad</h2>
   </section>
 
   <!-- ═══════════ ESPACIOS ═══════════ -->
   <section class="espacios" id="espacio" aria-labelledby="t-espacios">
-    <div class="espacios__head">
-      <p class="rotulo">Los espacios</p>
-      <h2 id="t-espacios" class="oculto">Los espacios de MOZÉ</h2>
-      <div class="selector" id="espaciosSelector" role="tablist" aria-label="Elige un espacio"></div>
-    </div>
+    <p class="rotulo">Los espacios</p>
+    <h2 id="t-espacios" class="oculto">Los espacios de MOZÉ</h2>
     <div id="espaciosPanel"></div>
   </section>
 
@@ -1327,8 +1374,11 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 
   <!-- ═══════════ CONFÍA EN LOS EXPERTOS ═══════════ -->
   <section class="aval oscuro" aria-labelledby="t-aval">
-    <p class="rotulo rotulo--claro">Confía en los expertos</p>
-    <h2 id="t-aval" class="aval__frase" data-fade></h2>
+    <div class="aval__fondo" id="avalFondo" aria-hidden="true"></div>
+    <div class="aval__cuerpo">
+      <p class="rotulo rotulo--claro">Confía en los expertos</p>
+      <h2 id="t-aval" class="aval__frase" data-fade></h2>
+    </div>
   </section>
 
   <!-- ═══════════ SERVICIOS · VITRINA ═══════════ -->
@@ -1427,10 +1477,17 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
           <input id="f-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com">
         </div>
         <div class="campo">
-          <label for="f-tipo">Tipo de evento</label>
-          <select id="f-tipo" name="tipo" required>
-            <option value="">Elige una opción</option>
-          </select>
+          <span class="campo__et" id="f-tipo-et">Tipo de evento</span>
+          <div class="lista" id="listaTipo">
+            <button type="button" class="lista__btn" id="f-tipo-btn"
+                    aria-haspopup="listbox" aria-expanded="false"
+                    aria-labelledby="f-tipo-et f-tipo-btn">
+              <span data-valor>Elige una opción</span>
+              <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+            <ul class="lista__menu" id="f-tipo-menu" role="listbox" aria-labelledby="f-tipo-et" tabindex="-1" hidden></ul>
+            <input type="hidden" id="f-tipo" name="tipo">
+          </div>
         </div>
         <div class="campo">
           <label for="f-fecha">Fecha tentativa</label>
@@ -1533,23 +1590,19 @@ const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':
    1 · Contenido generado desde los datos
 --------------------------------------------------------------- */
 function pintarEspacios() {
-  const sel  = $('#espaciosSelector');
   const cont = $('#espaciosPanel');
-  if (!sel || !cont) return;
+  if (!cont) return;
 
-  sel.innerHTML = SITE.espacios.map((e, i) => `
-    <button type="button" role="tab" id="tab-${esc(e.id)}" aria-controls="panel-${esc(e.id)}"
-            aria-selected="${i === 0}">${esc(e.nombre)}</button>`).join('');
-
+  // Los dos espacios se muestran uno tras otro: cada uno conserva
+  // su propia composición, sin pestañas de por medio.
   cont.innerHTML = SITE.espacios.map((e, i) => `
-    <article class="espacio" id="panel-${esc(e.id)}" role="tabpanel"
-             aria-labelledby="tab-${esc(e.id)}"${i === 0 ? '' : ' hidden'}>
+    <article class="espacio" id="${esc(e.id)}" aria-labelledby="nom-${esc(e.id)}">
       <div class="espacio__media">
         ${galeria(e.fotos, e.nombre, { prioritaria: i === 0 })}
       </div>
       <div class="espacio__ficha">
         <p class="espacio__et">${esc(e.etiqueta)}</p>
-        <h3 class="espacio__nombre">${esc(e.nombre)}</h3>
+        <h3 class="espacio__nombre" id="nom-${esc(e.id)}">${esc(e.nombre)}</h3>
         <p class="espacio__cap">${esc(e.capacidad)}</p>
         <p class="texto">${esc(e.texto)}</p>
         <ul class="espacio__rasgos">
@@ -1620,8 +1673,7 @@ function pintarEventos() {
   const c = $('#eventosLista');
   if (!c) return;
   c.innerHTML = TIPOS_EVENTO.map((e, i) => `
-    <a class="indice__fila ev${e.suave ? ' ev__mas' : ''}" href="#contacto"
- >
+    <a class="indice__fila ev" href="#contacto">
       <span class="ev__n">${String(i + 1).padStart(2, '0')}</span>
       <span class="ev__nombre">${esc(e.nombre)}</span>
       <i class="ev__flecha" aria-hidden="true">→</i>
@@ -1654,6 +1706,42 @@ function pintarVitrina() {
   }).join('');
 }
 
+function pintarAvalFondo() {
+  const c = $('#avalFondo');
+  if (!c || !SITE.avalColumnas) return;
+
+  // El vídeo sólo entra en pantallas amplias, sin ahorro de datos
+  // y sin movimiento reducido: cuatro decodificadores a la vez
+  // pesan en CPU, aunque el archivo sea pequeño.
+  const ahorro = navigator.connection && (navigator.connection.saveData ||
+                 /2g/.test(navigator.connection.effectiveType || ''));
+  const permiteVideo = !QUIETO && !ahorro && window.innerWidth >= 1100;
+
+  c.innerHTML = SITE.avalColumnas.map(col => {
+    const conVideo = permiteVideo && col.video;
+    return `<div class="aval__col">
+        <img src="${esc(col.img)}" alt="" loading="lazy" decoding="async">
+        ${conVideo ? `<video src="${esc(col.video)}" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>` : ''}
+      </div>`;
+  }).join('');
+
+  const videos = $$('video', c);
+  if (!videos.length) return;
+
+  // Sólo se cargan y reproducen mientras la sección se ve
+  ScrollTrigger.create({
+    trigger: '.aval', start: 'top bottom', end: 'bottom top',
+    onToggle: s => {
+      videos.forEach(v => {
+        if (s.isActive) {
+          if (!v.dataset.listo) { v.dataset.listo = '1'; v.load(); }
+          v.play().then(() => v.classList.add('corriendo')).catch(() => {});
+        } else v.pause();
+      });
+    }
+  });
+}
+
 function pintarAval() {
   const c = $('#t-aval');
   if (!c) return;
@@ -1667,12 +1755,80 @@ function pintarAval() {
 }
 
 function pintarOpcionesForm() {
-  const sel = $('#f-tipo');
-  if (!sel) return;
-  // §19 · orden alfabético real, respetando acentos del español
+  const menu = $('#f-tipo-menu');
+  const btn  = $('#f-tipo-btn');
+  const campo = $('#f-tipo');
+  if (!menu || !btn || !campo) return;
+
+  // Orden alfabético real, respetando los acentos del español
   const ord = [...OPCIONES_FORM].sort((a, b) => a.localeCompare(b, 'es'));
-  sel.insertAdjacentHTML('beforeend',
-    ord.map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join(''));
+  menu.innerHTML = ord.map((o, i) => `
+    <li role="option" id="opt-${i}" aria-selected="false" data-valor="${esc(o)}">${esc(o)}</li>`).join('');
+
+  const opciones = $$('li', menu);
+  const etiqueta = $('[data-valor]', btn);
+  btn.dataset.vacio = '';
+  let abierto = false, marcada = -1;
+
+  const marcar = k => {
+    marcada = k;
+    opciones.forEach((o, j) => o.classList.toggle('marcada', j === k));
+    if (k >= 0) {
+      opciones[k].scrollIntoView({ block: 'nearest' });
+      menu.setAttribute('aria-activedescendant', opciones[k].id);
+    }
+  };
+
+  const abrir = () => {
+    abierto = true;
+    menu.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    marcar(Math.max(0, ord.indexOf(campo.value)));
+  };
+
+  const cerrar = (devolverFoco = true) => {
+    abierto = false;
+    menu.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    menu.removeAttribute('aria-activedescendant');
+    if (devolverFoco) btn.focus();
+  };
+
+  const elegir = k => {
+    const v = ord[k];
+    campo.value = v;
+    etiqueta.textContent = v;
+    delete btn.dataset.vacio;
+    opciones.forEach((o, j) => o.setAttribute('aria-selected', j === k));
+    campo.closest('.campo').classList.remove('error');
+    $('.campo__err', campo.closest('.campo'))?.remove();
+    cerrar();
+  };
+
+  btn.addEventListener('click', () => abierto ? cerrar() : abrir());
+  opciones.forEach((o, k) => {
+    o.addEventListener('click', () => elegir(k));
+    o.addEventListener('pointerenter', () => marcar(k));
+  });
+
+  btn.addEventListener('keydown', e => {
+    if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) { e.preventDefault(); abrir(); }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!abierto) return;
+    if (e.key === 'Escape')    { e.preventDefault(); cerrar(); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); marcar((marcada + 1) % ord.length); }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); marcar((marcada - 1 + ord.length) % ord.length); }
+    if (e.key === 'Home')      { e.preventDefault(); marcar(0); }
+    if (e.key === 'End')       { e.preventDefault(); marcar(ord.length - 1); }
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (marcada >= 0) elegir(marcada); }
+    if (e.key === 'Tab') cerrar(false);
+  });
+
+  document.addEventListener('pointerdown', e => {
+    if (abierto && !e.target.closest('#listaTipo')) cerrar(false);
+  });
 }
 
 function pintarResenas() {
@@ -1728,7 +1884,7 @@ function pintarResenas() {
 
 function pintarContactoMarca() {
   const c = $('#contactoMarca');
-  const m = SITE.contactoMarca;
+  const m = SITE.marca;
   if (!c) return;
   if (!m) { c.remove(); return; }
   c.innerHTML = `<img src="${esc(m.src)}" alt="${esc(m.alt)}" loading="lazy" decoding="async">`;
@@ -1769,6 +1925,15 @@ function hidratar() {
   const rev = $('#linkResenas');
   if (rev) rev.href = SITE.googleReviews ||
     `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.mapaBusqueda)}`;
+
+  // Barra: versión blanca sobre transparente, va sobre el vídeo
+  const nav = $('#navLogo');
+  if (nav && SITE.logo) nav.innerHTML =
+    `<img src="${esc(SITE.logo.src)}" alt="${esc(SITE.logo.alt)}" fetchpriority="high" decoding="async">`;
+
+  // Intro: versión a color, la misma que cierra el contacto
+  const ldr = $('#loaderLogo');
+  if (ldr && SITE.marca) { ldr.src = SITE.marca.src; ldr.alt = ''; }
 
   const anio = $('#anio');
   if (anio) anio.textContent = new Date().getFullYear();
@@ -2057,37 +2222,6 @@ function galerias() {
 }
 
 /* ---------------------------------------------------------------
-   8b · Selector de espacios · MOZÉ A / JAS
---------------------------------------------------------------- */
-function espaciosTabs() {
-  const sel = $('#espaciosSelector');
-  if (!sel) return;
-  const tabs = $$('button', sel);
-  const paneles = tabs.map(t => $('#' + t.getAttribute('aria-controls')));
-
-  const mostrar = k => {
-    tabs.forEach((t, j) => t.setAttribute('aria-selected', j === k));
-    paneles.forEach((p, j) => { p.hidden = j !== k; });
-    if (!QUIETO) {
-      gsap.fromTo(paneles[k], { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, duration: .5, ease: 'expo.out' });
-    }
-    ScrollTrigger.refresh();
-  };
-
-  tabs.forEach((t, k) => {
-    t.addEventListener('click', () => mostrar(k));
-    t.addEventListener('keydown', e => {
-      let n = null;
-      if (e.key === 'ArrowRight') n = (k + 1) % tabs.length;
-      if (e.key === 'ArrowLeft')  n = (k - 1 + tabs.length) % tabs.length;
-      if (n === null) return;
-      e.preventDefault(); tabs[n].focus(); mostrar(n);
-    });
-  });
-}
-
-/* ---------------------------------------------------------------
    9 · Lightbox · §41 · X visible, ESC, flechas, foco atrapado
 --------------------------------------------------------------- */
 function lightbox() {
@@ -2363,7 +2497,8 @@ function formulario() {
 
     if (!ok) {
       estado.textContent = 'Faltan datos por corregir.';
-      primero.focus();
+      // El campo del tipo es oculto: se enfoca su botón visible
+      (primero.id === 'f-tipo' ? $('#f-tipo-btn') : primero).focus();
       return;
     }
 
@@ -2383,7 +2518,7 @@ function formulario() {
     estado.textContent = 'Se abrió WhatsApp con tus datos ya escritos. Pulsa enviar ahí para que nos llegue.';
   });
 
-  $$('.campo input,.campo select,.campo textarea').forEach(c => {
+  $$('.campo input,.campo textarea').forEach(c => {
     c.addEventListener('input', () => marcar(c, false, ''));
   });
 }
@@ -2399,6 +2534,7 @@ window.addEventListener('DOMContentLoaded', () => {
   pintarCristaleria();
   pintarEventos();
   pintarVitrina();
+  pintarAvalFondo();
   pintarAval();
   pintarOpcionesForm();
   pintarResenas();
@@ -2411,7 +2547,6 @@ window.addEventListener('DOMContentLoaded', () => {
   reveals();
   contadores();
   galerias();
-  espaciosTabs();
   lightbox();
   vitrina();
   formulario();
