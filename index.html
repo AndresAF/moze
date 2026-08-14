@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mozé Centro de Eventos · Salones y jardín en Tuxtla Gutiérrez, Chiapas</title>
-<meta name="description" content="Mozé Centro de Eventos en Tuxtla Gutiérrez, Chiapas. Salón principal Mozé A para 800 invitados, salón JAS para eventos íntimos y jardín arbolado. Banquetera propia, montajes y servicio por profesionales.">
+<title>MOZÉ Centro de Eventos · Salones y jardín en Tuxtla Gutiérrez, Chiapas</title>
+<meta name="description" content="MOZÉ Centro de Eventos en Tuxtla Gutiérrez, Chiapas. Salón principal MOZÉ A para 800 invitados, salón JAS para eventos íntimos y jardín arbolado. Banquetera propia, montajes y servicio por profesionales.">
 <meta name="theme-color" content="#14160F">
 <link rel="canonical" href="https://mozecentrodeeventos.com/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Mozé Centro de Eventos · Tuxtla Gutiérrez">
+<meta property="og:title" content="MOZÉ Centro de Eventos · Tuxtla Gutiérrez">
 <meta property="og:description" content="Dos salones, un jardín y todo en un mismo lugar. Capacidad para 800 invitados, banquetera propia y 13 años de experiencia.">
-<meta property="og:image" content="FOTOS/hero.jpg">
+<meta property="og:image" content="FOTOS/hero-poster.jpg">
 <meta property="og:locale" content="es_MX">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="FOTOS/hero.jpg">
+<link rel="preload" as="image" href="FOTOS/hero-poster.jpg">
 
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Mozé · CONFIGURACIÓN
+   MOZÉ · CONFIGURACIÓN
    ---------------------------------------------------------------
    Todo lo editable del sitio vive aquí. Los campos vacíos ('')
    son datos que el cliente todavía no ha proporcionado: la sección
@@ -30,12 +30,12 @@
 const SITE = {
 
   /* ---- Marca ---------------------------------------------- */
-  marca: 'Mozé',
+  marca: 'MOZÉ',
 
   /* ---- Contacto ------------------------------------------- */
   telefono:  '+529611465809',
   whatsapp:  '529611465809',
-  waMensaje: 'Hola, me interesa agendar una visita a Mozé.',
+  waMensaje: 'Hola, me interesa agendar una visita a MOZÉ.',
   instagram: 'mozecentrodeeventos',
 
   /* Estos tres los encontré publicados en directorios. VERIFICAR
@@ -49,7 +49,7 @@ const SITE = {
      Maps. Si se deja vacía se arma una desde mapaBusqueda, que
      funciona sin API key.
      NO se requiere API key en ninguno de los dos casos.        */
-  mapaBusqueda: 'Mozé Centro de Eventos, Tuxtla Gutiérrez, Chiapas',
+  mapaBusqueda: 'MOZÉ Centro de Eventos, Tuxtla Gutiérrez, Chiapas',
   mapaEmbed:    '',
 
   /* ---- Reseñas de Google ----------------------------------
@@ -64,6 +64,17 @@ const SITE = {
   googleRating:  '4.5',
   googleTotal:   '689',
   googleReviews: '',
+
+  /* ---- Vídeo del hero -------------------------------------
+     Se reproduce en bucle, sin sonido, como fondo. En pantallas
+     chicas o con ahorro de datos activo NO se descarga: queda el
+     fotograma de respaldo, que es el primer cuadro del vídeo.   */
+  video: {
+    escritorio: 'VIDEO/hero.mp4',
+    movil:      'VIDEO/hero-movil.mp4',
+    respaldo:   'FOTOS/hero-poster.jpg',
+    anchoMinimo: 700          // por debajo de esto, sólo la imagen
+  },
 
   /* ---- Tipografía -----------------------------------------
        'a' Editorial clásica   Cormorant Garamond + Jost
@@ -91,9 +102,14 @@ const SITE = {
       texto: 'Planta libre sin columnas, con altura para producción y clima controlado toda la noche. El montaje se adapta a lo que tu evento pida.',
       rasgos: ['Climatizado', 'Sin columnas', 'Pantallas', 'Planta de respaldo'],
       fotos: [
-        { src: 'FOTOS/salon-a-montaje.jpg', alt: 'Salón Mozé A montado para un banquete' },
-        { src: 'FOTOS/salon-a-vacio.jpg',   alt: 'Salón Mozé A vacío, planta libre' },
-        { src: 'FOTOS/salon-a-aforo.jpg',   alt: 'Salón Mozé A con el aforo completo' }
+        { src: 'FOTOS/salon-a-1.jpg', alt: 'Salón MOZÉ A con techo drapeado en rojo y naranja, montado para ceremonia' },
+        { src: 'FOTOS/salon-a-2.jpg', alt: 'Banquete de gala en MOZÉ A con centros florales altos e iluminación cálida' },
+        { src: 'FOTOS/salon-a-3.jpg', alt: 'Boda en MOZÉ A con cascada floral suspendida sobre la pista' },
+        { src: 'FOTOS/salon-a-4.jpg', alt: 'Pista de baile personalizada y mesa de honor en MOZÉ A' },
+        { src: 'FOTOS/salon-a-5.jpg', alt: 'Expo corporativa con stands y mesas altas en MOZÉ A' },
+        { src: 'FOTOS/salon-a-6.jpg', alt: 'Mesa redonda montada en tonos dorados en MOZÉ A' },
+        { src: 'FOTOS/salon-a-7.jpg', alt: 'Montaje en blanco y plata con centros de gypsophila en MOZÉ A' },
+        { src: 'FOTOS/salon-a-8.jpg', alt: 'Mesa larga con flores de colores para un evento de día en MOZÉ A' }
       ]
     },
     {
@@ -114,24 +130,31 @@ const SITE = {
      Sustituye las rutas cuando lleguen las fotos definitivas
      del jardín vacío, con montaje y con personas.             */
   jardin: [
-    { src: 'FOTOS/jardin-1.jpg', alt: 'Jardín de Mozé con montaje al atardecer' },
-    { src: 'FOTOS/jardin-2.jpg', alt: 'Jardín de Mozé con mesa larga bajo los árboles' },
-    { src: 'FOTOS/jardin-3.jpg', alt: 'Jardín de Mozé durante un evento' }
+    { src: 'FOTOS/jardin-1.jpg', alt: 'Altar de cortinas con gypsophila y rosas blancas en el jardín de MOZÉ' },
+    { src: 'FOTOS/jardin-2.jpg', alt: 'Mesas con sombrillas de flecos bajo los árboles del jardín de MOZÉ' },
+    { src: 'FOTOS/jardin-3.jpg', alt: 'Ceremonia al aire libre con arco de follaje y sillas transparentes' },
+    { src: 'FOTOS/jardin-4.jpg', alt: 'Ceremonia nocturna con arco floral iluminado en el jardín de MOZÉ' }
   ],
 
   /* ---- Banquetera ----------------------------------------- */
   banquetera: [
-    { src: 'FOTOS/banquetera.jpg',       alt: 'Servicio de banquete durante un evento en Mozé' },
-    { src: 'FOTOS/banquetera-plato.jpg', alt: 'Plato del menú de la banquetera de Mozé' }
+    { src: 'FOTOS/banquete-1.jpg', alt: 'Plato de la banquetera de MOZÉ en salsa verde con croquetas y frijoles' },
+    { src: 'FOTOS/banquete-2.jpg', alt: 'Lasaña gratinada con guarnición de verduras del menú de MOZÉ' },
+    { src: 'FOTOS/banquete-3.jpg', alt: 'Plato montado en mesa con puré y verduras salteadas' },
+    { src: 'FOTOS/banquete-4.jpg', alt: 'Panadería y postres del servicio de banquete de MOZÉ' }
   ],
 
   /* ---- Montajes espectaculares ---------------------------- */
   montajes: [
-    { src: 'FOTOS/montaje-1.jpg', alt: 'Mesa principal con letrero luminoso' },
-    { src: 'FOTOS/montaje-2.jpg', alt: 'Techo intervenido con esferas colgantes' },
-    { src: 'FOTOS/montaje-3.jpg', alt: 'Montaje con centros de mesa florales de color' },
-    { src: 'FOTOS/montaje-4.jpg', alt: 'Montaje temático con follaje y letrero' },
-    { src: 'FOTOS/montaje-5.jpg', alt: 'Salón montado con iluminación de color' }
+    { src: 'FOTOS/montaje-1.jpg', alt: 'Techo intervenido en dorado con esferas y pista iluminada' },
+    { src: 'FOTOS/montaje-2.jpg', alt: 'Montaje temático con carruaje, caballos y reloj monumental' },
+    { src: 'FOTOS/montaje-3.jpg', alt: 'Reloj y arco floral con caballos en montaje de cuento' },
+    { src: 'FOTOS/montaje-4.jpg', alt: 'Mesa imperial bajo jardín colgante con esferas espejo' },
+    { src: 'FOTOS/montaje-5.jpg', alt: 'Mesa principal con letrero luminoso' },
+    { src: 'FOTOS/montaje-6.jpg', alt: 'Techo intervenido con esferas colgantes' },
+    { src: 'FOTOS/montaje-7.jpg', alt: 'Montaje con centros de mesa florales de color' },
+    { src: 'FOTOS/montaje-8.jpg', alt: 'Montaje temático con follaje y letrero' },
+    { src: 'FOTOS/montaje-9.jpg', alt: 'Salón montado con iluminación de color' }
   ],
 
   /* ---- Cristalería y plaque ------------------------------- */
@@ -142,12 +165,8 @@ const SITE = {
     { src: 'FOTOS/cristaleria-4.jpg', alt: 'Menú impreso sobre plato con plaque' }
   ],
 
-  /* ---- Fotos del bloque de contacto -----------------------
-     PENDIENTE · falta la fotografía del lobby.                */
-  contactoFotos: [
-    { src: 'FOTOS/cliente-1.jpg', alt: 'Clientes celebrando en Mozé' },
-    { src: 'FOTOS/cliente-2.jpg', alt: 'Festejada en el jardín de Mozé' }
-  ]
+  /* ---- Marca en el bloque de contacto -------------------- */
+  contactoMarca: { src: 'FOTOS/marca.png', alt: 'MOZÉ centro de eventos' }
 };
 
 
@@ -157,23 +176,23 @@ const SITE = {
    ═══════════════════════════════════════════════════════════════ */
 
 /* Distintas maneras de usar los salones.
-   'foto' es opcional: los que la tienen muestran imagen al hover. */
+   El resaltado al pasar el cursor es sólo de color: no hay imagen. */
 const TIPOS_EVENTO = [
-  { nombre: 'XV AÑOS',                 foto: 'FOTOS/ev-xv.jpg' },
+  { nombre: 'XV AÑOS' },
   { nombre: 'WEDDINGS' },
   { nombre: 'BABY SHOWERS' },
   { nombre: 'GENDER REVEALS' },
-  { nombre: 'CUMPLEAÑOS',              foto: 'FOTOS/ev-cumple.jpg' },
+  { nombre: 'CUMPLEAÑOS' },
   { nombre: 'PRIMERA COMUNIÓN' },
   { nombre: 'BAUTIZO' },
   { nombre: 'DESAYUNO EMPRESARIAL' },
   { nombre: 'COMIDA EMPRESARIAL' },
-  { nombre: 'CENA EMPRESARIAL',        foto: 'FOTOS/ev-empresarial.jpg' },
+  { nombre: 'CENA EMPRESARIAL' },
   { nombre: 'REUNIONES EMPRESARIALES' },
-  { nombre: 'BODAS',                   foto: 'FOTOS/ev-bodas.jpg' },
+  { nombre: 'BODAS' },
   { nombre: 'DESPEDIDA DE SOLTERA' },
-  { nombre: 'FIESTA EN JARDÍN',        foto: 'FOTOS/ev-jardin.jpg' },
-  { nombre: 'BRUNCH',                  foto: 'FOTOS/ev-brunch.jpg' },
+  { nombre: 'FIESTA EN JARDÍN' },
+  { nombre: 'BRUNCH' },
   { nombre: 'PROM' },
   { nombre: 'CENA PRE-PROM' },
   { nombre: 'FIESTA DE GRADUACIÓN' },
@@ -182,13 +201,13 @@ const TIPOS_EVENTO = [
 ];
 
 /* Todo en un mismo lugar. Lista editorial con revelado de imagen.
-   NOTA: Mozé no ofrece audio ni iluminación como servicio propio.
+   NOTA: MOZÉ no ofrece audio ni iluminación como servicio propio.
    Lo que sí ofrece es capacidad de montaje.                        */
 const SERVICIOS = [
   { n: '01', nombre: 'BANQUETERA',
     texto: 'Prueba de menú antes de decidir, desde opciones para niños hasta gourmet.',
     foto: 'FOTOS/sv-banquetera.jpg',
-    alt: 'Servicio de banquete durante un evento en Mozé',
+    alt: 'Servicio de banquete durante un evento en MOZÉ',
     ancla: '#banquetera' },
   { n: '02', nombre: 'MONTAJES ESPECTACULARES',
     texto: 'Capacidad para realizar el montaje que imaginas.',
@@ -207,7 +226,7 @@ const SERVICIOS = [
   { n: '05', nombre: 'SERVICIO POR PROFESIONALES',
     texto: 'Personal, meseros y vendedoras capacitadas con más de 13 años de experiencia.',
     foto: 'FOTOS/sv-servicio.jpg',
-    alt: 'Meseros sirviendo durante un evento en Mozé' }
+    alt: 'Meseros sirviendo durante un evento en MOZÉ' }
 ];
 
 /* Reseñas de Google, transcritas a mano.
@@ -278,25 +297,32 @@ const TIPOGRAFIAS = {
 
 <style>
 /* ═══════════════════════════════════════════════════════════════
-   Mozé · SISTEMA DE DISEÑO
+   MOZÉ · SISTEMA DE DISEÑO
    ═══════════════════════════════════════════════════════════════ */
 
 :root{
-  /* ---- Verde Mozé -------------------------------------------
-     PENDIENTE · valor provisional. Cuando llegue el logo hay que
-     muestrear su verde y cambiar SOLO estas tres líneas. Todo el
-     sitio se actualiza solo: no hay ningún verde hardcodeado.  */
-  --verde:      #2A5B47;   /* fills, CTAs, fondos de sección     */
-  --verde-alto: #8FC3AB;   /* acentos sobre fondo oscuro          */
-  --verde-bajo: #1B3D2F;   /* profundidad, hovers sobre claro     */
+  /* ---- Paleta MOZÉ ------------------------------------------
+     Muestreada del logo: turquesa #32D9C3 y gris #545454.
 
-  --bone:#F3F0EA;
-  --paper:#E8E3D9;
-  --ink:#14160F;
-  --ink-2:#33372C;
-  --muted:#7E8474;
-  --line:rgba(20,22,15,.16);
-  --line-light:rgba(243,240,234,.20);
+     El turquesa puro da 1.77:1 sobre blanco — ilegible como
+     texto. Por eso hay dos: el puro para fondos oscuros, rellenos
+     y elementos gráficos; el oscuro para texto sobre claro.     */
+  --verde:      #16786C;   /* texto y CTAs sobre fondo claro · 5.3:1 */
+  --verde-alto: #32D9C3;   /* turquesa del logo · sobre oscuro       */
+  --verde-bajo: #0F5A50;   /* hovers y profundidad                   */
+
+  --bone:#FFFFFF;          /* el logo usa blanco puro               */
+  --paper:#EFF1F0;
+  --ink:#3A3A3A;           /* gris del logo, un punto más profundo  */
+  --ink-2:#545454;         /* gris exacto del logo                  */
+  --muted:#6E6E6E;         /* sube de contraste: 5.3:1 sobre blanco */
+  /* Texto sobre fondo oscuro: colores sólidos, nunca opacidad.
+     Un texto translúcido cambia de contraste según lo que tenga
+     detrás; uno sólido es predecible siempre.                    */
+  --sobre-osc:   #FFFFFF;   /* principal · 11.4:1 */
+  --sobre-osc-2: #D6D6D6;   /* secundario · 7.9:1 */
+  --line:rgba(58,58,58,.22);
+  --line-light:rgba(255,255,255,.34);
 
   --display:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost','Helvetica Neue',Arial,sans-serif;
@@ -335,7 +361,7 @@ ul,ol{list-style:none}
 
 /* ---------- Textura ---------- */
 .grain{
-  position:fixed;inset:0;z-index:7000;pointer-events:none;opacity:.14;
+  position:fixed;inset:0;z-index:7000;pointer-events:none;opacity:.09;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
 
@@ -348,16 +374,16 @@ ul,ol{list-style:none}
   display:flex;align-items:baseline;gap:clamp(1rem,2vw,1.75rem);
   padding-top:clamp(1.4rem,2.4vw,2rem);border-top:2px solid var(--ink);
   margin-bottom:clamp(1.5rem,2.8vw,2.2rem);
-  font-size:clamp(1.05rem,1.9vw,1.6rem);font-weight:600;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+  font-size:clamp(1.35rem,2.9vw,2.4rem);font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
 }
 /* Un filo verde antes de la etiqueta, en lugar del numeral */
 .rotulo::before{
-  content:'';width:clamp(28px,4vw,56px);height:3px;background:var(--verde);
+  content:'';width:clamp(40px,5.5vw,84px);height:4px;background:var(--verde);
   flex:none;align-self:center;
 }
 .rotulo--claro::before{background:var(--verde-alto)}
-.rotulo--claro{color:var(--bone);border-top-color:rgba(243,240,234,.65)}
+.rotulo--claro{color:var(--bone);border-top-color:var(--sobre-osc-2)}
 .rotulo--claro span{color:var(--verde-alto)}
 
 h1,h2,h3{font-family:var(--display);font-weight:var(--dweight);line-height:1.04;letter-spacing:var(--dtrack)}
@@ -366,8 +392,8 @@ h1,h2,h3{font-family:var(--display);font-weight:var(--dweight);line-height:1.04;
 h2{font-weight:var(--dweight-alto);font-size:calc(var(--tscale) * clamp(3rem,8.4vw,7.2rem));line-height:.94}
 h3{font-weight:var(--dweight-alto);font-size:calc(var(--tscale) * clamp(1.9rem,4.2vw,3.3rem))}
 em{font-style:italic;color:var(--verde)}
-.oscuro em{color:var(--verde-alto)}
-.line{display:block;overflow:hidden}
+.oscuro em,.hero em{color:var(--verde-alto)}
+.line{display:block;overflow:hidden;padding-top:.14em;margin-top:-.14em}
 .line>span{display:block}
 .num{font-family:var(--display);font-weight:var(--dweight);font-variant-numeric:tabular-nums}
 
@@ -402,19 +428,20 @@ section{scroll-margin-top:var(--nav-h)}
   padding:1.25rem var(--pad);color:var(--bone);
   transition:background .4s var(--ease),padding .4s var(--ease);
 }
-.nav.solida{background:rgba(20,22,15,.96);padding-top:.9rem;padding-bottom:.9rem}
-.nav__logo{font-family:var(--display);font-size:1.7rem;letter-spacing:.02em;line-height:1}
+.nav.solida{background:var(--ink);padding-top:.9rem;padding-bottom:.9rem}
+.nav__logo{font-family:var(--display);font-weight:var(--dweight-alto);font-size:1.5rem;letter-spacing:.08em;line-height:1}
 .nav__logo em{color:var(--verde-alto);font-style:normal}
+.hero .nav__logo em{color:var(--verde-alto)}
 .nav__links{display:flex;gap:1.9rem}
 .nav__links a{
   font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
-  position:relative;padding-bottom:3px;opacity:.8;transition:opacity .3s;
+  position:relative;padding-bottom:3px;color:var(--sobre-osc);
 }
 .nav__links a::after{
   content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--verde-alto);
   transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease);
 }
-.nav__links a:hover,.nav__links a.activo{opacity:1}
+.nav__links a:hover,.nav__links a.activo{color:var(--verde-alto)}
 .nav__links a:hover::after,.nav__links a.activo::after{transform:scaleX(1);transform-origin:left}
 /* CTA principal · §22: más grande, con aire lateral, nunca pegado al borde */
 .nav__cta{
@@ -440,6 +467,7 @@ section{scroll-margin-top:var(--nav-h)}
 }
 .menu.abierto{visibility:visible}
 .menu a{
+  overflow:hidden;padding-top:.12em;
   font-family:var(--display);font-weight:var(--dweight-alto);
   font-size:calc(var(--tscale) * clamp(2.2rem,10vw,3.8rem));
   line-height:1.12;display:block;opacity:0;
@@ -447,7 +475,7 @@ section{scroll-margin-top:var(--nav-h)}
 .menu__pie{
   margin-top:auto;padding-top:2rem;border-top:1px solid var(--line-light);
   display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-  font-size:.76rem;letter-spacing:.1em;color:rgba(243,240,234,.7);
+  font-size:.76rem;letter-spacing:.1em;color:var(--sobre-osc-2);
 }
 
 /* ---------- Cursor ---------- */
@@ -467,11 +495,19 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   display:flex;align-items:center;justify-content:center;padding:var(--pad);
 }
 .loader__centro{display:flex;flex-direction:column;align-items:center;gap:clamp(.75rem,1.6vw,1.5rem)}
-.loader__linea{display:block;overflow:hidden;padding-bottom:.06em}
+/* La máscara recorta lo que sobresale al deslizar el texto. Con
+   line-height ajustado, la tilde de la É quedaba fuera de la caja.
+   El padding superior le da aire; el margen negativo devuelve el
+   bloque a su sitio para que siga centrado en pantalla. */
+.loader__linea{
+  display:block;overflow:hidden;
+  padding-top:.3em;margin-top:-.3em;
+  padding-bottom:.12em;
+}
 .loader__marca{
   display:block;font-family:var(--display);font-weight:var(--dweight-alto);
-  font-size:calc(var(--tscale) * clamp(4.5rem,25vw,20rem));
-  line-height:.82;letter-spacing:-.02em;
+  font-size:calc(var(--tscale) * clamp(3.6rem,20vw,16rem));
+  line-height:1;letter-spacing:.02em;
 }
 .loader__pie{
   font-size:clamp(.7rem,1.5vw,1rem);font-weight:500;
@@ -497,10 +533,17 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .hero__media{position:absolute;inset:0;z-index:-2;overflow:hidden}
 .hero__marco{position:absolute;inset:0;overflow:hidden}
 .hero__marco img{transform:scale(1.08)}
+/* El vídeo cubre el marco y se funde encima del fotograma de
+   respaldo, que ya está pintado: así no hay parpadeo al arrancar. */
+.hero__marco video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s var(--ease);
+}
+.hero__marco video.corriendo{opacity:1}
 /* §20 · velo lo justo para que el texto sea legible, sin lavar la foto */
 .hero__velo{
   position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(20,22,15,.55) 0%,rgba(20,22,15,.10) 38%,rgba(20,22,15,.48) 70%,rgba(20,22,15,.86) 100%);
+  background:linear-gradient(180deg,rgba(26,26,26,.72) 0%,rgba(26,26,26,.40) 38%,rgba(26,26,26,.62) 70%,rgba(26,26,26,.92) 100%);
 }
 .hero__texto{max-width:1000px;margin-bottom:clamp(2rem,6vh,4rem)}
 .hero__titulo{
@@ -515,14 +558,14 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 }
 .hero__titulo em.subrayado::after{transform:scaleX(1)}
 .hero__meta{display:flex;flex-wrap:wrap;gap:2.5rem;align-items:flex-end;justify-content:space-between}
-.hero__meta p{max-width:36ch;font-size:.96rem;opacity:.9;line-height:1.75}
+.hero__meta p{max-width:36ch;font-size:.96rem;line-height:1.75;color:var(--sobre-osc)}
 .hero__acciones{display:flex;gap:.85rem;flex-wrap:wrap}
 .hero .btn--solido{background:var(--bone);color:var(--ink)}
 .hero .btn--solido:hover{color:var(--bone)}
 .hero__pie{
   display:flex;justify-content:space-between;align-items:center;gap:1rem;
   padding-top:1.25rem;border-top:1px solid var(--line-light);
-  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,240,234,.75);
+  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2);
 }
 .pista{display:flex;align-items:center;gap:.7rem}
 .pista i{display:block;width:34px;height:1px;background:currentColor;transform-origin:left;animation:pista 2.4s var(--ease) infinite}
@@ -537,7 +580,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   font-size:calc(var(--tscale) * clamp(2rem,5vw,4.2rem));
   line-height:1.12;max-width:20ch;letter-spacing:-.015em;
 }
-.manif__t .w{display:inline-block;overflow:hidden;vertical-align:top}
+.manif__t .w{display:inline-block;overflow:hidden;vertical-align:top;padding-top:.16em;margin-top:-.16em}
 .manif__t .w>i{display:inline-block;font-style:normal}
 
 /* ═══════════════════════════════════════════════════════════════
@@ -613,6 +656,11 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   background:var(--paper);cursor:zoom-in;
 }
 .gal--alto .gal__marco{aspect-ratio:4/5}
+/* Variante panorámica · sólo montajes. Mismo componente que el
+   resto del sitio, con un encuadre más ancho y miniaturas
+   apaisadas: las tomas del salón se leen mejor así. */
+.gal--cine .gal__marco{aspect-ratio:16/9}
+.gal--cine .gal__minis button{flex:0 0 clamp(84px,11vw,116px);aspect-ratio:16/9}
 .gal__marco img{
   position:absolute;inset:0;opacity:0;
   transition:opacity .55s var(--ease);
@@ -624,7 +672,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   position:absolute;left:1rem;bottom:1rem;z-index:3;pointer-events:none;
   display:inline-flex;align-items:center;gap:.5rem;
   padding:.5rem .9rem;border-radius:100px;
-  background:rgba(20,22,15,.72);color:var(--bone);
+  background:rgba(42,42,42,.72);color:var(--bone);
   font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
   transition:background .35s var(--ease);
 }
@@ -636,7 +684,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   position:absolute;top:50%;transform:translateY(-50%);z-index:3;
   width:44px;height:44px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(243,240,234,.92);color:var(--ink);font-size:1rem;
+  background:rgba(255,255,255,.92);color:var(--ink);font-size:1rem;
   transition:background .3s var(--ease),color .3s var(--ease);
 }
 .gal__paso:hover,.gal__paso:focus-visible{background:var(--verde);color:var(--bone)}
@@ -644,9 +692,15 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .gal__next{right:.85rem}
 
 /* Miniaturas: el usuario ve cuántas fotos hay */
-.gal__minis{display:flex;gap:.5rem;margin-top:.7rem}
+/* Con muchas fotos la tira se desliza en lugar de desbordarse */
+.gal__minis{
+  display:flex;gap:.5rem;margin-top:.7rem;
+  overflow-x:auto;overflow-y:hidden;padding-bottom:.2rem;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.gal__minis::-webkit-scrollbar{display:none}
 .gal__minis button{
-  position:relative;flex:0 0 74px;aspect-ratio:1/1;overflow:hidden;
+  position:relative;flex:0 0 clamp(54px,7vw,74px);aspect-ratio:1/1;overflow:hidden;
   opacity:.42;transition:opacity .35s var(--ease);
 }
 .gal__minis button::after{
@@ -658,10 +712,10 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .gal__minis button[aria-selected="true"]{opacity:1}
 .gal__minis button[aria-selected="true"]::after{opacity:1}
 .gal__cuenta{
-  margin-left:auto;align-self:center;font-size:.64rem;letter-spacing:.2em;
+  margin-left:.4rem;align-self:center;flex:none;padding-left:.4rem;font-size:.64rem;letter-spacing:.2em;
   color:var(--muted);font-variant-numeric:tabular-nums;
 }
-.oscuro .gal__cuenta{color:rgba(243,240,234,.55)}
+.oscuro .gal__cuenta{color:var(--sobre-osc-2)}
 
 /* ═══════════════════════════════════════════════════════════════
    ÍNDICE CON REVELADO · eventos y servicios
@@ -678,8 +732,11 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   background:var(--verde);transform:scaleY(0);transform-origin:bottom;z-index:-1;
   transition:transform .55s var(--ease);
 }
-.indice__fila.activa::before{transform:scaleY(1);transform-origin:top}
-.indice__fila.activa{color:var(--bone)}
+/* Resaltado por CSS puro: ya no depende de JavaScript */
+.indice__fila:hover::before,
+.indice__fila:focus-visible::before{transform:scaleY(1);transform-origin:top}
+.indice__fila:hover,
+.indice__fila:focus-visible{color:var(--bone)}
 
 /* Eventos · retícula de tres columnas
    ---------------------------------------------------------------
@@ -698,41 +755,23 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 }
 /* El relleno sangra sólo un poco fuera de la celda, no a todo el ancho */
 .ev::before{left:-.7rem;right:-.7rem}
-.ev__n{font-size:.6rem;letter-spacing:.16em;color:var(--verde-alto);opacity:.75;font-variant-numeric:tabular-nums}
+.ev__n{font-size:.6rem;letter-spacing:.16em;color:var(--verde-alto);font-variant-numeric:tabular-nums}
 /* §44 · display en mayúsculas, con tracking abierto */
 .ev__nombre{
   font-family:var(--display);font-weight:var(--dweight);
   font-size:calc(var(--tscale) * clamp(1rem,1.55vw,1.35rem));
   line-height:1.15;letter-spacing:.03em;text-transform:uppercase;
 }
-.ev__mas{opacity:.55}
+.ev__mas .ev__nombre{color:var(--sobre-osc-2)}
 .ev__flecha{font-style:normal;font-size:.85rem;opacity:0;transition:opacity .35s var(--ease)}
-.ev.activa .ev__flecha{opacity:1}
+.ev:hover .ev__flecha,.ev:focus-visible .ev__flecha{opacity:1}
 .ev__linea{
   position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--verde-alto);
   transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);
 }
-.ev.activa .ev__linea{transform:scaleX(1)}
+.ev:hover .ev__linea,.ev:focus-visible .ev__linea{transform:scaleX(1)}
 
-/* Fondo de sección · la foto de la categoría bajo el cursor ocupa
-   toda la sección, atenuada por un filtro para que el texto siga
-   siendo lo primero que se lee. */
-.eventos{position:relative;overflow:hidden;isolation:isolate}
-.eventos__fondo{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.eventos__fondo img{
-  position:absolute;inset:0;opacity:0;
-  transform:scale(1.06);filter:saturate(.75);
-  transition:opacity .75s var(--ease),transform 1.4s var(--ease);
-}
-.eventos__fondo img.activa{opacity:1;transform:scale(1)}
-/* El filtro: tinte de la marca + oscurecido, siempre por encima */
-.eventos__filtro{
-  position:absolute;inset:0;z-index:1;
-  background:
-    linear-gradient(180deg,rgba(20,22,15,.94) 0%,rgba(20,22,15,.80) 30%,rgba(20,22,15,.84) 70%,rgba(20,22,15,.95) 100%),
-    linear-gradient(120deg,rgba(42,91,71,.35),rgba(20,22,15,0) 60%);
-}
-.eventos > *:not(.eventos__fondo){position:relative;z-index:1}
+.eventos{position:relative}
 
 /* ═══════════════════════════════════════════════════════════════
    CONFÍA EN LOS EXPERTOS
@@ -765,7 +804,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   padding:0 var(--pad);display:grid;grid-template-columns:1fr auto;
   gap:2rem;align-items:end;margin-bottom:clamp(2.5rem,6vw,4rem);
 }
-.vitrina__apoyo{color:rgba(243,240,234,.6);max-width:34ch;font-size:.92rem}
+.vitrina__apoyo{color:var(--sobre-osc-2);max-width:34ch;font-size:.92rem}
 
 .vitrina__panels{
   display:flex;gap:1px;margin:0 var(--pad);
@@ -786,10 +825,10 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 /* Velo permanente para que el nombre se lea sobre la foto */
 .vp__velo{
   position:absolute;inset:0;opacity:1;transition:opacity .55s var(--ease);
-  background:linear-gradient(180deg,rgba(20,22,15,.34) 0%,rgba(20,22,15,.5) 45%,rgba(20,22,15,.88) 100%);
+  background:linear-gradient(180deg,rgba(42,42,42,.34) 0%,rgba(42,42,42,.5) 45%,rgba(42,42,42,.88) 100%);
 }
 .vp.activo .vp__velo{
-  background:linear-gradient(180deg,rgba(20,22,15,.12) 0%,rgba(20,22,15,.3) 45%,rgba(20,22,15,.82) 100%);
+  background:linear-gradient(180deg,rgba(42,42,42,.12) 0%,rgba(42,42,42,.3) 45%,rgba(42,42,42,.82) 100%);
 }
 /* Filo verde que marca el panel activo */
 .vp::after{
@@ -812,7 +851,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   font-family:var(--display);font-weight:var(--dweight-alto);
   font-size:calc(var(--tscale) * clamp(.92rem,1.5vw,1.32rem));
   letter-spacing:.1em;text-transform:uppercase;line-height:1;white-space:nowrap;
-  color:var(--bone);text-shadow:0 1px 14px rgba(20,22,15,.55);transition:color .5s var(--ease);
+  color:var(--bone);text-shadow:0 1px 14px rgba(42,42,42,.55);transition:color .5s var(--ease);
 }
 /* El detalle sólo aparece y desaparece: nunca se desplaza */
 .vp__detalle{
@@ -820,7 +859,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   padding:2rem;max-width:32ch;
   opacity:0;pointer-events:none;transition:opacity .45s var(--ease) .1s;
 }
-.vp__detalle p{font-size:.88rem;line-height:1.7;color:rgba(243,240,234,.86);margin-bottom:1rem}
+.vp__detalle p{font-size:.88rem;line-height:1.7;color:var(--sobre-osc);margin-bottom:1rem}
 .vp__ver{
   font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
   color:var(--verde-alto);display:inline-flex;align-items:center;gap:.5rem;
@@ -832,11 +871,11 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .vp.activo .vp__nombre{color:var(--bone)}
 .vp.activo .vp__detalle{opacity:1;pointer-events:auto}
 .vitrina__panels.hay-activo .vp:not(.activo){flex-grow:.72}
-.vitrina__panels.hay-activo .vp:not(.activo) .vp__nombre{color:rgba(243,240,234,.78)}
+.vitrina__panels.hay-activo .vp:not(.activo) .vp__nombre{color:var(--sobre-osc-2)}
 
 .vitrina__pista{
   margin:1.5rem var(--pad) 0;display:flex;align-items:center;gap:.7rem;
-  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,240,234,.4);
+  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2);
 }
 .vitrina__pista i{display:block;width:26px;height:1px;background:currentColor}
 .solo-movil{display:none}
@@ -856,19 +895,13 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 }
 .oscuro .destacado__texto .sub{color:var(--verde-alto)}
 .destacado__texto p.cuerpo{max-width:46ch;line-height:1.85;margin-bottom:2rem;color:var(--ink-2)}
-.oscuro .destacado__texto p.cuerpo{color:rgba(243,240,234,.72)}
+.oscuro .destacado__texto p.cuerpo{color:var(--sobre-osc-2)}
 .destacado__media figure{overflow:hidden;aspect-ratio:3/2;cursor:zoom-in}
 
-/* Montajes · mosaico */
+/* Montajes · galería panorámica a todo el ancho de la sección */
 .montajes{padding:clamp(5rem,12vh,9rem) var(--pad)}
 .montajes__head{max-width:760px;margin-bottom:clamp(2.5rem,6vw,4rem)}
-.montajes__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(.75rem,1.6vw,1.35rem)}
-.montajes__grid figure{overflow:hidden;aspect-ratio:4/5;cursor:zoom-in;position:relative}
-.montajes__grid figure:nth-child(1){grid-column:span 3;aspect-ratio:3/2}
-.montajes__grid figure:nth-child(2){grid-column:span 3;aspect-ratio:3/2}
-.montajes__grid figure:nth-child(n+3){grid-column:span 2}
-.montajes__grid img{transition:transform .8s var(--ease)}
-.montajes__grid figure:hover img{transform:scale(1.045)}
+.montajes__gal{max-width:1400px}
 
 /* ═══════════════════════════════════════════════════════════════
    TESTIMONIOS
@@ -876,7 +909,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .testi{padding:clamp(5rem,12vh,8rem) var(--pad);text-align:center}
 .testi h2{margin-bottom:1.75rem}
 .testi__nota{
-  color:rgba(243,240,234,.5);font-size:.72rem;letter-spacing:.2em;
+  color:var(--sobre-osc-2);font-size:.72rem;letter-spacing:.2em;
   text-transform:uppercase;margin:0 auto 1.75rem;
 }
 
@@ -895,7 +928,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .marca-g__estrellas .vacia{opacity:.28}
 .marca-g__txt{
   font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(243,240,234,.6);text-align:left;line-height:1.5;
+  color:var(--sobre-osc-2);text-align:left;line-height:1.5;
 }
 
 /* Citas · una a la vez, a escala de titular */
@@ -915,7 +948,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .cita blockquote::after{content:'\201D';color:var(--verde-alto);margin-left:.06em}
 .cita figcaption{
   font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(243,240,234,.55);
+  color:var(--sobre-osc-2);
 }
 .citas__mando{
   display:flex;align-items:center;justify-content:center;gap:1rem;
@@ -924,12 +957,12 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .citas__mando button{
   width:40px;height:40px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(243,240,234,.1);color:var(--bone);
+  background:rgba(255,255,255,.1);color:var(--bone);
   transition:background .3s var(--ease);
 }
 .citas__mando button:hover,.citas__mando button:focus-visible{background:var(--verde)}
 .citas__cuenta{
-  font-size:.68rem;letter-spacing:.2em;color:rgba(243,240,234,.55);
+  font-size:.68rem;letter-spacing:.2em;color:var(--sobre-osc-2);
   font-variant-numeric:tabular-nums;min-width:4.5em;
 }
 
@@ -943,18 +976,18 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .contacto__titulo{
   font-size:calc(var(--tscale) * clamp(3rem,8vw,6.4rem));line-height:.96;margin-bottom:1.5rem;
 }
-.contacto__intro{color:rgba(243,240,234,.7);max-width:40ch;margin-bottom:2.5rem;font-size:.95rem}
+.contacto__intro{color:var(--sobre-osc-2);max-width:40ch;margin-bottom:2.5rem;font-size:.95rem}
 .form{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 1.75rem}
 .campo{display:flex;flex-direction:column}
 .campo--full{grid-column:1/-1}
-.campo label{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,240,234,.6);margin-bottom:.55rem}
+.campo label{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2);margin-bottom:.55rem}
 .campo input,.campo select,.campo textarea{
   width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-light);
   color:var(--bone);font-family:var(--sans);font-size:.95rem;font-weight:300;
   padding:.6rem 0;border-radius:0;transition:border-color .35s var(--ease);
 }
 .campo textarea{resize:vertical;min-height:66px}
-.campo input::placeholder,.campo textarea::placeholder{color:rgba(243,240,234,.34)}
+.campo input::placeholder,.campo textarea::placeholder{color:#A8A8A8;opacity:1}
 .campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--verde-alto)}
 /* §19/§20 · el select no debe quedar lavado ni cortado */
 .campo select{
@@ -967,14 +1000,15 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .campo.error input,.campo.error select{border-color:#D08A6A}
 .campo__err{font-size:.68rem;color:#D08A6A;margin-top:.4rem}
 .form__enviar{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem;margin-top:.5rem}
-.form__nota{font-size:.72rem;color:rgba(243,240,234,.5);max-width:34ch;line-height:1.6}
+.form__nota{font-size:.72rem;color:var(--sobre-osc-2);max-width:34ch;line-height:1.6}
 
 .contacto__lado{display:flex;flex-direction:column;gap:1.25rem}
-.contacto__fotos{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.contacto__fotos figure{overflow:hidden;aspect-ratio:4/5;cursor:zoom-in}
+/* La marca cierra el bloque de contacto. Ancho completo, sin
+   recorte: es un logotipo, no una fotografía. */
+.contacto__marca img{width:100%;height:auto;object-fit:contain}
 .datos{border-top:1px solid var(--line-light);padding-top:1.5rem;display:grid;gap:1.1rem}
 .datos div{display:grid;gap:.25rem}
-.datos dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,240,234,.5)}
+.datos dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2)}
 .datos dd a,.datos dd{font-family:var(--display);font-size:calc(var(--tscale) * clamp(1.15rem,2.2vw,1.6rem));line-height:1.3}
 .datos dd a{position:relative}
 .datos dd a::after{
@@ -1001,16 +1035,17 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
    ═══════════════════════════════════════════════════════════════ */
 .footer{background:var(--ink);color:var(--bone);padding:0 var(--pad) 2rem}
 .footer__marca{
-  font-family:var(--display);font-size:calc(var(--tscale) * clamp(4rem,18vw,14rem));
-  line-height:.85;letter-spacing:-.02em;border-bottom:1px solid var(--line-light);padding-bottom:.08em;
+  font-family:var(--display);font-weight:var(--dweight-alto);
+  font-size:calc(var(--tscale) * clamp(3.2rem,15vw,11.5rem));
+  line-height:.95;letter-spacing:.03em;border-bottom:1px solid var(--line-light);padding:.1em 0 .1em;
 }
-.footer__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:2.5rem 0;font-size:.82rem;color:rgba(243,240,234,.65)}
+.footer__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:2.5rem 0;font-size:.82rem;color:var(--sobre-osc-2)}
 .footer__cols a{display:block;transition:color .3s}
 .footer__cols a:hover{color:var(--verde-alto)}
 .footer__legal{
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;
   border-top:1px solid var(--line-light);font-size:.66rem;letter-spacing:.14em;
-  text-transform:uppercase;color:rgba(243,240,234,.5);
+  text-transform:uppercase;color:var(--sobre-osc-2);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1019,7 +1054,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .visor{
   position:fixed;inset:0;z-index:8500;display:none;
   align-items:center;justify-content:center;padding:clamp(1rem,4vw,3rem);
-  background:rgba(12,13,9,.94);
+  background:rgba(26,26,26,.97);
 }
 .visor.abierto{display:flex}
 .visor__fig{position:relative;max-width:min(1100px,92vw);max-height:88vh}
@@ -1028,7 +1063,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 }
 .visor__pie{
   margin-top:.9rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(243,240,234,.7);text-align:center;
+  color:var(--sobre-osc-2);text-align:center;
 }
 /* La X: alto contraste, área de toque generosa */
 .visor__x{
@@ -1044,7 +1079,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   position:fixed;top:50%;transform:translateY(-50%);z-index:2;
   width:52px;height:52px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(243,240,234,.12);color:var(--bone);
+  background:rgba(255,255,255,.12);color:var(--bone);
   transition:background .3s var(--ease);
 }
 .visor__paso:hover,.visor__paso:focus-visible{background:var(--verde)}
@@ -1101,10 +1136,6 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   .solo-desktop{display:none}
   .solo-movil{display:inline}
 
-  .montajes__grid{grid-template-columns:repeat(4,1fr)}
-  .montajes__grid figure:nth-child(1),
-  .montajes__grid figure:nth-child(2){grid-column:span 2}
-  .montajes__grid figure:nth-child(n+3){grid-column:span 2;aspect-ratio:1/1}
 
   .ubic__mapa{aspect-ratio:16/9}
 }
@@ -1144,12 +1175,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   .vp__nombre{font-size:calc(var(--tscale) * .82rem);letter-spacing:.08em}
   .vp__detalle p{font-size:.82rem}
 
-  .montajes__grid{grid-template-columns:1fr 1fr;gap:.6rem}
-  .montajes__grid figure:nth-child(1),
-  .montajes__grid figure:nth-child(2),
-  .montajes__grid figure:nth-child(n+3){grid-column:span 1;aspect-ratio:4/5}
 
-  .contacto__fotos{grid-template-columns:1fr 1fr;gap:.75rem}
   .form{grid-template-columns:1fr;gap:1.35rem}
   .campo--full,.campo{grid-column:1/-1}
   .form__enviar .btn{width:100%}
@@ -1166,8 +1192,6 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   .espacio__cap{font-size:.66rem;letter-spacing:.16em}
   .gal__marco{aspect-ratio:4/5}
   .gal__minis button{flex:0 0 50px}
-  .contacto__fotos{grid-template-columns:1fr}
-  .contacto__fotos figure{aspect-ratio:16/10}
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1188,7 +1212,6 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   .vp{transition:none}
   .vp__foto img{opacity:.9;filter:none;transform:none}
   .vp__velo{opacity:1}
-  .eventos__fondo img{transition:none}
 }
 
 </style>
@@ -1200,13 +1223,13 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 
 <div class="loader" id="loader">
   <div class="loader__centro">
-    <span class="loader__linea"><span class="loader__marca" data-marca>Mozé</span></span>
+    <span class="loader__linea"><span class="loader__marca" data-marca>MOZÉ</span></span>
     <span class="loader__pie" data-marca-pie>Centro de eventos · Tuxtla Gutiérrez</span>
   </div>
 </div>
 
 <header class="nav" id="nav">
-  <a href="#inicio" class="nav__logo" data-iman>Mozé<em>·</em></a>
+  <a href="#inicio" class="nav__logo" data-iman>MOZÉ<em>·</em></a>
   <nav class="nav__links" aria-label="Principal">
     <a href="#espacio">Espacios</a>
     <a href="#eventos">Eventos</a>
@@ -1238,7 +1261,10 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   <!-- ═══════════ HERO ═══════════ -->
   <section class="hero" id="inicio">
     <div class="hero__media">
-      <div class="hero__marco"><img src="FOTOS/hero.jpg" alt="Salón principal de Mozé montado para un banquete" fetchpriority="high" decoding="async"></div>
+      <div class="hero__marco">
+        <img id="heroPoster" src="FOTOS/hero-poster.jpg" alt="Recorrido por las instalaciones de MOZÉ" fetchpriority="high" decoding="async">
+        <video id="heroVideo" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+      </div>
       <div class="hero__velo"></div>
     </div>
     <div class="hero__texto">
@@ -1275,7 +1301,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
   <section class="espacios" id="espacio" aria-labelledby="t-espacios">
     <div class="espacios__head">
       <p class="rotulo">Los espacios</p>
-      <h2 id="t-espacios" class="oculto">Los espacios de Mozé</h2>
+      <h2 id="t-espacios" class="oculto">Los espacios de MOZÉ</h2>
       <div class="selector" id="espaciosSelector" role="tablist" aria-label="Elige un espacio"></div>
     </div>
     <div id="espaciosPanel"></div>
@@ -1294,7 +1320,6 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 
   <!-- ═══════════ EVENTOS ═══════════ -->
   <section class="eventos oscuro" id="eventos" aria-labelledby="t-eventos">
-    <div class="eventos__fondo" id="eventosFondo" aria-hidden="true"><span class="eventos__filtro"></span></div>
     <p class="rotulo rotulo--claro">Eventos</p>
     <h2 id="t-eventos" data-fade>Distintas maneras<br>de usar los salones.</h2>
     <div class="eventos__lista indice" id="eventosLista" data-stagger></div>
@@ -1337,7 +1362,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
       <h2 id="t-mont" data-fade>Montajes<br>espectaculares.</h2>
       <p class="cuerpo" data-fade style="margin-top:1.25rem;max-width:44ch;color:var(--ink-2)">Capacidad para realizar el montaje que imaginas.</p>
     </div>
-    <div class="montajes__grid" id="montajesGrid"></div>
+    <div class="montajes__gal" id="montajesGaleria" data-reveal></div>
   </section>
 
   <!-- ═══════════ CRISTALERÍA ═══════════ -->
@@ -1360,14 +1385,14 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
       <p class="cuerpo" data-fade>Personal, meseros y vendedoras capacitadas con más de 13 años de experiencia atendiendo eventos de todo tipo.</p>
     </div>
     <div class="destacado__media" data-reveal>
-      <figure data-lightbox><img src="FOTOS/servicio.jpg" alt="Meseros sirviendo durante un evento en Mozé" loading="lazy" decoding="async"></figure>
+      <figure data-lightbox><img src="FOTOS/servicio.jpg" alt="Meseros sirviendo durante un evento en MOZÉ" loading="lazy" decoding="async"></figure>
     </div>
   </section>
 
   <!-- ═══════════ CINTA ═══════════ -->
   <div class="ribbon" data-marquee data-speed="26" data-dir="-1" aria-hidden="true">
     <div class="ribbon__track">
-      <span>Mozé</span><i>·</i><span>Salón &amp; jardín</span><i>·</i><span>Banquetera propia</span><i>·</i><span>Tuxtla Gutiérrez</span><i>·</i>
+      <span>MOZÉ</span><i>·</i><span>Salón &amp; jardín</span><i>·</i><span>Banquetera propia</span><i>·</i><span>Tuxtla Gutiérrez</span><i>·</i>
     </div>
   </div>
 
@@ -1427,7 +1452,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
     </div>
 
     <aside class="contacto__lado">
-      <div class="contacto__fotos" id="contactoFotos"></div>
+      <div class="contacto__marca" id="contactoMarca"></div>
       <dl class="datos">
         <div><dt>Teléfono</dt><dd><a data-tel data-tel-txt href="#">961 146 5809</a></dd></div>
         <div><dt>WhatsApp</dt><dd><a data-wa href="#" target="_blank" rel="noopener noreferrer">Escríbenos</a></dd></div>
@@ -1454,7 +1479,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 </main>
 
 <footer class="footer">
-  <div class="footer__marca">Mozé</div>
+  <div class="footer__marca">MOZÉ</div>
   <div class="footer__cols">
     <div>
       <p>Centro de eventos</p>
@@ -1466,12 +1491,12 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
       <a data-ig href="#" target="_blank" rel="noopener noreferrer">@mozecentrodeeventos</a>
     </div>
     <div>
-      <p>Salón Mozé A · JAS · Jardín</p>
+      <p>Salón MOZÉ A · JAS · Jardín</p>
       <p>Banquetera y montajes</p>
     </div>
   </div>
   <div class="footer__legal">
-    <span>© <span id="anio"></span> Mozé Centro de Eventos</span>
+    <span>© <span id="anio"></span> MOZÉ Centro de Eventos</span>
     <a href="#inicio" data-iman>Volver arriba ↑</a>
   </div>
 </footer>
@@ -1492,7 +1517,7 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   Mozé · MOTOR
+   MOZÉ · MOTOR
    ═══════════════════════════════════════════════════════════════ */
 
 gsap.registerPlugin(ScrollTrigger);
@@ -1536,7 +1561,7 @@ function pintarEspacios() {
 
 /* Galería reutilizable · espacios, jardín, banquetera, cristalería
    Miniaturas visibles, flechas reales y señal de ampliar.        */
-function galeria(fotos, titulo, { alto = false, prioritaria = false } = {}) {
+function galeria(fotos, titulo, { alto = false, cine = false, prioritaria = false } = {}) {
   const unica = fotos.length < 2;
 
   const imgs = fotos.map((f, i) => `
@@ -1557,7 +1582,7 @@ function galeria(fotos, titulo, { alto = false, prioritaria = false } = {}) {
         </div>`;
 
   return `
-      <div class="gal${alto ? ' gal--alto' : ''}" data-gal aria-roledescription="carrusel" aria-label="${esc(titulo)}">
+      <div class="gal${alto ? ' gal--alto' : ''}${cine ? ' gal--cine' : ''}" data-gal aria-roledescription="carrusel" aria-label="${esc(titulo)}">
         <div class="gal__marco" data-lightbox-grupo>
           ${imgs}
           <span class="gal__zoom">
@@ -1587,12 +1612,8 @@ function pintarCristaleria() {
 }
 
 function pintarMontajes() {
-  const c = $('#montajesGrid');
-  if (!c) return;
-  c.innerHTML = SITE.montajes.map(m => `
-    <figure data-reveal data-lightbox>
-      <img src="${esc(m.src)}" alt="${esc(m.alt)}" loading="lazy" decoding="async">
-    </figure>`).join('');
+  const c = $('#montajesGaleria');
+  if (c) c.innerHTML = galeria(SITE.montajes, 'montajes espectaculares', { cine: true });
 }
 
 function pintarEventos() {
@@ -1600,7 +1621,7 @@ function pintarEventos() {
   if (!c) return;
   c.innerHTML = TIPOS_EVENTO.map((e, i) => `
     <a class="indice__fila ev${e.suave ? ' ev__mas' : ''}" href="#contacto"
-       ${e.foto ? `data-foto="${esc(e.foto)}"` : ''}>
+ >
       <span class="ev__n">${String(i + 1).padStart(2, '0')}</span>
       <span class="ev__nombre">${esc(e.nombre)}</span>
       <i class="ev__flecha" aria-hidden="true">→</i>
@@ -1705,11 +1726,12 @@ function pintarResenas() {
     b.addEventListener('click', () => ir(i + +b.dataset.cita)));
 }
 
-function pintarContactoFotos() {
-  const c = $('#contactoFotos');
+function pintarContactoMarca() {
+  const c = $('#contactoMarca');
+  const m = SITE.contactoMarca;
   if (!c) return;
-  c.innerHTML = SITE.contactoFotos.map(f => `
-    <figure data-lightbox><img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy" decoding="async"></figure>`).join('');
+  if (!m) { c.remove(); return; }
+  c.innerHTML = `<img src="${esc(m.src)}" alt="${esc(m.alt)}" loading="lazy" decoding="async">`;
 }
 
 /* ---------------------------------------------------------------
@@ -1737,7 +1759,7 @@ function hidratar() {
       `https://www.google.com/maps?q=${encodeURIComponent(SITE.mapaBusqueda)}&output=embed`;
     marco.innerHTML =
       `<iframe src="${esc(url)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        title="Mapa con la ubicación de Mozé"></iframe>`;
+        title="Mapa con la ubicación de MOZÉ"></iframe>`;
   }
   const comoLlegar = $('#comoLlegar');
   if (comoLlegar) comoLlegar.href =
@@ -1766,6 +1788,43 @@ function formatoTel(t) {
 }
 
 /* ---------------------------------------------------------------
+   2b · Vídeo de fondo del hero
+   ---------------------------------------------------------------
+   Sólo se descarga cuando tiene sentido: pantalla suficientemente
+   ancha, sin ahorro de datos y sin preferencia de movimiento
+   reducido. Si algo falla queda el fotograma, que es idéntico al
+   primer cuadro, así que nadie ve un hueco.
+--------------------------------------------------------------- */
+function heroVideo() {
+  const v = $('#heroVideo');
+  if (!v || !SITE.video) return;
+
+  const ahorro = navigator.connection && (navigator.connection.saveData ||
+                 /2g/.test(navigator.connection.effectiveType || ''));
+  const angosto = window.innerWidth < (SITE.video.anchoMinimo || 700);
+
+  if (QUIETO || ahorro || angosto) { v.remove(); return; }
+
+  // Pantallas medianas reciben la versión ligera: 1.3 MB en vez de 3.3
+  v.src = window.innerWidth < 1100 ? SITE.video.movil : SITE.video.escritorio;
+  v.load();
+
+  const arrancar = () => {
+    v.play().then(() => v.classList.add('corriendo')).catch(() => v.remove());
+  };
+
+  if (v.readyState >= 3) arrancar();
+  else v.addEventListener('canplay', arrancar, { once: true });
+  v.addEventListener('error', () => v.remove(), { once: true });
+
+  // Fuera de pantalla no gasta batería ni decodificación
+  ScrollTrigger.create({
+    trigger: '.hero', start: 'top bottom', end: 'bottom top',
+    onToggle: s => { s.isActive ? v.play().catch(() => {}) : v.pause(); }
+  });
+}
+
+/* ---------------------------------------------------------------
    3 · Hero · §38 · se anima UNA sola vez, al cargar la página.
    No hay ScrollTrigger en la entrada, así que volver al hero
    nunca reinicia la animación.
@@ -1784,9 +1843,9 @@ function arranque() {
         { clipPath: 'inset(16% 11% 16% 11%)' },
         { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'expo.inOut' }, 0)
       .fromTo('.hero__marco img', { scale: 1.24 }, { scale: 1.08, duration: 1.6, ease: 'expo.out' }, 0)
-      .fromTo('[data-h="1"] span', { yPercent: 120 }, { yPercent: 0, duration: .85 }, .35)
-      .fromTo('[data-h="2"]', { yPercent: 118 }, { yPercent: 0, duration: 1, stagger: .08 }, .45)
-      .fromTo('[data-h="3"]', { y: 22, opacity: 0 }, { y: 0, opacity: .9, duration: .8 }, .85)
+      .fromTo('[data-h="1"] span', { yPercent: 132 }, { yPercent: 0, duration: .85 }, .35)
+      .fromTo('[data-h="2"]', { yPercent: 130 }, { yPercent: 0, duration: 1, stagger: .08 }, .45)
+      .fromTo('[data-h="3"]', { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: .8 }, .85)
       .fromTo('[data-h="4"]', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: .7, stagger: .09 }, .95)
       .add(() => $('.hero__titulo em')?.classList.add('subrayado'), 1.25);
   };
@@ -1802,7 +1861,7 @@ function arranque() {
   // Entrada corta: la marca sube, respira un instante y la cortina
   // se va hacia arriba dejando ver el hero. Total ~2.1s.
   gsap.timeline()
-    .fromTo('[data-marca]', { yPercent: 112 },
+    .fromTo('[data-marca]', { yPercent: 125 },
       { yPercent: 0, duration: 1, ease: 'expo.out' })
     .fromTo('[data-marca-pie]', { opacity: 0, y: 10 },
       { opacity: 1, y: 0, duration: .7, ease: 'power3.out' }, '-=.5')
@@ -1862,7 +1921,7 @@ function navegacion() {
 
   const tl = gsap.timeline({ paused: true })
     .to(menu, { clipPath: 'inset(0 0 0% 0)', duration: .8, ease: 'expo.inOut' })
-    .fromTo('.menu a', { yPercent: 110, opacity: 0 },
+    .fromTo('.menu a', { yPercent: 124, opacity: 0 },
       { yPercent: 0, opacity: 1, duration: .65, stagger: .055, ease: 'expo.out' }, '-=.4');
 
   const alternar = f => {
@@ -1902,7 +1961,7 @@ function reveals() {
       .map(w => `<span class="w"><i>${w}</i></span>`).join(' ');
     gsap.from(man.querySelectorAll('i'), {
       scrollTrigger: { trigger: man, start: 'top 74%', once: true },
-      yPercent: 110, opacity: 0, duration: .9, stagger: .028, ease: 'expo.out'
+      yPercent: 124, opacity: 0, duration: .9, stagger: .028, ease: 'expo.out'
     });
   }
 
@@ -1998,7 +2057,7 @@ function galerias() {
 }
 
 /* ---------------------------------------------------------------
-   8b · Selector de espacios · Mozé A / JAS
+   8b · Selector de espacios · MOZÉ A / JAS
 --------------------------------------------------------------- */
 function espaciosTabs() {
   const sel = $('#espaciosSelector');
@@ -2144,47 +2203,6 @@ function lightbox() {
    El texto no se mueve nunca. Sólo cambian el relleno de la fila,
    la línea, el color y la fotografía de fondo de la sección.
 --------------------------------------------------------------- */
-function eventosFondo() {
-  const fondo = $('#eventosFondo');
-  const filas = $$('.indice__fila');
-  if (!fondo || !filas.length) return;
-
-  // Una capa por fotografía: así el cambio entre categorías es un
-  // fundido cruzado real y no un salto al recargar el src.
-  const capas = {};
-  [...new Set(filas.map(f => f.dataset.foto).filter(Boolean))].forEach(src => {
-    const im = document.createElement('img');
-    im.src = src; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
-    fondo.insertBefore(im, fondo.firstChild);
-    capas[src] = im;
-  });
-
-  const mostrar = src => {
-    Object.entries(capas).forEach(([k, im]) => im.classList.toggle('activa', k === src));
-  };
-
-  // Sin puntero fino la fila es sólo un enlace al formulario:
-  // no montamos escuchas que nunca se van a disparar.
-  if (!FINO || QUIETO) return;
-
-  filas.forEach(fila => {
-    fila.addEventListener('pointerenter', () => {
-      fila.classList.add('activa');
-      mostrar(fila.dataset.foto || null);
-    });
-    fila.addEventListener('pointerleave', () => fila.classList.remove('activa'));
-    fila.addEventListener('focus', () => {
-      fila.classList.add('activa');
-      mostrar(fila.dataset.foto || null);
-    });
-    fila.addEventListener('blur', () => fila.classList.remove('activa'));
-  });
-
-  // Al salir de la lista el fondo se apaga por completo
-  const lista = $('#eventosLista');
-  lista.addEventListener('pointerleave', () => mostrar(null));
-}
-
 /* ---------------------------------------------------------------
    10b · Vitrina de servicios
    ---------------------------------------------------------------
@@ -2352,7 +2370,7 @@ function formulario() {
     const d = new FormData(form);
     const linea = (et, v) => v ? `\n${et}: ${v}` : '';
     const texto =
-      'Hola, quiero información para un evento en Mozé.' +
+      'Hola, quiero información para un evento en MOZÉ.' +
       linea('Nombre', d.get('nombre')) +
       linea('Teléfono', d.get('telefono')) +
       linea('Email', d.get('email')) +
@@ -2384,17 +2402,17 @@ window.addEventListener('DOMContentLoaded', () => {
   pintarAval();
   pintarOpcionesForm();
   pintarResenas();
-  pintarContactoFotos();
+  pintarContactoMarca();
   hidratar();
 
   navegacion();
+  heroVideo();
   punteroFX();
   reveals();
   contadores();
   galerias();
   espaciosTabs();
   lightbox();
-  eventosFondo();
   vitrina();
   formulario();
   arranque();
