@@ -1093,55 +1093,42 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
 .catalogo{
   grid-column:1/-1;
   margin-top:clamp(2.5rem,6vw,4rem);
-  padding-top:clamp(1.5rem,3vw,2.25rem);
-  border-top:1px solid var(--line);
+  /* --ficha lo fija el JS por catálogo: el emplatado necesita
+     ficha apaisada; las copas y las sillas, vertical. */
+  --ficha:4/5;
 }
-.oscuro .catalogo{border-top-color:var(--line-light)}
-.catalogo__cab{
-  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
-  gap:.75rem 2rem;margin-bottom:clamp(1.25rem,3vw,2rem);
+.catalogo__et{
+  display:block;font-size:.66rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:clamp(.9rem,2vw,1.25rem);
 }
-.catalogo__et{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-/* Desplegable · mismo patrón accesible que el selector del
-   formulario, pero sobre fondo claro. Muestra el grupo activo y
-   despliega los demás; el nombre del grupo elegido está siempre
-   a la vista, así que nada queda escondido sin señal. */
-.catalogo__drop{position:relative;min-width:min(15rem,60vw)}
-.catalogo__btn{
-  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;
-  padding:.55rem 0;border-bottom:1px solid var(--ink);
-  font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
-  text-align:left;transition:border-color .35s var(--ease),color .35s var(--ease);
-}
-.catalogo__btn svg{width:12px;height:8px;flex:none;color:var(--verde);transition:transform .35s var(--ease)}
-.catalogo__btn[aria-expanded="true"]{border-color:var(--verde);color:var(--verde)}
-.catalogo__btn[aria-expanded="true"] svg{transform:rotate(180deg)}
-.catalogo__menu{
-  position:absolute;top:calc(100% + .4rem);left:0;right:0;z-index:60;
-  background:var(--bone);border:1px solid var(--line);
-  box-shadow:0 18px 40px rgba(58,58,58,.14);
-}
-.catalogo__menu[hidden]{display:none}
-.catalogo__menu li{
-  padding:.8rem 1rem;cursor:pointer;
-  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
-  transition:background .2s var(--ease),color .2s var(--ease);
-}
-.catalogo__menu li:hover,.catalogo__menu li.marcada{background:var(--verde);color:var(--bone)}
-.catalogo__menu li[aria-selected="true"]{color:var(--ink);font-weight:500}
-.catalogo__menu li[aria-selected="true"]::after{content:' ✓';color:var(--verde)}
-.catalogo__menu li[aria-selected="true"]:hover{color:var(--bone)}
-/* Sobre fondo oscuro cambian los tonos, no la mecánica */
-.oscuro .catalogo__btn{color:var(--bone);border-bottom-color:var(--sobre-osc-2)}
-.oscuro .catalogo__btn svg{color:var(--verde-alto)}
-.oscuro .catalogo__btn[aria-expanded="true"]{border-color:var(--verde-alto);color:var(--verde-alto)}
-.oscuro .catalogo__menu{background:#2A2A2A;border-color:var(--line-light);box-shadow:none}
-.oscuro .catalogo__menu li{color:var(--sobre-osc-2)}
-.oscuro .catalogo__menu li[aria-selected="true"]{color:var(--bone)}
 
-/* --ficha y --cols los fija el JS por catálogo: el emplatado
-   necesita ficha apaisada; las copas y sillas, vertical. */
-.catalogo{--ficha:4/5}
+/* Pestañas · comparten la retícula de las fotos, así que cada
+   botón cae sobre la columna de su imagen. La activa se pone en
+   el gris fuerte del texto; las demás se quedan pálidas. */
+.catalogo__tabs{
+  display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));
+  gap:clamp(.7rem,2vw,1.5rem);
+  margin-bottom:clamp(1rem,2.4vw,1.6rem);
+}
+.catalogo__tabs button{
+  justify-self:start;position:relative;padding:.4rem 0;
+  font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);transition:color .35s var(--ease);
+}
+/* El filo verde sólo aparece bajo la activa. El texto no se mueve. */
+.catalogo__tabs button::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--verde);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);
+}
+.catalogo__tabs button:hover{color:var(--ink)}
+.catalogo__tabs button[aria-selected="true"]{color:var(--ink)}
+.catalogo__tabs button[aria-selected="true"]::after{transform:scaleX(1)}
+.oscuro .catalogo__tabs button{color:var(--sobre-osc-2)}
+.oscuro .catalogo__tabs button:hover,
+.oscuro .catalogo__tabs button[aria-selected="true"]{color:var(--bone)}
+.oscuro .catalogo__tabs button::after{background:var(--verde-alto)}
+
 .catalogo__panel{
   display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));
   gap:clamp(.7rem,2vw,1.5rem);
@@ -1454,8 +1441,8 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
   .catalogo__panel{gap:.55rem}
   .catalogo--ancho .catalogo__panel{--cols:2}
   .catalogo figcaption{font-size:.58rem;letter-spacing:.08em;margin-top:.45rem}
-  .catalogo__drop{min-width:0;width:100%}
-  .catalogo__btn{font-size:.72rem;letter-spacing:.16em}
+  .catalogo__tabs{display:flex;flex-wrap:wrap;gap:.4rem 1.35rem}
+  .catalogo__tabs button{font-size:.7rem;letter-spacing:.16em}
 
   .eventos__lista{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.1rem;margin-top:1.25rem}
   .ev{grid-template-columns:auto minmax(0,1fr) auto;gap:.5rem;padding:.65rem 0}
@@ -1950,23 +1937,27 @@ function pintarCatalogos() {
     const c = $('#' + cat.id);
     if (!c || !cat.grupos || !cat.grupos.length) return;
 
-    const titulos = cat.grupos.map(g => g.titulo);
-
     // Ficha apaisada o vertical según el catálogo
     if (cat.formato) {
       c.style.setProperty('--ficha', cat.formato);
+      // Apaisada: en móvil van de dos en dos, a tres no se leen
       if (parseFloat(cat.formato) > 1) c.classList.add('catalogo--ancho');
     }
 
-    const opciones = titulos.map((t, i) => `
-          <li role="option" id="${cat.id}-o${i}" aria-selected="${i === 0}">${esc(t)}</li>`).join('');
+    // Tres columnas SIEMPRE, en todos los grupos. Que un grupo tenga
+    // cuatro piezas no puede cambiar el tamaño de la ficha: al pasar
+    // de pestaña se vería un salto. La cuarta baja a la fila siguiente.
+    const colsTabs = Math.max(3, cat.grupos.length);
 
-    // Cuatro piezas caben mejor en 2x2 que en una fila de 3 y una huérfana
-    const columnas = n => n <= 3 ? n : (n === 4 ? 2 : 3);
+    const tabs = cat.grupos.map((g, i) => `
+          <button type="button" role="tab" id="${cat.id}-t${i}"
+                  aria-controls="${cat.id}-p${i}" aria-selected="${i === 0}"
+                  tabindex="${i === 0 ? 0 : -1}">${esc(g.titulo)}</button>`).join('');
 
     const paneles = cat.grupos.map((g, i) => `
-      <div class="catalogo__panel" id="${cat.id}-p${i}"
-           style="--cols:${columnas(g.piezas.length)}"${i === 0 ? '' : ' hidden'}>
+      <div class="catalogo__panel" role="tabpanel" id="${cat.id}-p${i}"
+           aria-labelledby="${cat.id}-t${i}"
+           ${i === 0 ? '' : 'hidden'}>
         ${g.piezas.map(pz => `
         <figure data-lightbox>
           <img src="${esc(pz.src)}" alt="${esc(pz.alt)}" data-pie="${esc(pz.nombre)}" loading="lazy" decoding="async">
@@ -1975,59 +1966,20 @@ function pintarCatalogos() {
       </div>`).join('');
 
     c.innerHTML = `
-      <div class="catalogo__cab">
-        ${cat.etiqueta ? `<p class="catalogo__et" id="${cat.id}-et">${esc(cat.etiqueta)}</p>` : ''}
-        <div class="catalogo__drop">
-          <button type="button" class="catalogo__btn" id="${cat.id}-btn"
-                  aria-haspopup="listbox" aria-expanded="false"
-                  aria-label="${esc(cat.aria || cat.id)}">
-            <span data-valor>${esc(titulos[0])}</span>
-            <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </button>
-          <ul class="catalogo__menu" id="${cat.id}-menu" role="listbox"
-              aria-label="${esc(cat.aria || cat.id)}" tabindex="-1" hidden>${opciones}</ul>
-        </div>
-      </div>
+      ${cat.etiqueta ? `<p class="catalogo__et">${esc(cat.etiqueta)}</p>` : ''}
+      <div class="catalogo__tabs" role="tablist" style="--cols:${colsTabs}"
+           aria-label="${esc(cat.aria || cat.id)}">${tabs}</div>
       ${paneles}`;
 
-    const btn   = $('#' + cat.id + '-btn', c);
-    const menu  = $('#' + cat.id + '-menu', c);
-    const items = $$('li', menu);
-    const ps    = $$('.catalogo__panel', c);
-    const valor = $('[data-valor]', btn);
+    const bs = $$('[role="tab"]', c);
+    const ps = $$('.catalogo__panel', c);
 
-    let abierto = false, marcada = 0, activa = 0;
-
-    const marcar = k => {
-      marcada = k;
-      items.forEach((o, j) => o.classList.toggle('marcada', j === k));
-      if (k >= 0) {
-        items[k].scrollIntoView({ block: 'nearest' });
-        menu.setAttribute('aria-activedescendant', items[k].id);
-      }
-    };
-
-    const abrir = () => {
-      abierto = true;
-      menu.hidden = false;
-      btn.setAttribute('aria-expanded', 'true');
-      marcar(activa);
-    };
-
-    const cerrar = (devolverFoco = true) => {
-      abierto = false;
-      menu.hidden = true;
-      btn.setAttribute('aria-expanded', 'false');
-      menu.removeAttribute('aria-activedescendant');
-      if (devolverFoco) btn.focus();
-    };
-
-    const elegir = k => {
-      activa = k;
-      valor.textContent = titulos[k];
-      items.forEach((o, j) => o.setAttribute('aria-selected', j === k));
+    const ir = k => {
+      bs.forEach((b, j) => {
+        b.setAttribute('aria-selected', j === k);
+        b.tabIndex = j === k ? 0 : -1;      // sólo la activa entra al tabulador
+      });
       ps.forEach((pn, j) => { pn.hidden = j !== k; });
-      cerrar();
       if (!QUIETO) {
         gsap.fromTo($$('figure', ps[k]),
           { y: 14, opacity: 0 },
@@ -2035,30 +1987,17 @@ function pintarCatalogos() {
       }
     };
 
-    btn.addEventListener('click', () => abierto ? cerrar() : abrir());
-    btn.addEventListener('keydown', e => {
-      if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) { e.preventDefault(); abrir(); }
-    });
-
-    items.forEach((o, k) => {
-      o.addEventListener('click', () => elegir(k));
-      o.addEventListener('pointerenter', () => marcar(k));
-    });
-
-    // El teclado sólo se escucha mientras este desplegable está abierto
-    document.addEventListener('keydown', e => {
-      if (!abierto) return;
-      if (e.key === 'Escape')    { e.preventDefault(); cerrar(); }
-      if (e.key === 'ArrowDown') { e.preventDefault(); marcar((marcada + 1) % items.length); }
-      if (e.key === 'ArrowUp')   { e.preventDefault(); marcar((marcada - 1 + items.length) % items.length); }
-      if (e.key === 'Home')      { e.preventDefault(); marcar(0); }
-      if (e.key === 'End')       { e.preventDefault(); marcar(items.length - 1); }
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (marcada >= 0) elegir(marcada); }
-      if (e.key === 'Tab') cerrar(false);
-    });
-
-    document.addEventListener('pointerdown', e => {
-      if (abierto && !e.target.closest('#' + cat.id + ' .catalogo__drop')) cerrar(false);
+    bs.forEach((b, k) => {
+      b.addEventListener('click', () => ir(k));
+      b.addEventListener('keydown', e => {
+        let n = null;
+        if (e.key === 'ArrowRight') n = (k + 1) % bs.length;
+        if (e.key === 'ArrowLeft')  n = (k - 1 + bs.length) % bs.length;
+        if (e.key === 'Home')       n = 0;
+        if (e.key === 'End')        n = bs.length - 1;
+        if (n === null) return;
+        e.preventDefault(); ir(n); bs[n].focus();
+      });
     });
   });
 }
