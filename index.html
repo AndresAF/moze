@@ -409,7 +409,8 @@ const SERVICIOS = [
    Usa el nombre tal como aparece publicado.
 
      texto — la reseña completa. Se ve en testimonios.
-     autor — el nombre publicado.
+     autor — opcional. El nombre publicado. Si se omite, la cita
+             aparece sin firma, que es como está ahora.
      fecha — opcional.
      frase — opcional. El trozo corto que gira en la cinta. Debe
              ser palabra por palabra de la reseña, no un resumen:
@@ -420,7 +421,7 @@ const SERVICIOS = [
 
    Mientras el arreglo esté vacío, testimonios muestra sólo la
    calificación y la cinta se queda con las frases de marca.
-   No se inventa ninguna reseña. 
+   No se inventa ninguna reseña.
 
    const RESENAS = [
      { texto: 'Texto exacto y completo de la reseña.',
@@ -429,18 +430,7 @@ const SERVICIOS = [
        fecha: 'marzo 2025' }
    ];                                                              */
 const RESENAS = [
-{ texto: 'Exelente lugar, amplio y muy bien decorado, amplio estacionamiento, con muy buenas instalaciones',
-       frase: 'Exelente lugar',
-       autor: 'Alfredo Carrillo',
-      },
-       { texto: 'Beautiful place to have events',
-       frase: 'Beatiful',
-       autor: 'Kenneth Davis',
-       },
-       { texto: 'Es un lujo que vale totalmente la pena vivir, de los mejores salones de eventos ',
-       frase: 'Maravilloso y recomendable',
-       autor: 'Alfredo Carrillo',
-      }
+  { texto: 'Es un lugar hermoso, lleno de buena atención, limpio y rico' }
 ];
 
 /* Opciones del formulario · salen de TIPOS_EVENTO, así que la
@@ -1686,7 +1676,7 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
       <h2 id="t-cris" data-fade>Cristalería<br>y plaqué.</h2>
       <p class="sub" data-fade>Opciones versátiles y elegantes</p>
       <p class="cuerpo" data-fade>Aliados con Table Set te ofrecemos una amplia variedad de mesas y sillas para completar el montaje.</p>
-      <a href="#contacto" class="btn btn--verde" data-fade data-iman>Cotiza para tu evento</a>
+      <a href="#contacto" class="btn btn--verde" data-fade data-iman>Solicitar catálogo</a>
     </div>
     <div class="destacado__media" id="cristaleriaGaleria" data-reveal></div>
     <div class="catalogo" id="catCristaleria" data-fade></div>
@@ -1699,7 +1689,7 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
       <h2 id="t-mob" data-fade>Mobiliario<br>de lujo.</h2>
       <p class="sub" data-fade>Piezas de diseño para tu montaje</p>
       <p class="cuerpo" data-fade>Sillones, mesas y sillas fuera de catálogo para los montajes que se salen de lo común, disponibles aquí mismo.</p>
-      <a href="#contacto" class="btn btn--verde" data-fade data-iman>Cotiza para tu evento</a>
+      <a href="#contacto" class="btn btn--verde" data-fade data-iman>Solicitar catálogo</a>
     </div>
     <div class="destacado__media" id="mobiliarioGaleria" data-reveal></div>
     <div class="catalogo" id="catMobiliario" data-fade></div>
@@ -1747,14 +1737,6 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
           <input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre completo" required>
         </div>
         <div class="campo">
-          <label for="f-tel">Teléfono</label>
-          <input id="f-tel" name="telefono" type="tel" autocomplete="tel" placeholder="961 000 0000" required>
-        </div>
-        <div class="campo">
-          <label for="f-email">Email <span style="text-transform:none;letter-spacing:0">(opcional)</span></label>
-          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com">
-        </div>
-        <div class="campo">
           <span class="campo__et" id="f-tipo-et">Tipo de evento</span>
           <div class="lista" id="listaTipo">
             <button type="button" class="lista__btn" id="f-tipo-btn"
@@ -1768,15 +1750,23 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
           </div>
         </div>
         <div class="campo">
+          <label for="f-inv">Núm. de personas</label>
+          <input id="f-inv" name="invitados" type="number" min="1" max="800" placeholder="150">
+        </div>
+        <div class="campo">
           <label for="f-fecha">Fecha tentativa</label>
           <input id="f-fecha" name="fecha" type="date">
         </div>
         <div class="campo">
-          <label for="f-inv">Invitados aprox.</label>
-          <input id="f-inv" name="invitados" type="number" min="1" max="800" placeholder="150">
+          <label for="f-tel">Teléfono</label>
+          <input id="f-tel" name="telefono" type="tel" autocomplete="tel" placeholder="961 000 0000" required>
+        </div>
+        <div class="campo">
+          <label for="f-email">Email <span style="text-transform:none;letter-spacing:0">(opcional)</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com">
         </div>
         <div class="campo campo--full">
-          <label for="f-msg">Mensaje</label>
+          <label for="f-msg">Información adicional</label>
           <textarea id="f-msg" name="mensaje" rows="2" placeholder="Cuéntanos sobre tu evento…"></textarea>
         </div>
         <div class="form__enviar">
@@ -2250,7 +2240,7 @@ function pintarResenas() {
   cont.innerHTML = RESENAS.map((r, i) => `
     <figure class="cita${i === 0 ? ' activa' : ''}">
       <blockquote>${esc(r.texto)}</blockquote>
-      <figcaption>${esc(r.autor)}${r.fecha ? ' · ' + esc(r.fecha) : ''}</figcaption>
+      ${r.autor ? `<figcaption>${esc(r.autor)}${r.fecha ? ' · ' + esc(r.fecha) : ''}</figcaption>` : ''}
     </figure>`).join('') + (RESENAS.length < 2 ? '' : `
     <div class="citas__mando">
       <button type="button" data-cita="-1" aria-label="Reseña anterior">&#8592;</button>
@@ -2285,13 +2275,13 @@ function pintarCinta() {
       frase: r.frase || (r.texto && r.texto.length <= 70 ? r.texto : ''),
       autor: r.autor
     }))
-    .filter(r => r.frase && r.autor);
+    .filter(r => r.frase);
 
   if (!citas.length) return;   // se queda la cinta de marca
 
   track.innerHTML = citas.map(r =>
     `<span>&#8220;${esc(r.frase)}&#8221;</span><i>&#183;</i>` +
-    `<span class="ribbon__autor">${esc(r.autor)}</span><i>&#183;</i>`
+    (r.autor ? `<span class="ribbon__autor">${esc(r.autor)}</span><i>&#183;</i>` : '')
   ).join('');
 }
 
@@ -2937,8 +2927,8 @@ function formulario() {
 
     const pruebas = [
       ['#f-nombre', v => v.trim().length > 1, 'Escribe tu nombre'],
-      ['#f-tel',    v => v.replace(/\D/g, '').length >= 10, 'Necesitamos 10 dígitos'],
-      ['#f-tipo',   v => v !== '', 'Elige el tipo de evento']
+      ['#f-tipo',   v => v !== '', 'Elige el tipo de evento'],
+      ['#f-tel',    v => v.replace(/\D/g, '').length >= 10, 'Necesitamos 10 dígitos']
     ];
     const mail = $('#f-email');
     if (mail.value.trim()) pruebas.push(['#f-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), 'Revisa el correo']);
@@ -2961,12 +2951,12 @@ function formulario() {
     const texto =
       'Hola, quiero información para un evento en MOZÉ.' +
       linea('Nombre', d.get('nombre')) +
+      linea('Tipo de evento', d.get('tipo')) +
+      linea('Núm. de personas', d.get('invitados')) +
+      linea('Fecha tentativa', d.get('fecha')) +
       linea('Teléfono', d.get('telefono')) +
       linea('Email', d.get('email')) +
-      linea('Tipo de evento', d.get('tipo')) +
-      linea('Fecha', d.get('fecha')) +
-      linea('Invitados', d.get('invitados')) +
-      linea('Mensaje', d.get('mensaje'));
+      linea('Información adicional', d.get('mensaje'));
 
     window.open(`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
     estado.textContent = 'Se abrió WhatsApp con tus datos ya escritos. Pulsa enviar ahí para que nos llegue.';
