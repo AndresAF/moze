@@ -88,7 +88,7 @@ const SITE = {
      'espacios' = los dos salones más el jardín.               */
   cifras: {
     capacidad:  800,
-    cupoMinimo: 100,
+    cupoMinimo: 30,
     anios:      13,
     espacios:   3,
     salones:    2,
@@ -102,12 +102,12 @@ const SITE = {
       etiqueta: 'MOZÉ',
       nombre: 'Salón completo',
       capacidad: 'DE 100 A 800 PERSONAS',
-      texto: 'Un espacio de gran capacidad, ideal para eventos de cualquier tamaño. Instalaciones que cuentan con facilidades para la instalación de montajes y clima para la comodidad de tus invitados.',
-      rasgos: ['Amplio', 'Climatizado', 'Anclajes en techo', 'Elegantes candelabros', 'Tapizado moderno', 'Espacio vanguardista'],
+      texto: 'Un espacio de gran capacidad, ideal para eventos de gran formato. Instalaciones que cuentan con facilidades para la realización de montajes como entelados y aire acondicionado para la comodidad de tus invitados.',
+      rasgos: ['Amplio', 'Aire Acondicionado', 'Anclajes en techo', 'Elegantes candelabros', 'Tapizado moderno', 'Espacio vanguardista'],
       fotos: [
-        { src: 'FOTOS/salon-a-1.jpg', alt: 'Salón completo de MOZÉ en planta libre, sin montaje' },
-        { src: 'FOTOS/salon-a-2.jpg', alt: 'Banquete montado en el salón completo con techo intervenido' },
-        { src: 'FOTOS/salon-a-3.jpg', alt: 'Salón completo con follaje colgante, pantalla y mesas para un evento grande' }
+        { src: 'FOTOS/salon-a-1.jpg', alt: 'Salón completo de MOZÉ en planta libre, sin montaje', pie: 'Planta libre' },
+        { src: 'FOTOS/salon-a-2.jpg', alt: 'Banquete montado en el salón completo con techo intervenido', pie: 'Banquete con techo intervenido' },
+        { src: 'FOTOS/salon-a-3.jpg', alt: 'Salón completo con follaje colgante, pantalla y mesas para un evento grande', pie: 'Follaje colgante y pantalla' }
       ]
     },
     {
@@ -116,11 +116,11 @@ const SITE = {
       nombre: 'JAS',
       capacidad: 'MENOS DE 100 PERSONAS',
       texto: 'Espacio íntimo para eventos pequeños. Elegante, con excelente iluminación y climatizado, un espacio perfecto para un evento más familiar, íntimo.',
-      rasgos: ['Climatizado', 'Iluminación', 'Familiar', 'Elegante'],
+      rasgos: ['Aire Acondicionado', 'Iluminación', 'Familiar', 'Elegante'],
       fotos: [
-        { src: 'FOTOS/jas-1.jpg', alt: 'Salón JAS montado con globos para una celebración' },
-        { src: 'FOTOS/jas-2.jpg', alt: 'Salón JAS con montaje floral para un evento familiar' },
-        { src: 'FOTOS/jas-3.jpg', alt: 'Salón JAS vacío, con luz natural' }
+        { src: 'FOTOS/jas-3.jpg', alt: 'Salón JAS montado con globos para una celebración', pie: 'Montaje con globos' },
+        { src: 'FOTOS/jas-2.jpg', alt: 'Salón JAS con montaje floral para un evento familiar', pie: 'Montaje floral' },
+        { src: 'FOTOS/jas-1.jpg', alt: 'Salón JAS vacío, con luz natural', pie: 'Salón vacío' }
       ]
     }
   ],
@@ -129,42 +129,42 @@ const SITE = {
      Sustituye las rutas cuando lleguen las fotos definitivas
      del jardín vacío, con montaje y con personas.             */
   jardin: [
-    { src: 'FOTOS/jardin-1.jpg', alt: 'Montaje con centros florales altos en el jardín de MOZÉ' },
-    { src: 'FOTOS/jardin-2.jpg', alt: 'Mesas y pista iluminadas en el jardín de MOZÉ' },
-    { src: 'FOTOS/jardin-3.jpg', alt: 'Mesas largas bajo los árboles iluminados del jardín' },
-    { src: 'FOTOS/jardin-4.jpg', alt: 'Luces colgantes entre los árboles del jardín de MOZÉ' }
+    { src: 'FOTOS/jardin-1.jpg', alt: 'Montaje con centros florales altos en el jardín de MOZÉ', pie: 'Centros florales altos' },
+    { src: 'FOTOS/jardin-2.jpg', alt: 'Mesas y pista iluminadas en el jardín de MOZÉ', pie: 'Pista iluminada' },
+    { src: 'FOTOS/jardin-3.jpg', alt: 'Mesas largas bajo los árboles iluminados del jardín', pie: 'Mesas bajo los árboles' },
+    { src: 'FOTOS/jardin-4.jpg', alt: 'Luces colgantes entre los árboles del jardín de MOZÉ', pie: 'Luces colgantes' }
   ],
 
   /* ---- Banquetera ----------------------------------------- */
   banquetera: [
-    { src: 'FOTOS/banquete-1.jpg', alt: 'Plato de la banquetera de MOZÉ en salsa verde con croquetas y frijoles' },
-    { src: 'FOTOS/banquete-2.jpg', alt: 'Lasaña gratinada con guarnición de verduras del menú de MOZÉ' },
-    { src: 'FOTOS/banquete-3.jpg', alt: 'Plato montado en mesa con puré y verduras salteadas' },
-    { src: 'FOTOS/banquete-4.jpg', alt: 'Panadería y postres del servicio de banquete de MOZÉ' }
+    { src: 'FOTOS/banquete-1.jpg', alt: 'Plato de la banquetera de MOZÉ en salsa verde con croquetas y frijoles', pie: 'Plato en salsa verde' },
+    { src: 'FOTOS/banquete-2.jpg', alt: 'Lasaña gratinada con guarnición de verduras del menú de MOZÉ', pie: 'Lasaña gratinada' },
+    { src: 'FOTOS/banquete-3.jpg', alt: 'Plato montado en mesa con puré y verduras salteadas', pie: 'Puré y verduras salteadas' },
+    { src: 'FOTOS/banquete-4.jpg', alt: 'Panadería y postres del servicio de banquete de MOZÉ', pie: 'Panadería y postres' }
   ],
 
   /* ---- Montajes espectaculares ---------------------------- */
   montajes: [
-    { src: 'FOTOS/montaje-1.jpg', alt: 'Techo intervenido en magenta con cortinas de luz sobre la pista' },
-    { src: 'FOTOS/montaje-2.jpg', alt: 'Banderolas verdes suspendidas y candiles sobre el montaje' },
-    { src: 'FOTOS/montaje-3.jpg', alt: 'Techo cubierto de listones de colores sobre el salón' },
-    { src: 'FOTOS/montaje-4.jpg', alt: 'Esferas espejo y haces de luz sobre la pista de baile' },
-    { src: 'FOTOS/montaje-5.jpg', alt: 'Techo drapeado con candiles de cristal sobre el banquete' }
+    { src: 'FOTOS/montaje-1.jpg', alt: 'Techo intervenido en magenta con cortinas de luz sobre la pista', pie: 'Techo en magenta' },
+    { src: 'FOTOS/montaje-2.jpg', alt: 'Banderolas verdes suspendidas y candiles sobre el montaje', pie: 'Banderolas verdes' },
+    { src: 'FOTOS/montaje-3.jpg', alt: 'Techo cubierto de listones de colores sobre el salón', pie: 'Listones de colores' },
+    { src: 'FOTOS/montaje-4.jpg', alt: 'Esferas espejo y haces de luz sobre la pista de baile', pie: 'Esferas espejo' },
+    { src: 'FOTOS/montaje-5.jpg', alt: 'Techo drapeado con candiles de cristal sobre el banquete', pie: 'Techo drapeado con candiles' }
   ],
 
   /* ---- Cristalería y plaqué ------------------------------- */
   cristaleria: [
-    { src: 'FOTOS/cristaleria-1.jpg', alt: 'Copas de cristal sobre mesa vestida' },
-    { src: 'FOTOS/cristaleria-2.jpg', alt: 'Cristalería en tonos azules con plaqué' },
-    { src: 'FOTOS/cristaleria-3.jpg', alt: 'Plaqué y cristalería en montaje formal' },
-    { src: 'FOTOS/cristaleria-4.jpg', alt: 'Menú impreso sobre plato con plaqué' }
+    { src: 'FOTOS/cristaleria-1.jpg', alt: 'Copas de cristal sobre mesa vestida', pie: 'Copas sobre mesa vestida' },
+    { src: 'FOTOS/cristaleria-2.jpg', alt: 'Cristalería en tonos azules con plaqué', pie: 'Cristalería en azul' },
+    { src: 'FOTOS/cristaleria-3.jpg', alt: 'Plaqué y cristalería en montaje formal', pie: 'Plaqué en montaje formal' },
+    { src: 'FOTOS/cristaleria-4.jpg', alt: 'Menú impreso sobre plato con plaqué', pie: 'Menú sobre plato' }
   ],
 
   /* ---- Mobiliario de lujo --------------------------------- */
   mobiliario: [
-    { src: 'FOTOS/mobiliario-1.jpg', alt: 'Sillones y mesa de diseño en un montaje de MOZÉ' },
-    { src: 'FOTOS/mobiliario-2.jpg', alt: 'Mesa redonda con sillas de madera y bejuco en el jardín' },
-    { src: 'FOTOS/mobiliario-3.jpg', alt: 'Mesa imperial con candiles e iluminación en rojo' }
+    { src: 'FOTOS/mobiliario-1.jpg', alt: 'Sillones y mesa de diseño en un montaje de MOZÉ', pie: 'Sillones y mesa de diseño' },
+    { src: 'FOTOS/mobiliario-2.jpg', alt: 'Mesa redonda con sillas de madera y bejuco en el jardín', pie: 'Sillas de bejuco en el jardín' },
+    { src: 'FOTOS/mobiliario-3.jpg', alt: 'Mesa imperial con candiles e iluminación en rojo', pie: 'Mesa imperial en rojo' }
   ],
 
   /* ---- Catálogos con pestañas ------------------------------
@@ -173,8 +173,37 @@ const SITE = {
      Añadir un grupo = añadir una pestaña. Añadir una pieza =
      añadir una línea. No hay que tocar el maquetado.
      Los nombres de las piezas son descriptivos: sustitúyelos por
-     los del catálogo real cuando el cliente los pase.          */
+     los del catálogo real cuando el cliente los pase.
+
+     'formato' cambia el recorte de la ficha (4:5 por omisión).  */
   catalogos: [
+    {
+      id: 'catBanquetes',
+      etiqueta: 'Recorre el menú',
+      aria: 'Entradas, platos fuertes y postres',
+      /* Fotografía de estudio en 16:9: la ficha se ensancha para
+         no recortar el emplatado. Los demás catálogos siguen en
+         4:5 porque son piezas verticales.                        */
+      formato: '16 / 9',
+      grupos: [
+        { titulo: 'Entradas', piezas: [
+          { src: 'FOTOS/catalogo/entrada-1.jpg', nombre: 'Tostada y brocheta de vegetales', alt: 'Entrada de tostada y brocheta de vegetales servida en pizarra' },
+          { src: 'FOTOS/catalogo/entrada-2.jpg', nombre: 'Brocheta caprese', alt: 'Brocheta caprese con tostada en plato rectangular' },
+          { src: 'FOTOS/catalogo/entrada-3.jpg', nombre: 'Empanada y croqueta', alt: 'Empanada y croqueta con crocante servidas en pizarra' }
+        ] },
+        { titulo: 'Platos fuertes', piezas: [
+          { src: 'FOTOS/catalogo/fuerte-1.jpg', nombre: 'Medallón en costra de ajonjolí', alt: 'Medallón en costra de ajonjolí con reducción y vegetales' },
+          { src: 'FOTOS/catalogo/fuerte-2.jpg', nombre: 'Medallón con vegetales torneados', alt: 'Medallón sobre salsa verde con vegetales torneados' },
+          { src: 'FOTOS/catalogo/fuerte-3.jpg', nombre: 'Canelones en salsa verde', alt: 'Canelones en salsa verde con croquetas y guarnición' }
+        ] },
+        { titulo: 'Postres', piezas: [
+          { src: 'FOTOS/catalogo/postre-1.jpg', nombre: 'Milhojas de crema', alt: 'Milhojas de crema con arándano y crocante' },
+          { src: 'FOTOS/catalogo/postre-2.jpg', nombre: 'Tartaleta con crumble', alt: 'Tartaleta con crumble y puntos de coulis' },
+          { src: 'FOTOS/catalogo/postre-3.jpg', nombre: 'Postre con hoja de chocolate', alt: 'Postre de crema con hoja de chocolate y crumble' },
+          { src: 'FOTOS/catalogo/postre-4.jpg', nombre: 'Pastel con manzana deshidratada', alt: 'Pastel con manzana deshidratada y puntos de chocolate' }
+        ] }
+      ]
+    },
     {
       id: 'catCristaleria',
       etiqueta: 'Elige las piezas de tu mesa',
@@ -262,66 +291,71 @@ const SITE = {
    quedan fusionadas en una sola entrada, "BODA".               */
 const TIPOS_EVENTO = [
   { nombre: 'XV AÑOS', fotos: [
-    { src: 'FOTOS/eventos/xv-anios-1.jpg', alt: 'XV años con reloj monumental y arco floral en MOZÉ' },
-    { src: 'FOTOS/eventos/xv-anios-2.jpg', alt: 'Mesas con centros florales altos durante unos XV años' },
-    { src: 'FOTOS/eventos/xv-anios-3.jpg', alt: 'Salón con techo drapeado en rojo para unos XV años' },
-    { src: 'FOTOS/eventos/xv-anios-4.jpg', alt: 'Techo drapeado y montaje en tonos lila para unos XV años' }
+    { src: 'FOTOS/eventos/xv-anios-1.jpg', alt: 'XV años con reloj monumental y arco floral en MOZÉ', pie: 'Reloj monumental y arco floral' },
+    { src: 'FOTOS/eventos/xv-anios-2.jpg', alt: 'Mesas con centros florales altos durante unos XV años', pie: 'Centros florales altos' },
+    { src: 'FOTOS/eventos/xv-anios-3.jpg', alt: 'Salón con techo drapeado en rojo para unos XV años', pie: 'Techo drapeado en rojo' },
+    { src: 'FOTOS/eventos/xv-anios-4.jpg', alt: 'Techo drapeado y montaje en tonos lila para unos XV años', pie: 'Montaje en tonos lila' }
   ] },
-  { nombre: 'BODA', fotos: [
-    { src: 'FOTOS/eventos/boda-1.jpg', alt: 'Ceremonia de boda entre árboles iluminados' },
-    { src: 'FOTOS/eventos/boda-2.jpg', alt: 'Banquete de boda con pista iluminada y follaje colgante' },
-    { src: 'FOTOS/eventos/boda-3.jpg', alt: 'Montaje de boda en blanco con centros florales altos' },
-    { src: 'FOTOS/eventos/boda-4.jpg', alt: 'Ceremonia de boda en el jardín con montaje floral' }
+  { nombre: 'BODA / WEDDING', fotos: [
+    { src: 'FOTOS/eventos/boda-1.jpg', alt: 'Ceremonia de boda entre árboles iluminados', pie: 'Ceremonia entre árboles' },
+    { src: 'FOTOS/eventos/boda-2.jpg', alt: 'Banquete de boda con pista iluminada y follaje colgante', pie: 'Pista con follaje colgante' },
+    { src: 'FOTOS/eventos/boda-3.jpg', alt: 'Montaje de boda en blanco con centros florales altos', pie: 'Montaje en blanco' },
+    { src: 'FOTOS/eventos/boda-4.jpg', alt: 'Ceremonia de boda en el jardín con montaje floral', pie: 'Ceremonia en el jardín' }
   ] },
   { nombre: 'BABY SHOWER', fotos: [
-    { src: 'FOTOS/eventos/baby-shower-1.jpg', alt: 'Baby shower con muro de follaje y montaje en blanco' },
-    { src: 'FOTOS/eventos/baby-shower-2.jpg', alt: 'Mesa de baby shower con globos y flores en tonos rosa' },
-    { src: 'FOTOS/eventos/baby-shower-3.jpg', alt: 'Salón montado para un baby shower' },
-    { src: 'FOTOS/eventos/baby-shower-4.jpg', alt: 'Mesa de baby shower con vajilla verde y lámpara de flecos' }
+    { src: 'FOTOS/eventos/baby-shower-1.jpg', alt: 'Baby shower con muro de follaje y montaje en blanco', pie: 'Muro de follaje' },
+    { src: 'FOTOS/eventos/baby-shower-2.jpg', alt: 'Mesa de baby shower con globos y flores en tonos rosa', pie: 'Globos y flores en rosa' },
+    { src: 'FOTOS/eventos/baby-shower-3.jpg', alt: 'Salón montado para un baby shower', pie: 'Salón montado' },
+    { src: 'FOTOS/eventos/baby-shower-4.jpg', alt: 'Mesa de baby shower con vajilla verde y lámpara de flecos', pie: 'Vajilla verde y lámpara de flecos' }
   ] },
   { nombre: 'CUMPLEAÑOS', fotos: [
-    { src: 'FOTOS/eventos/cumpleanios-1.jpg', alt: 'Mesa montada con cristalería azul para un cumpleaños' },
-    { src: 'FOTOS/eventos/cumpleanios-2.jpg', alt: 'Salón con iluminación morada y pista para un cumpleaños' },
-    { src: 'FOTOS/eventos/cumpleanios-3.jpg', alt: 'Mesa imperial montada para una comida de cumpleaños' },
-    { src: 'FOTOS/eventos/cumpleanios-4.jpg', alt: 'Pista iluminada durante una fiesta de cumpleaños' }
+    { src: 'FOTOS/eventos/cumpleanios-1.jpg', alt: 'Mesa montada con cristalería azul para un cumpleaños', pie: 'Cristalería azul' },
+    { src: 'FOTOS/eventos/cumpleanios-2.jpg', alt: 'Salón con iluminación morada y pista para un cumpleaños', pie: 'Iluminación morada' },
+    { src: 'FOTOS/eventos/cumpleanios-3.jpg', alt: 'Mesa imperial montada para una comida de cumpleaños', pie: 'Mesa imperial' },
+    { src: 'FOTOS/eventos/cumpleanios-4.jpg', alt: 'Pista iluminada durante una fiesta de cumpleaños', pie: 'Pista iluminada' }
   ] },
   { nombre: 'PRIMERA COMUNIÓN', fotos: [
-    { src: 'FOTOS/eventos/comunion-1.jpg', alt: 'Mesa de primera comunión en menta y rosa con cristalería ámbar' },
-    { src: 'FOTOS/eventos/comunion-2.jpg', alt: 'Centro floral y servicio de mesa para una primera comunión' }
+    { src: 'FOTOS/eventos/comunion-1.jpg', alt: 'Mesa de primera comunión en menta y rosa con cristalería ámbar', pie: 'Mesa en menta y rosa' },
+    { src: 'FOTOS/eventos/comunion-2.jpg', alt: 'Centro floral y servicio de mesa para una primera comunión', pie: 'Centro floral' }
   ] },
   { nombre: 'BAUTIZO', fotos: [
-    { src: 'FOTOS/eventos/bautizo-1.jpg', alt: 'Salón con techo drapeado y mesas montadas para un bautizo' },
-    { src: 'FOTOS/eventos/bautizo-2.jpg', alt: 'Centros de mesa con globos aerostáticos para un bautizo' }
+    { src: 'FOTOS/eventos/bautizo-1.jpg', alt: 'Salón con techo drapeado y mesas montadas para un bautizo', pie: 'Techo drapeado' },
+    { src: 'FOTOS/eventos/bautizo-2.jpg', alt: 'Centros de mesa con globos aerostáticos para un bautizo', pie: 'Globos aerostáticos' }
   ] },
   { nombre: 'REUNIONES EMPRESARIALES', fotos: [
-    { src: 'FOTOS/eventos/empresarial-1.jpg', alt: 'Reunión empresarial en montaje tipo auditorio' },
-    { src: 'FOTOS/eventos/empresarial-2.jpg', alt: 'Salón empresarial con pantallas y techo intervenido' },
-    { src: 'FOTOS/eventos/empresarial-3.jpg', alt: 'Sillas y pantallas montadas para una conferencia' },
-    { src: 'FOTOS/eventos/empresarial-4.jpg', alt: 'Escenario y presídium para un evento empresarial' }
+    { src: 'FOTOS/eventos/empresarial-1.jpg', alt: 'Reunión empresarial en montaje tipo auditorio', pie: 'Montaje tipo auditorio' },
+    { src: 'FOTOS/eventos/empresarial-2.jpg', alt: 'Salón empresarial con pantallas y techo intervenido', pie: 'Pantallas y techo intervenido' },
+    { src: 'FOTOS/eventos/empresarial-3.jpg', alt: 'Sillas y pantallas montadas para una conferencia', pie: 'Sillas y pantallas' },
+    { src: 'FOTOS/eventos/empresarial-4.jpg', alt: 'Escenario y presídium para un evento empresarial', pie: 'Escenario y presídium' }
   ] },
   { nombre: 'DESPEDIDA DE SOLTERA', fotos: [
-    { src: 'FOTOS/eventos/despedida-1.jpg', alt: 'Baile en la pista del jardín durante una despedida de soltera' }
+    { src: 'FOTOS/eventos/despedida-1.jpg', alt: 'Baile en la pista del jardín durante una despedida de soltera', pie: 'Baile en el jardín' }
   ] },
   { nombre: 'FIESTA EN JARDÍN', fotos: [
-    { src: 'FOTOS/eventos/jardin-ev-1.jpg', alt: 'Fiesta en el jardín con centros florales altos' },
-    { src: 'FOTOS/eventos/jardin-ev-2.jpg', alt: 'Pista y mesas iluminadas en el jardín de MOZÉ' },
-    { src: 'FOTOS/eventos/jardin-ev-3.jpg', alt: 'Jardín iluminado con luces colgantes entre los árboles' },
-    { src: 'FOTOS/eventos/jardin-ev-4.jpg', alt: 'Mesas largas bajo los árboles del jardín' }
+    { src: 'FOTOS/eventos/jardin-ev-1.jpg', alt: 'Fiesta en el jardín con centros florales altos', pie: 'Centros florales altos' },
+    { src: 'FOTOS/eventos/jardin-ev-2.jpg', alt: 'Pista y mesas iluminadas en el jardín de MOZÉ', pie: 'Pista iluminada' },
+    { src: 'FOTOS/eventos/jardin-ev-3.jpg', alt: 'Jardín iluminado con luces colgantes entre los árboles', pie: 'Luces entre los árboles' },
+    { src: 'FOTOS/eventos/jardin-ev-4.jpg', alt: 'Mesas largas bajo los árboles del jardín', pie: 'Mesas largas' }
   ] },
-  { nombre: 'PROM', fotos: [
-    { src: 'FOTOS/eventos/prom-1.jpg', alt: 'Salón montado para un prom con pista central' },
-    { src: 'FOTOS/eventos/prom-2.jpg', alt: 'Iluminación de color durante un prom' },
-    { src: 'FOTOS/eventos/prom-3.jpg', alt: 'Escenario y letrero luminoso en una graduación' }
+  { nombre: 'GRADUACIÒN / PROM', fotos: [
+    { src: 'FOTOS/eventos/prom-1.jpg', alt: 'Salón montado para un prom con pista central', pie: 'Pista central' },
+    { src: 'FOTOS/eventos/prom-2.jpg', alt: 'Iluminación de color durante un prom', pie: 'Iluminación de color' },
+    { src: 'FOTOS/eventos/prom-3.jpg', alt: 'Escenario y letrero luminoso en una graduación', pie: 'Letrero luminoso' }
+  ] },
+  { nombre: 'DESAYUNO /  BRUNCH / COMIDA / MERIENDA / CENA', fotos: [
+    { src: 'FOTOS/eventos/prom-1.jpg', alt: 'Salón montado para un prom con pista central', pie: 'Pista central' },
+    { src: 'FOTOS/eventos/prom-2.jpg', alt: 'Iluminación de color durante un prom', pie: 'Iluminación de color' },
+    { src: 'FOTOS/eventos/prom-3.jpg', alt: 'Escenario y letrero luminoso en una graduación', pie: 'Letrero luminoso' }
   ] },
   { nombre: 'ENTREGA DE DOCUMENTOS', fotos: [
-    { src: 'FOTOS/eventos/documentos-1.jpg', alt: 'Salón montado para una entrega de documentos' },
-    { src: 'FOTOS/eventos/documentos-2.jpg', alt: 'Techo drapeado y sillas para una entrega de documentos' }
+    { src: 'FOTOS/eventos/documentos-1.jpg', alt: 'Salón montado para una entrega de documentos', pie: 'Salón montado' },
+    { src: 'FOTOS/eventos/documentos-2.jpg', alt: 'Techo drapeado y sillas para una entrega de documentos', pie: 'Techo drapeado y sillas' }
   ] },
   { nombre: 'SALÓN TIPO AUDITORIO', fotos: [
-    { src: 'FOTOS/eventos/auditorio-1.jpg', alt: 'Salón montado en formato auditorio con sillas alineadas' },
-    { src: 'FOTOS/eventos/auditorio-2.jpg', alt: 'Montaje tipo auditorio con pantallas laterales' },
-    { src: 'FOTOS/eventos/auditorio-3.jpg', alt: 'Escenario y sillas en montaje de auditorio' },
-    { src: 'FOTOS/eventos/auditorio-4.jpg', alt: 'Vista panorámica del salón en montaje de auditorio' }
+    { src: 'FOTOS/eventos/auditorio-1.jpg', alt: 'Salón montado en formato auditorio con sillas alineadas', pie: 'Sillas alineadas' },
+    { src: 'FOTOS/eventos/auditorio-2.jpg', alt: 'Montaje tipo auditorio con pantallas laterales', pie: 'Pantallas laterales' },
+    { src: 'FOTOS/eventos/auditorio-3.jpg', alt: 'Escenario y sillas en montaje de auditorio', pie: 'Escenario y sillas' },
+    { src: 'FOTOS/eventos/auditorio-4.jpg', alt: 'Vista panorámica del salón en montaje de auditorio', pie: 'Vista panorámica' }
   ] }
 ];
 
@@ -329,9 +363,9 @@ const TIPOS_EVENTO = [
    NOTA: MOZÉ no ofrece audio ni iluminación como servicio propio.
    Lo que sí ofrece es capacidad de montaje.                        */
 const SERVICIOS = [
-  { n: '01', nombre: 'BANQUETERA',
+  { n: '01', nombre: 'BANQUETES',
     texto: 'Prueba de menú: preparamos una degustación antes del gran día, con opciones para niños y opciones gourmet.',
-    foto: 'FOTOS/sv-banquetera.jpg',
+    foto: 'FOTOS/filete.jpeg',
     alt: 'Servicio de banquete durante un evento en MOZÉ',
     ancla: '#banquetera' },
   { n: '02', nombre: 'MONTAJES ESPECTACULARES',
@@ -931,7 +965,7 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
 }
 .aval__cuerpo{position:relative;z-index:1}
 .aval__frase{
-  max-width:28ch;line-height:1.16;
+  max-width:34ch;line-height:1.16;
   font-size:calc(var(--tscale) * clamp(1.9rem,4.6vw,3.8rem));
 }
 .aval__n{
@@ -1052,9 +1086,9 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
    ---------------------------------------------------------------
    Va DEBAJO de la galería principal, ocupando las dos columnas:
    la foto grande de la sección no se toca, esto se suma.
-   Las pestañas son hermanas entre sí — cristalería y plaqué son
-   la misma familia — así que ocultar una no esconde contenido
-   distinto, sólo la otra mitad del mismo catálogo.
+   Los grupos son hermanos entre sí — cristalería y plaqué son la
+   misma familia — así que mostrar uno a la vez no esconde
+   contenido distinto, sólo la otra mitad del mismo catálogo.
    ═══════════════════════════════════════════════════════════════ */
 .catalogo{
   grid-column:1/-1;
@@ -1068,29 +1102,54 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
   gap:.75rem 2rem;margin-bottom:clamp(1.25rem,3vw,2rem);
 }
 .catalogo__et{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-.catalogo__tabs{display:flex;gap:clamp(1.25rem,3vw,2.5rem)}
-.catalogo__tabs button{
-  position:relative;padding:.35rem 0;
-  font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--muted);transition:color .35s var(--ease);
+/* Desplegable · mismo patrón accesible que el selector del
+   formulario, pero sobre fondo claro. Muestra el grupo activo y
+   despliega los demás; el nombre del grupo elegido está siempre
+   a la vista, así que nada queda escondido sin señal. */
+.catalogo__drop{position:relative;min-width:min(15rem,60vw)}
+.catalogo__btn{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;
+  padding:.55rem 0;border-bottom:1px solid var(--ink);
+  font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+  text-align:left;transition:border-color .35s var(--ease),color .35s var(--ease);
 }
-/* El subrayado marca la pestaña activa. El texto no se mueve. */
-.catalogo__tabs button::after{
-  content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--verde);
-  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);
+.catalogo__btn svg{width:12px;height:8px;flex:none;color:var(--verde);transition:transform .35s var(--ease)}
+.catalogo__btn[aria-expanded="true"]{border-color:var(--verde);color:var(--verde)}
+.catalogo__btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.catalogo__menu{
+  position:absolute;top:calc(100% + .4rem);left:0;right:0;z-index:60;
+  background:var(--bone);border:1px solid var(--line);
+  box-shadow:0 18px 40px rgba(58,58,58,.14);
 }
-.catalogo__tabs button:hover{color:var(--ink)}
-.catalogo__tabs button[aria-selected="true"]{color:var(--ink)}
-.catalogo__tabs button[aria-selected="true"]::after{transform:scaleX(1)}
-.oscuro .catalogo__tabs button:hover,
-.oscuro .catalogo__tabs button[aria-selected="true"]{color:var(--bone)}
-.oscuro .catalogo__tabs button::after{background:var(--verde-alto)}
+.catalogo__menu[hidden]{display:none}
+.catalogo__menu li{
+  padding:.8rem 1rem;cursor:pointer;
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
+  transition:background .2s var(--ease),color .2s var(--ease);
+}
+.catalogo__menu li:hover,.catalogo__menu li.marcada{background:var(--verde);color:var(--bone)}
+.catalogo__menu li[aria-selected="true"]{color:var(--ink);font-weight:500}
+.catalogo__menu li[aria-selected="true"]::after{content:' ✓';color:var(--verde)}
+.catalogo__menu li[aria-selected="true"]:hover{color:var(--bone)}
+/* Sobre fondo oscuro cambian los tonos, no la mecánica */
+.oscuro .catalogo__btn{color:var(--bone);border-bottom-color:var(--sobre-osc-2)}
+.oscuro .catalogo__btn svg{color:var(--verde-alto)}
+.oscuro .catalogo__btn[aria-expanded="true"]{border-color:var(--verde-alto);color:var(--verde-alto)}
+.oscuro .catalogo__menu{background:#2A2A2A;border-color:var(--line-light);box-shadow:none}
+.oscuro .catalogo__menu li{color:var(--sobre-osc-2)}
+.oscuro .catalogo__menu li[aria-selected="true"]{color:var(--bone)}
 
-.catalogo__panel{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,2vw,1.5rem)}
+/* --ficha y --cols los fija el JS por catálogo: el emplatado
+   necesita ficha apaisada; las copas y sillas, vertical. */
+.catalogo{--ficha:4/5}
+.catalogo__panel{
+  display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));
+  gap:clamp(.7rem,2vw,1.5rem);
+}
 .catalogo__panel[hidden]{display:none}
 .catalogo figure{margin:0;cursor:zoom-in}
 .catalogo figure img{
-  aspect-ratio:4/5;object-fit:cover;background:#FFFFFF;
+  aspect-ratio:var(--ficha);object-fit:cover;background:#FFFFFF;
   transition:opacity .4s var(--ease);
 }
 .catalogo figure:hover img,.catalogo figure:focus-visible img{opacity:.84}
@@ -1393,9 +1452,10 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
   .gal__zoom{left:.6rem;bottom:.6rem;padding:.42rem .7rem;font-size:.56rem}
 
   .catalogo__panel{gap:.55rem}
+  .catalogo--ancho .catalogo__panel{--cols:2}
   .catalogo figcaption{font-size:.58rem;letter-spacing:.08em;margin-top:.45rem}
-  .catalogo__tabs{gap:1.5rem}
-  .catalogo__tabs button{font-size:.68rem;letter-spacing:.16em}
+  .catalogo__drop{min-width:0;width:100%}
+  .catalogo__btn{font-size:.72rem;letter-spacing:.16em}
 
   .eventos__lista{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.1rem;margin-top:1.25rem}
   .ev{grid-template-columns:auto minmax(0,1fr) auto;gap:.5rem;padding:.65rem 0}
@@ -1579,12 +1639,13 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
   <!-- ═══════════ BANQUETERA ═══════════ -->
   <section class="destacado" id="banquetera" aria-labelledby="t-banq">
     <div class="destacado__texto">
-      <p class="rotulo">Banquetera</p>
-      <h2 id="t-banq" data-fade>Banquetera<br>propia.</h2>
+      <p class="rotulo">Banquetes</p>
+      <h2 id="t-banq" data-fade>Banquetes.</h2>
       <p class="cuerpo" data-fade>Contamos con chefs profesionales cuyas opciones se adecuan a tu paladar.</p>
       <a href="#contacto" class="btn btn--verde" data-fade data-iman>Agenda tu prueba de menú</a>
     </div>
     <div class="destacado__media" id="banqueteraGaleria" data-reveal></div>
+    <div class="catalogo" id="catBanquetes" data-fade></div>
   </section>
 
   <!-- ═══════════ MONTAJES ═══════════ -->
@@ -1631,7 +1692,7 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
       <p class="cuerpo" data-fade>Expertos en servicio y atención al cliente a disposición de tus invitados.</p>
     </div>
     <div class="destacado__media" data-reveal>
-      <figure data-lightbox><img src="FOTOS/servicio.jpg" alt="Mesero sirviendo durante un evento en MOZÉ" loading="lazy" decoding="async"></figure>
+      <figure data-lightbox><img src="FOTOS/servicio.jpg" alt="Mesero sirviendo durante un evento en MOZÉ" data-pie="Servicio en mesa" loading="lazy" decoding="async"></figure>
     </div>
   </section>
 
@@ -1745,7 +1806,7 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
     </div>
     <div>
       <p>Salón completo · JAS · Jardín</p>
-      <p>Banquetera y montajes</p>
+      <p>Banquetes y montajes</p>
     </div>
   </div>
   <div class="footer__legal">
@@ -1815,7 +1876,8 @@ function galeria(fotos, titulo, { alto = false, cine = false, prioritaria = fals
   const unica = fotos.length < 2;
 
   const imgs = fotos.map((f, i) => `
-        <img src="${esc(f.src)}" alt="${esc(f.alt)}" class="${i === 0 ? 'activa' : ''}"
+        <img src="${esc(f.src)}" alt="${esc(f.alt)}" data-pie="${esc(f.pie || f.alt)}"
+             class="${i === 0 ? 'activa' : ''}"
              ${prioritaria && i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`).join('');
 
   const flechas = unica ? '' : `
@@ -1888,37 +1950,84 @@ function pintarCatalogos() {
     const c = $('#' + cat.id);
     if (!c || !cat.grupos || !cat.grupos.length) return;
 
-    const tabs = cat.grupos.map((g, i) => `
-        <button type="button" role="tab" id="${cat.id}-t${i}"
-                aria-controls="${cat.id}-p${i}" aria-selected="${i === 0}"
-                tabindex="${i === 0 ? 0 : -1}">${esc(g.titulo)}</button>`).join('');
+    const titulos = cat.grupos.map(g => g.titulo);
+
+    // Ficha apaisada o vertical según el catálogo
+    if (cat.formato) {
+      c.style.setProperty('--ficha', cat.formato);
+      if (parseFloat(cat.formato) > 1) c.classList.add('catalogo--ancho');
+    }
+
+    const opciones = titulos.map((t, i) => `
+          <li role="option" id="${cat.id}-o${i}" aria-selected="${i === 0}">${esc(t)}</li>`).join('');
+
+    // Cuatro piezas caben mejor en 2x2 que en una fila de 3 y una huérfana
+    const columnas = n => n <= 3 ? n : (n === 4 ? 2 : 3);
 
     const paneles = cat.grupos.map((g, i) => `
-      <div class="catalogo__panel" role="tabpanel" id="${cat.id}-p${i}"
-           aria-labelledby="${cat.id}-t${i}"${i === 0 ? '' : ' hidden'}>
+      <div class="catalogo__panel" id="${cat.id}-p${i}"
+           style="--cols:${columnas(g.piezas.length)}"${i === 0 ? '' : ' hidden'}>
         ${g.piezas.map(pz => `
         <figure data-lightbox>
-          <img src="${esc(pz.src)}" alt="${esc(pz.alt)}" loading="lazy" decoding="async">
+          <img src="${esc(pz.src)}" alt="${esc(pz.alt)}" data-pie="${esc(pz.nombre)}" loading="lazy" decoding="async">
           <figcaption>${esc(pz.nombre)}</figcaption>
         </figure>`).join('')}
       </div>`).join('');
 
     c.innerHTML = `
       <div class="catalogo__cab">
-        ${cat.etiqueta ? `<p class="catalogo__et">${esc(cat.etiqueta)}</p>` : ''}
-        <div class="catalogo__tabs" role="tablist" aria-label="${esc(cat.aria || cat.id)}">${tabs}</div>
+        ${cat.etiqueta ? `<p class="catalogo__et" id="${cat.id}-et">${esc(cat.etiqueta)}</p>` : ''}
+        <div class="catalogo__drop">
+          <button type="button" class="catalogo__btn" id="${cat.id}-btn"
+                  aria-haspopup="listbox" aria-expanded="false"
+                  aria-label="${esc(cat.aria || cat.id)}">
+            <span data-valor>${esc(titulos[0])}</span>
+            <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <ul class="catalogo__menu" id="${cat.id}-menu" role="listbox"
+              aria-label="${esc(cat.aria || cat.id)}" tabindex="-1" hidden>${opciones}</ul>
+        </div>
       </div>
       ${paneles}`;
 
-    const bs = $$('[role="tab"]', c);
-    const ps = $$('.catalogo__panel', c);
+    const btn   = $('#' + cat.id + '-btn', c);
+    const menu  = $('#' + cat.id + '-menu', c);
+    const items = $$('li', menu);
+    const ps    = $$('.catalogo__panel', c);
+    const valor = $('[data-valor]', btn);
 
-    const ir = k => {
-      bs.forEach((b, j) => {
-        b.setAttribute('aria-selected', j === k);
-        b.tabIndex = j === k ? 0 : -1;
-      });
+    let abierto = false, marcada = 0, activa = 0;
+
+    const marcar = k => {
+      marcada = k;
+      items.forEach((o, j) => o.classList.toggle('marcada', j === k));
+      if (k >= 0) {
+        items[k].scrollIntoView({ block: 'nearest' });
+        menu.setAttribute('aria-activedescendant', items[k].id);
+      }
+    };
+
+    const abrir = () => {
+      abierto = true;
+      menu.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      marcar(activa);
+    };
+
+    const cerrar = (devolverFoco = true) => {
+      abierto = false;
+      menu.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      menu.removeAttribute('aria-activedescendant');
+      if (devolverFoco) btn.focus();
+    };
+
+    const elegir = k => {
+      activa = k;
+      valor.textContent = titulos[k];
+      items.forEach((o, j) => o.setAttribute('aria-selected', j === k));
       ps.forEach((pn, j) => { pn.hidden = j !== k; });
+      cerrar();
       if (!QUIETO) {
         gsap.fromTo($$('figure', ps[k]),
           { y: 14, opacity: 0 },
@@ -1926,17 +2035,30 @@ function pintarCatalogos() {
       }
     };
 
-    bs.forEach((b, k) => {
-      b.addEventListener('click', () => ir(k));
-      b.addEventListener('keydown', e => {
-        let n = null;
-        if (e.key === 'ArrowRight') n = (k + 1) % bs.length;
-        if (e.key === 'ArrowLeft')  n = (k - 1 + bs.length) % bs.length;
-        if (e.key === 'Home')       n = 0;
-        if (e.key === 'End')        n = bs.length - 1;
-        if (n === null) return;
-        e.preventDefault(); ir(n); bs[n].focus();
-      });
+    btn.addEventListener('click', () => abierto ? cerrar() : abrir());
+    btn.addEventListener('keydown', e => {
+      if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) { e.preventDefault(); abrir(); }
+    });
+
+    items.forEach((o, k) => {
+      o.addEventListener('click', () => elegir(k));
+      o.addEventListener('pointerenter', () => marcar(k));
+    });
+
+    // El teclado sólo se escucha mientras este desplegable está abierto
+    document.addEventListener('keydown', e => {
+      if (!abierto) return;
+      if (e.key === 'Escape')    { e.preventDefault(); cerrar(); }
+      if (e.key === 'ArrowDown') { e.preventDefault(); marcar((marcada + 1) % items.length); }
+      if (e.key === 'ArrowUp')   { e.preventDefault(); marcar((marcada - 1 + items.length) % items.length); }
+      if (e.key === 'Home')      { e.preventDefault(); marcar(0); }
+      if (e.key === 'End')       { e.preventDefault(); marcar(items.length - 1); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (marcada >= 0) elegir(marcada); }
+      if (e.key === 'Tab') cerrar(false);
+    });
+
+    document.addEventListener('pointerdown', e => {
+      if (abierto && !e.target.closest('#' + cat.id + ' .catalogo__drop')) cerrar(false);
     });
   });
 }
@@ -2043,9 +2165,10 @@ function pintarAval() {
   // Las cifras salen de SITE.cifras: no se repiten en el markup.
   const n = v => `<span class="num aval__n" data-count="${v}">0</span>`;
   c.innerHTML =
-    `Más de ${n(cif.anios)} años realizando eventos en Tuxtla Gutiérrez, ` +
+    `Contamos con una sólida experiencia realizando eventos en Tuxtla Gutiérrez, ` +
     `${n(cif.espacios)} espacios versátiles con cupo de ` +
-    `${n(cif.cupoMinimo)} a ${n(cif.capacidad)} personas y estacionamiento propio.`;
+    `${n(cif.cupoMinimo)} a ${n(cif.capacidad)} personas. ` +
+    `Estacionamiento propio y Servicio de Valet Parking.`;
 }
 
 function pintarOpcionesForm() {
@@ -2557,7 +2680,8 @@ function lightbox() {
   const pintar = () => {
     const f = grupo[pos];
     img.src = f.src; img.alt = f.alt;
-    pie.textContent = `${String(pos + 1).padStart(2, '0')} / ${String(grupo.length).padStart(2, '0')} — ${f.alt}`;
+    // Se muestra el pie corto, no la descripción larga del alt
+    pie.textContent = `${String(pos + 1).padStart(2, '0')} / ${String(grupo.length).padStart(2, '0')} — ${f.pie || f.alt}`;
     $('#visorPrev').hidden = $('#visorNext').hidden = grupo.length < 2;
   };
 
@@ -2623,7 +2747,7 @@ function lightbox() {
     fig.setAttribute('tabindex', '0');
     fig.setAttribute('role', 'button');
     fig.setAttribute('aria-label', `Ampliar: ${im.alt}`);
-    const lanzar = () => abrir([{ src: im.src, alt: im.alt }], 0, im);
+    const lanzar = () => abrir([{ src: im.src, alt: im.alt, pie: im.dataset.pie }], 0, im);
     fig.addEventListener('click', lanzar);
     fig.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lanzar(); }
@@ -2639,7 +2763,7 @@ function lightbox() {
     marco.setAttribute('aria-label', 'Ampliar la foto');
     const lanzar = () => {
       const idx = raiz?._idx ? raiz._idx() : 0;
-      abrir(ims.map(x => ({ src: x.src, alt: x.alt })), idx, ims[idx]);
+      abrir(ims.map(x => ({ src: x.src, alt: x.alt, pie: x.dataset.pie })), idx, ims[idx]);
     };
     marco.addEventListener('click', e => { if (!e.target.closest('[data-paso]')) lanzar(); });
     marco.addEventListener('keydown', e => {
