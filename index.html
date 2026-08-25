@@ -5,7 +5,2911 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MOZÉ Centro de Eventos · Salones y jardín en Tuxtla Gutiérrez, Chiapas</title>
 <meta name="description" content="MOZÉ Centro de Eventos en Tuxtla Gutiérrez, Chiapas. Salón principal MOZÉ A para 800 invitados, salón JAS para eventos íntimos y jardín arbolado. Banquetera propia, montajes y servicio por profesionales.">
+<meta name="theme-color" content="#14160F"><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOZÉ Centro de Eventos · Salones y jardín en Tuxtla Gutiérrez, Chiapas</title>
+<meta name="description" content="MOZÉ Centro de Eventos en Tuxtla Gutiérrez, Chiapas. Salón completo con cupo de 100 a 800 personas, salón JAS para eventos íntimos y jardín arbolado. Banquetera propia, montajes y servicio por profesionales.">
 <meta name="theme-color" content="#14160F">
+<link rel="canonical" href="https://mozecentrodeeventos.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="MOZÉ Centro de Eventos · Tuxtla Gutiérrez">
+<meta property="og:description" content="Dos salones, un jardín y todo en un mismo lugar. Cupo de 100 a 800 personas, banquetera propia y más de 13 años de experiencia.">
+<meta property="og:image" content="FOTOS/hero-poster.jpg">
+<meta property="og:locale" content="es_MX">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="FOTOS/hero-poster.jpg">
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   MOZÉ · CONFIGURACIÓN
+   ---------------------------------------------------------------
+   Todo lo editable del sitio vive aquí. Los campos vacíos ('')
+   son datos que el cliente todavía no ha proporcionado: la sección
+   correspondiente se oculta sola hasta que se llenen.
+   ═══════════════════════════════════════════════════════════════ */
+
+const SITE = {
+
+  /* ---- Marca ---------------------------------------------- */
+  marca: 'MOZÉ',
+
+  /* ---- Contacto ------------------------------------------- */
+  telefono:  '+529611465809',
+  whatsapp:  '529611465809',
+  waMensaje: 'Hola, me interesa agendar una visita a MOZÉ.',
+  instagram: 'mozecentrodeeventos',
+
+  /* Estos tres los encontré publicados en directorios. VERIFICAR
+     con el cliente antes de publicar. Vaciar el campo lo oculta.  */
+  email:     '',
+  direccion: 'Carr. Panamericana 5191, Plan de Ayala, 29110 Tuxtla Gutiérrez, Chis.',
+  horarios:  'Lunes a domingo · 9:00 a 19:00',
+
+  /* ---- Ubicación ------------------------------------------
+     mapaEmbed: pega aquí la URL de "Insertar un mapa" de Google
+     Maps. Si se deja vacía se arma una desde mapaBusqueda, que
+     funciona sin API key.
+     NO se requiere API key en ninguno de los dos casos.        */
+  mapaBusqueda: 'MOZÉ Centro de Eventos, Tuxtla Gutiérrez, Chiapas',
+  mapaEmbed:    '',
+
+  /* ---- Reseñas de Google ----------------------------------
+     Google NO tiene widget gratuito para incrustar reseñas, así
+     que la calificación se escribe aquí a mano.
+
+     PENDIENTE VERIFICAR · 4.5 y 689 salen de directorios
+     públicos, no de la ficha oficial. Abre tu perfil de Google
+     Maps, comprueba las cifras reales y actualízalas. Se
+     recomienda revisarlas cada pocos meses.
+     Cualquier campo vacío desaparece de la sección.            */
+  googleRating:  '4.5',
+  googleTotal:   '689',
+  googleReviews: '',
+
+  /* ---- Vídeo del hero -------------------------------------
+     Se reproduce en bucle, sin sonido, como fondo. En pantallas
+     chicas o con ahorro de datos activo NO se descarga: queda el
+     fotograma de respaldo, que es el primer cuadro del vídeo.   */
+  video: {
+    escritorio: 'VIDEO/hero.mp4',
+    movil:      'VIDEO/hero-movil.mp4',
+    respaldo:   'FOTOS/hero-poster.jpg',
+    anchoMinimo: 700          // por debajo de esto, sólo la imagen
+  },
+
+  /* ---- Tipografía -----------------------------------------
+       'a' Editorial clásica   Cormorant Garamond + Jost
+       'b' Contemporánea       Instrument Serif + Inter Tight
+       'c' Alto contraste      Bodoni Moda + Archivo
+       'd' Cálida              Fraunces + Manrope           */
+  tipografia: 'b',
+
+  /* ---- Cifras oficiales -----------------------------------
+     Un solo lugar. No repetir estos números en el markup.
+     'espacios' = los dos salones más el jardín.               */
+  cifras: {
+    capacidad:  800,
+    cupoMinimo: 100,
+    anios:      13,
+    espacios:   3,
+    salones:    2,
+    jardines:   1
+  },
+
+  /* ---- Espacios ------------------------------------------- */
+  espacios: [
+    {
+      id: 'moze-a',
+      etiqueta: 'MOZÉ',
+      nombre: 'Salón completo',
+      capacidad: 'DE 100 A 800 PERSONAS',
+      texto: 'Un espacio de gran capacidad, ideal para eventos de cualquier tamaño. Instalaciones que cuentan con facilidades para la instalación de montajes y clima para la comodidad de tus invitados.',
+      rasgos: ['Amplio', 'Climatizado', 'Anclajes en techo', 'Elegantes candelabros', 'Tapizado moderno', 'Espacio vanguardista'],
+      fotos: [
+        { src: 'FOTOS/salon-a-1.jpg', alt: 'Salón completo de MOZÉ en planta libre, sin montaje' },
+        { src: 'FOTOS/salon-a-2.jpg', alt: 'Banquete montado en el salón completo con techo intervenido' },
+        { src: 'FOTOS/salon-a-3.jpg', alt: 'Salón completo con follaje colgante, pantalla y mesas para un evento grande' }
+      ]
+    },
+    {
+      id: 'jas',
+      etiqueta: 'Segundo salón',
+      nombre: 'JAS',
+      capacidad: 'MENOS DE 100 PERSONAS',
+      texto: 'Espacio íntimo para eventos pequeños. Elegante, con excelente iluminación y climatizado, un espacio perfecto para un evento más familiar, íntimo.',
+      rasgos: ['Climatizado', 'Iluminación', 'Familiar', 'Elegante'],
+      fotos: [
+        { src: 'FOTOS/jas-1.jpg', alt: 'Salón JAS montado con globos para una celebración' },
+        { src: 'FOTOS/jas-2.jpg', alt: 'Salón JAS con montaje floral para un evento familiar' },
+        { src: 'FOTOS/jas-3.jpg', alt: 'Salón JAS vacío, con luz natural' }
+      ]
+    }
+  ],
+
+  /* ---- Jardín · galería tipo stories ----------------------
+     Sustituye las rutas cuando lleguen las fotos definitivas
+     del jardín vacío, con montaje y con personas.             */
+  jardin: [
+    { src: 'FOTOS/jardin-1.jpg', alt: 'Montaje con centros florales altos en el jardín de MOZÉ' },
+    { src: 'FOTOS/jardin-2.jpg', alt: 'Mesas y pista iluminadas en el jardín de MOZÉ' },
+    { src: 'FOTOS/jardin-3.jpg', alt: 'Mesas largas bajo los árboles iluminados del jardín' },
+    { src: 'FOTOS/jardin-4.jpg', alt: 'Luces colgantes entre los árboles del jardín de MOZÉ' }
+  ],
+
+  /* ---- Banquetera ----------------------------------------- */
+  banquetera: [
+    { src: 'FOTOS/banquete-1.jpg', alt: 'Plato de la banquetera de MOZÉ en salsa verde con croquetas y frijoles' },
+    { src: 'FOTOS/banquete-2.jpg', alt: 'Lasaña gratinada con guarnición de verduras del menú de MOZÉ' },
+    { src: 'FOTOS/banquete-3.jpg', alt: 'Plato montado en mesa con puré y verduras salteadas' },
+    { src: 'FOTOS/banquete-4.jpg', alt: 'Panadería y postres del servicio de banquete de MOZÉ' }
+  ],
+
+  /* ---- Montajes espectaculares ---------------------------- */
+  montajes: [
+    { src: 'FOTOS/montaje-1.jpg', alt: 'Techo intervenido en magenta con cortinas de luz sobre la pista' },
+    { src: 'FOTOS/montaje-2.jpg', alt: 'Banderolas verdes suspendidas y candiles sobre el montaje' },
+    { src: 'FOTOS/montaje-3.jpg', alt: 'Techo cubierto de listones de colores sobre el salón' },
+    { src: 'FOTOS/montaje-4.jpg', alt: 'Esferas espejo y haces de luz sobre la pista de baile' },
+    { src: 'FOTOS/montaje-5.jpg', alt: 'Techo drapeado con candiles de cristal sobre el banquete' }
+  ],
+
+  /* ---- Cristalería y plaqué ------------------------------- */
+  cristaleria: [
+    { src: 'FOTOS/cristaleria-1.jpg', alt: 'Copas de cristal sobre mesa vestida' },
+    { src: 'FOTOS/cristaleria-2.jpg', alt: 'Cristalería en tonos azules con plaqué' },
+    { src: 'FOTOS/cristaleria-3.jpg', alt: 'Plaqué y cristalería en montaje formal' },
+    { src: 'FOTOS/cristaleria-4.jpg', alt: 'Menú impreso sobre plato con plaqué' }
+  ],
+
+  /* ---- Mobiliario de lujo --------------------------------- */
+  mobiliario: [
+    { src: 'FOTOS/mobiliario-1.jpg', alt: 'Sillones y mesa de diseño en un montaje de MOZÉ' },
+    { src: 'FOTOS/mobiliario-2.jpg', alt: 'Mesa redonda con sillas de madera y bejuco en el jardín' },
+    { src: 'FOTOS/mobiliario-3.jpg', alt: 'Mesa imperial con candiles e iluminación en rojo' }
+  ],
+
+  /* ---- Catálogos con pestañas ------------------------------
+     Cada catálogo vive dentro de su sección, DEBAJO de la galería
+     principal: la foto grande no se toca, esto se suma.
+     Añadir un grupo = añadir una pestaña. Añadir una pieza =
+     añadir una línea. No hay que tocar el maquetado.
+     Los nombres de las piezas son descriptivos: sustitúyelos por
+     los del catálogo real cuando el cliente los pase.          */
+  catalogos: [
+    {
+      id: 'catCristaleria',
+      etiqueta: 'Elige las piezas de tu mesa',
+      aria: 'Cristalería y plaqué',
+      grupos: [
+        { titulo: 'Cristalería', piezas: [
+          { src: 'FOTOS/catalogo/cristaleria-1.jpg', nombre: 'Copa labrada en ámbar', alt: 'Copa de agua labrada en color ámbar' },
+          { src: 'FOTOS/catalogo/cristaleria-2.jpg', nombre: 'Copa flauta', alt: 'Copa flauta de cristal transparente' },
+          { src: 'FOTOS/catalogo/cristaleria-3.jpg', nombre: 'Copa en rosa', alt: 'Copa de vino en cristal rosa' }
+        ] },
+        { titulo: 'Plaqué', piezas: [
+          { src: 'FOTOS/catalogo/plaque-1.jpg', nombre: 'Plato base dorado', alt: 'Plato base con borde dorado en ráfagas' },
+          { src: 'FOTOS/catalogo/plaque-2.jpg', nombre: 'Plato con filo dorado', alt: 'Plato blanco con filo dorado' },
+          { src: 'FOTOS/catalogo/plaque-3.jpg', nombre: 'Plato floral en azul', alt: 'Plato con estampado floral azul y filo dorado' }
+        ] }
+      ]
+    },
+    {
+      id: 'catMobiliario',
+      etiqueta: 'Elige el montaje de tu mesa',
+      aria: 'Manteles y sillas',
+      grupos: [
+        { titulo: 'Manteles', piezas: [
+          { src: 'FOTOS/catalogo/mantel-1.jpg', nombre: 'Mantel blanco', alt: 'Mesa vestida con mantel blanco' },
+          { src: 'FOTOS/catalogo/mantel-2.jpg', nombre: 'Mantel negro', alt: 'Mesa vestida con mantel negro' },
+          { src: 'FOTOS/catalogo/mantel-3.jpg', nombre: 'Mantel floral en azul', alt: 'Mesa vestida con mantel de estampado floral azul' }
+        ] },
+        { titulo: 'Sillas', piezas: [
+          { src: 'FOTOS/catalogo/silla-1.jpg', nombre: 'Silla negra', alt: 'Silla de respaldo ovalado en negro' },
+          { src: 'FOTOS/catalogo/silla-2.jpg', nombre: 'Silla dorada tapizada', alt: 'Silla dorada con asiento y respaldo tapizados en beige' },
+          { src: 'FOTOS/catalogo/silla-3.jpg', nombre: 'Silla de madera con bejuco', alt: 'Silla de madera con respaldo y asiento de bejuco' }
+        ] }
+      ]
+    }
+  ],
+
+  /* ---- Fondo de "Una amplia trayectoria" -------------------
+     Cuatro columnas del mismo ancho. Cada una acepta imagen o
+     vídeo: si 'video' tiene ruta, se usa el vídeo; si está
+     vacío, se usa la imagen.
+
+     SOBRE EL PESO · un clip vertical de 5 s pesa unos 150 KB,
+     así que las cuatro en vídeo suman ~610 KB: menos que las
+     cuatro fotos. El archivo NO es el problema.
+     Lo que sí cuesta es que cuatro vídeos se decodifican a la
+     vez, y con el del hero serían cinco: en teléfonos de gama
+     media eso calienta y gasta batería. Por eso el vídeo aquí
+     nunca se carga en pantallas chicas, aunque lo actives.
+
+     PARA PROBAR CON VÍDEO: pon los archivos en VIDEO/ y escribe
+     la ruta, por ejemplo  video: 'VIDEO/aval-1.mp4'            */
+  avalColumnas: [
+    { img: 'FOTOS/aval-1.jpg', video: '', alt: 'Salón montado para una ceremonia' },
+    { img: 'FOTOS/aval-2.jpg', video: '', alt: 'Montaje con techo intervenido en dorado' },
+    { img: 'FOTOS/aval-3.jpg', video: '', alt: 'Ceremonia nocturna en el jardín' },
+    { img: 'FOTOS/aval-4.jpg', video: '', alt: 'Meseros sirviendo durante un evento' }
+  ],
+
+  /* ---- Logotipo -------------------------------------------
+     Dos versiones con usos distintos:
+     · logo   — blanco sobre transparente, para la barra, donde
+                se superpone al vídeo y necesita fondo libre.
+     · marca  — versión a color completa, para la intro y el
+                bloque de contacto.                             */
+  logo:  { src: 'FOTOS/logo.png',  alt: 'MOZÉ centro de eventos' },
+
+  /* ---- Marca a color · intro y bloque de contacto -------- */
+  marca: { src: 'FOTOS/marca.png', alt: 'MOZÉ centro de eventos' }
+};
+
+
+/* ═══════════════════════════════════════════════════════════════
+   DATOS DE CONTENIDO
+   Listas que generan markup. Editar aquí, nunca en el HTML.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Distintas maneras de usar nuestros espacios.
+   ---------------------------------------------------------------
+   Cada categoría con 'fotos' se vuelve un botón: al pulsarlo se
+   abre su galería en el visor. Las que no tienen fotos siguen
+   llevando al formulario de contacto. Para darle galería a una,
+   basta con añadirle su arreglo 'fotos'.
+
+   NOTA · "Weddings" y "Bodas" eran la misma categoría duplicada:
+   quedan fusionadas en una sola entrada, "BODA".               */
+const TIPOS_EVENTO = [
+  { nombre: 'XV AÑOS', fotos: [
+    { src: 'FOTOS/eventos/xv-anios-1.jpg', alt: 'XV años con reloj monumental y arco floral en MOZÉ' },
+    { src: 'FOTOS/eventos/xv-anios-2.jpg', alt: 'Mesas con centros florales altos durante unos XV años' },
+    { src: 'FOTOS/eventos/xv-anios-3.jpg', alt: 'Salón con techo drapeado en rojo para unos XV años' },
+    { src: 'FOTOS/eventos/xv-anios-4.jpg', alt: 'Techo drapeado y montaje en tonos lila para unos XV años' }
+  ] },
+  { nombre: 'BODA', fotos: [
+    { src: 'FOTOS/eventos/boda-1.jpg', alt: 'Ceremonia de boda entre árboles iluminados' },
+    { src: 'FOTOS/eventos/boda-2.jpg', alt: 'Banquete de boda con pista iluminada y follaje colgante' },
+    { src: 'FOTOS/eventos/boda-3.jpg', alt: 'Montaje de boda en blanco con centros florales altos' },
+    { src: 'FOTOS/eventos/boda-4.jpg', alt: 'Ceremonia de boda en el jardín con montaje floral' }
+  ] },
+  { nombre: 'BABY SHOWER', fotos: [
+    { src: 'FOTOS/eventos/baby-shower-1.jpg', alt: 'Baby shower con muro de follaje y montaje en blanco' },
+    { src: 'FOTOS/eventos/baby-shower-2.jpg', alt: 'Mesa de baby shower con globos y flores en tonos rosa' },
+    { src: 'FOTOS/eventos/baby-shower-3.jpg', alt: 'Salón montado para un baby shower' },
+    { src: 'FOTOS/eventos/baby-shower-4.jpg', alt: 'Mesa de baby shower con vajilla verde y lámpara de flecos' }
+  ] },
+  { nombre: 'CUMPLEAÑOS', fotos: [
+    { src: 'FOTOS/eventos/cumpleanios-1.jpg', alt: 'Mesa montada con cristalería azul para un cumpleaños' },
+    { src: 'FOTOS/eventos/cumpleanios-2.jpg', alt: 'Salón con iluminación morada y pista para un cumpleaños' },
+    { src: 'FOTOS/eventos/cumpleanios-3.jpg', alt: 'Mesa imperial montada para una comida de cumpleaños' },
+    { src: 'FOTOS/eventos/cumpleanios-4.jpg', alt: 'Pista iluminada durante una fiesta de cumpleaños' }
+  ] },
+  { nombre: 'PRIMERA COMUNIÓN', fotos: [
+    { src: 'FOTOS/eventos/comunion-1.jpg', alt: 'Mesa de primera comunión en menta y rosa con cristalería ámbar' },
+    { src: 'FOTOS/eventos/comunion-2.jpg', alt: 'Centro floral y servicio de mesa para una primera comunión' }
+  ] },
+  { nombre: 'BAUTIZO', fotos: [
+    { src: 'FOTOS/eventos/bautizo-1.jpg', alt: 'Salón con techo drapeado y mesas montadas para un bautizo' },
+    { src: 'FOTOS/eventos/bautizo-2.jpg', alt: 'Centros de mesa con globos aerostáticos para un bautizo' }
+  ] },
+  { nombre: 'REUNIONES EMPRESARIALES', fotos: [
+    { src: 'FOTOS/eventos/empresarial-1.jpg', alt: 'Reunión empresarial en montaje tipo auditorio' },
+    { src: 'FOTOS/eventos/empresarial-2.jpg', alt: 'Salón empresarial con pantallas y techo intervenido' },
+    { src: 'FOTOS/eventos/empresarial-3.jpg', alt: 'Sillas y pantallas montadas para una conferencia' },
+    { src: 'FOTOS/eventos/empresarial-4.jpg', alt: 'Escenario y presídium para un evento empresarial' }
+  ] },
+  { nombre: 'DESPEDIDA DE SOLTERA', fotos: [
+    { src: 'FOTOS/eventos/despedida-1.jpg', alt: 'Baile en la pista del jardín durante una despedida de soltera' }
+  ] },
+  { nombre: 'FIESTA EN JARDÍN', fotos: [
+    { src: 'FOTOS/eventos/jardin-ev-1.jpg', alt: 'Fiesta en el jardín con centros florales altos' },
+    { src: 'FOTOS/eventos/jardin-ev-2.jpg', alt: 'Pista y mesas iluminadas en el jardín de MOZÉ' },
+    { src: 'FOTOS/eventos/jardin-ev-3.jpg', alt: 'Jardín iluminado con luces colgantes entre los árboles' },
+    { src: 'FOTOS/eventos/jardin-ev-4.jpg', alt: 'Mesas largas bajo los árboles del jardín' }
+  ] },
+  { nombre: 'PROM', fotos: [
+    { src: 'FOTOS/eventos/prom-1.jpg', alt: 'Salón montado para un prom con pista central' },
+    { src: 'FOTOS/eventos/prom-2.jpg', alt: 'Iluminación de color durante un prom' },
+    { src: 'FOTOS/eventos/prom-3.jpg', alt: 'Escenario y letrero luminoso en una graduación' }
+  ] },
+  { nombre: 'ENTREGA DE DOCUMENTOS', fotos: [
+    { src: 'FOTOS/eventos/documentos-1.jpg', alt: 'Salón montado para una entrega de documentos' },
+    { src: 'FOTOS/eventos/documentos-2.jpg', alt: 'Techo drapeado y sillas para una entrega de documentos' }
+  ] },
+  { nombre: 'SALÓN TIPO AUDITORIO', fotos: [
+    { src: 'FOTOS/eventos/auditorio-1.jpg', alt: 'Salón montado en formato auditorio con sillas alineadas' },
+    { src: 'FOTOS/eventos/auditorio-2.jpg', alt: 'Montaje tipo auditorio con pantallas laterales' },
+    { src: 'FOTOS/eventos/auditorio-3.jpg', alt: 'Escenario y sillas en montaje de auditorio' },
+    { src: 'FOTOS/eventos/auditorio-4.jpg', alt: 'Vista panorámica del salón en montaje de auditorio' }
+  ] }
+];
+
+/* Todo en un mismo lugar. Lista editorial con revelado de imagen.
+   NOTA: MOZÉ no ofrece audio ni iluminación como servicio propio.
+   Lo que sí ofrece es capacidad de montaje.                        */
+const SERVICIOS = [
+  { n: '01', nombre: 'BANQUETERA',
+    texto: 'Prueba de menú: preparamos una degustación antes del gran día, con opciones para niños y opciones gourmet.',
+    foto: 'FOTOS/sv-banquetera.jpg',
+    alt: 'Servicio de banquete durante un evento en MOZÉ',
+    ancla: '#banquetera' },
+  { n: '02', nombre: 'MONTAJES ESPECTACULARES',
+    texto: 'Capacidad y facilidades para realizar los montajes que mejor se acomoden a lo que imaginaste.',
+    foto: 'FOTOS/sv-montajes.jpg',
+    alt: 'Techo intervenido con esferas colgantes',
+    ancla: '#montajes' },
+  { n: '03', nombre: 'MOBILIARIO PROPIO',
+    texto: 'Mesas, sillas y mobiliario propio para montar tu evento.',
+    foto: 'FOTOS/sv-mobiliario.jpg',
+    alt: 'Mesa curva y sillas transparentes montadas en el salón' },
+  { n: '04', nombre: 'MOBILIARIO DE LUJO',
+    texto: 'Piezas de diseño para montajes que se salen de lo común.',
+    foto: 'FOTOS/sv-mobiliario-lujo.jpg',
+    alt: 'Mesa imperial con candiles en un montaje de lujo',
+    ancla: '#mobiliario' },
+  { n: '05', nombre: 'MESAS Y SILLAS',
+    texto: 'Aliados con Table Set te ofrecemos una amplia variedad de mesas y sillas.',
+    foto: 'FOTOS/sv-mesas.jpg',
+    alt: 'Mesa vestida con sillas doradas' },
+  { n: '06', nombre: 'CRISTALERÍA Y PLAQUÉ',
+    texto: 'Opciones versátiles y elegantes.',
+    foto: 'FOTOS/sv-cristaleria.jpg',
+    alt: 'Copas de cristal sobre mesa vestida',
+    ancla: '#cristaleria' },
+  { n: '07', nombre: 'SERVICIO POR PROFESIONALES',
+    texto: 'Vendedoras, chefs, capitanes de meseros, meseros y personal de limpieza entrenados y con más de 13 años de experiencia en el ámbito.',
+    foto: 'FOTOS/mesero.JPEG',
+    alt: 'Mesero sirviendo durante un evento en MOZÉ' }
+];
+
+/* Reseñas de Google, transcritas a mano.
+   ---------------------------------------------------------------
+   CÓMO LLENARLAS: abre tu ficha de Google Maps, elige 3 o 4
+   reseñas reales y cópialas tal cual, sin editar el texto.
+   Usa el nombre tal como aparece publicado.
+
+   Mientras el arreglo esté vacío la sección muestra sólo la
+   calificación y el botón a Google. No se inventa ninguna.
+
+   const RESENAS = [
+     { texto: 'Texto exacto de la reseña.', autor: 'Nombre Apellido', fecha: 'marzo 2025' }
+   ];                                                              */
+const RESENAS = [];
+
+/* Opciones del formulario · salen de TIPOS_EVENTO, así que la
+   lista nunca se desincroniza de la sección de eventos.
+   Se ordenan alfabéticamente al pintarse.                        */
+const OPCIONES_FORM = TIPOS_EVENTO.map(e => e.nombre).concat('OTRO');
+
+
+/* ═══════════════════════════════════════════════════════════════
+   TIPOGRAFÍAS · se cargan sólo las de la opción elegida
+   ═══════════════════════════════════════════════════════════════ */
+const TIPOGRAFIAS = {
+  a: { nombre:'Editorial clásica', display:"'Cormorant Garamond',Georgia,serif",
+       sans:"'Jost','Helvetica Neue',Arial,sans-serif",
+       google:'Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600',
+       escala:1, peso:300, pesoAlto:600, track:'-.01em' },
+  b: { nombre:'Contemporánea', display:"'Instrument Serif',Georgia,serif",
+       sans:"'Inter Tight','Helvetica Neue',Arial,sans-serif",
+       google:'Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600',
+       escala:.86, peso:400, pesoAlto:400, track:'-.02em' },
+  c: { nombre:'Alto contraste', display:"'Bodoni Moda',Didot,Georgia,serif",
+       sans:"'Archivo','Helvetica Neue',Arial,sans-serif",
+       google:'Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=Archivo:wght@300;400;500;600',
+       escala:.9, peso:400, pesoAlto:700, track:'-.015em' },
+  d: { nombre:'Cálida', display:"'Fraunces',Georgia,serif",
+       sans:"'Manrope','Helvetica Neue',Arial,sans-serif",
+       google:'Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Manrope:wght@300;400;500;600',
+       escala:.9, peso:300, pesoAlto:600, track:'-.015em' }
+};
+
+/* Atajo de pruebas: index.html?t=c  ·  index.html?t=b            */
+(function aplicarTipografia() {
+  const q = new URLSearchParams(location.search);
+  if (q.get('t')) SITE.tipografia = q.get('t');
+  const t = TIPOGRAFIAS[(SITE.tipografia || 'a').toLowerCase()] || TIPOGRAFIAS.a;
+
+  const l = document.createElement('link');
+  l.rel = 'stylesheet';
+  l.href = 'https://fonts.googleapis.com/css2?family=' + t.google + '&display=swap';
+  document.head.appendChild(l);
+
+  const r = document.documentElement.style;
+  r.setProperty('--display', t.display);
+  r.setProperty('--sans',    t.sans);
+  r.setProperty('--tscale',  String(t.escala));
+  r.setProperty('--dweight', String(t.peso));
+  // Instrument Serif sólo existe en un peso: ahí pesoAlto == peso
+  // y el volumen lo aporta el tamaño, no el grosor.
+  r.setProperty('--dweight-alto', String(t.pesoAlto || t.peso));
+  r.setProperty('--dtrack',  t.track);
+})();
+
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   MOZÉ · SISTEMA DE DISEÑO
+   ═══════════════════════════════════════════════════════════════ */
+
+:root{
+  /* ---- Paleta MOZÉ ------------------------------------------
+     Muestreada del logo: turquesa #32D9C3 y gris #545454.
+
+     El turquesa puro da 1.77:1 sobre blanco — ilegible como
+     texto. Por eso hay dos: el puro para fondos oscuros, rellenos
+     y elementos gráficos; el oscuro para texto sobre claro.     */
+  --verde:      #16786C;   /* texto y CTAs sobre fondo claro · 5.3:1 */
+  --verde-alto: #32D9C3;   /* turquesa del logo · sobre oscuro       */
+  --verde-bajo: #0F5A50;   /* hovers y profundidad                   */
+
+  --bone:#FFFFFF;          /* el logo usa blanco puro               */
+  --paper:#EFF1F0;
+  --ink:#3A3A3A;           /* gris del logo, un punto más profundo  */
+  --ink-2:#545454;         /* gris exacto del logo                  */
+  --muted:#6E6E6E;         /* sube de contraste: 5.3:1 sobre blanco */
+  /* Texto sobre fondo oscuro: colores sólidos, nunca opacidad.
+     Un texto translúcido cambia de contraste según lo que tenga
+     detrás; uno sólido es predecible siempre.                    */
+  --sobre-osc:   #FFFFFF;   /* principal · 11.4:1 */
+  --sobre-osc-2: #D6D6D6;   /* secundario · 7.9:1 */
+  --line:rgba(58,58,58,.22);
+  --line-light:rgba(255,255,255,.34);
+
+  --display:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+  --tscale:1; --dweight:300; --dweight-alto:600; --dtrack:-.01em;
+
+  --pad:clamp(1.25rem,5vw,5.5rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --nav-h:76px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:var(--nav-h)}
+html.is-locked,html.is-locked body{overflow:hidden;height:100%}
+
+body{
+  background:var(--bone);color:var(--ink);
+  font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;   /* clip (no hidden): recorta sin romper position:sticky */
+}
+
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul,ol{list-style:none}
+::selection{background:var(--verde);color:var(--bone)}
+
+/* Accesibilidad: foco visible en todo elemento interactivo */
+:focus-visible{outline:2px solid var(--verde-alto);outline-offset:3px;border-radius:2px}
+.salta{
+  position:absolute;left:-9999px;top:0;z-index:9999;
+  background:var(--ink);color:var(--bone);padding:1rem 1.5rem;
+}
+.salta:focus{left:0}
+.oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Textura ---------- */
+.grain{
+  position:fixed;inset:0;z-index:7000;pointer-events:none;opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+/* ---------- Tipografía ---------- */
+.eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--verde-alto);overflow:hidden}
+/* Apertura de sección · una regla a todo lo ancho, un número
+   grande y la etiqueta en el color del texto. Se tiene que ver
+   desde el rabillo del ojo que empieza un capítulo nuevo. */
+.rotulo{
+  display:flex;align-items:baseline;gap:clamp(1rem,2vw,1.75rem);
+  padding-top:clamp(1.4rem,2.4vw,2rem);border-top:2px solid var(--ink);
+  margin-bottom:clamp(1.5rem,2.8vw,2.2rem);
+  font-size:clamp(1.35rem,2.9vw,2.4rem);font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+}
+/* Un filo verde antes de la etiqueta, en lugar del numeral */
+.rotulo::before{
+  content:'';width:clamp(40px,5.5vw,84px);height:4px;background:var(--verde);
+  flex:none;align-self:center;
+}
+.rotulo--claro::before{background:var(--verde-alto)}
+.rotulo--claro{color:var(--bone);border-top-color:var(--sobre-osc-2)}
+.rotulo--claro span{color:var(--verde-alto)}
+.rotulo--centro{justify-content:center;max-width:46ch;margin-inline:auto}
+
+h1,h2,h3{font-family:var(--display);font-weight:var(--dweight);line-height:1.04;letter-spacing:var(--dtrack)}
+/* Los títulos de sección llevan volumen. El h1 del hero se queda
+   ligero a propósito: a 7rem el peso grueso se vuelve un muro. */
+h2{font-weight:var(--dweight-alto);font-size:calc(var(--tscale) * clamp(3rem,8.4vw,7.2rem));line-height:.94}
+h3{font-weight:var(--dweight-alto);font-size:calc(var(--tscale) * clamp(1.9rem,4.2vw,3.3rem))}
+em{font-style:italic;color:var(--verde)}
+.oscuro em,.hero em{color:var(--verde-alto)}
+.line{display:block;overflow:hidden;padding-top:.14em;margin-top:-.14em}
+.line>span{display:block}
+.num{font-family:var(--display);font-weight:var(--dweight);font-variant-numeric:tabular-nums}
+
+section{scroll-margin-top:var(--nav-h)}
+.oscuro{background:var(--ink);color:var(--bone)}
+.papel{background:var(--paper)}
+
+/* ---------- Botones ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:1.1rem 2.2rem;border-radius:100px;border:1px solid transparent;
+  position:relative;isolation:isolate;overflow:hidden;
+  transition:color .4s var(--ease);
+}
+.btn::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;z-index:-1;
+  background:var(--verde);transform:translateY(101%);transition:transform .55s var(--ease);
+}
+.btn:hover::before,.btn:focus-visible::before{transform:translateY(0)}
+.btn--solido{background:var(--ink);color:var(--bone)}
+.btn--verde{background:var(--verde);color:var(--bone)}
+.btn--verde::before{background:var(--verde-bajo)}
+.btn--linea{border-color:currentColor}
+.btn--linea:hover,.btn--linea:focus-visible{color:var(--bone)}
+.btn--grande{padding:1.35rem 3rem;font-size:.8rem}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;width:100%;z-index:600;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  padding:1.25rem var(--pad);color:var(--bone);
+  transition:background .4s var(--ease),padding .4s var(--ease);
+}
+.nav.solida{background:var(--ink);padding-top:.9rem;padding-bottom:.9rem}
+/* Logotipo · alto fijo, ancho automático: no se deforma nunca */
+.nav__logo{display:flex;align-items:center;flex:none}
+.nav__logo img{
+  width:auto;height:clamp(30px,3.4vw,42px);object-fit:contain;
+  transition:height .4s var(--ease);
+}
+.nav.solida .nav__logo img{height:clamp(26px,2.8vw,34px)}
+.nav__links{display:flex;gap:1.9rem}
+.nav__links a{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  position:relative;padding-bottom:3px;color:var(--sobre-osc);
+}
+.nav__links a::after{
+  content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--verde-alto);
+  transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease);
+}
+.nav__links a:hover,.nav__links a.activo{color:var(--verde-alto)}
+.nav__links a:hover::after,.nav__links a.activo::after{transform:scaleX(1);transform-origin:left}
+/* CTA principal · §22: más grande, con aire lateral, nunca pegado al borde */
+.nav__cta{
+  flex:none;margin-left:.5rem;
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--verde);color:var(--bone);
+  padding:.95rem 1.9rem;border-radius:100px;
+  transition:background .35s var(--ease),transform .35s var(--ease);
+}
+.nav__cta:hover,.nav__cta:focus-visible{background:var(--verde-alto);color:var(--ink)}
+.nav__menu{display:none;width:34px;height:18px;position:relative}
+.nav__menu i{position:absolute;left:0;width:100%;height:1px;background:currentColor;transition:transform .4s var(--ease)}
+.nav__menu i:first-child{top:4px}
+.nav__menu i:last-child{bottom:4px}
+.nav__menu.abierto i:first-child{transform:translateY(5px) rotate(45deg)}
+.nav__menu.abierto i:last-child{transform:translateY(-6px) rotate(-45deg)}
+
+/* Menú móvil · §20: fondo sólido, sin lavar el contenido */
+.menu{
+  position:fixed;inset:0;z-index:500;background:var(--ink);color:var(--bone);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:6rem var(--pad) var(--pad);clip-path:inset(0 0 100% 0);visibility:hidden;
+}
+.menu.abierto{visibility:visible}
+.menu a{
+  overflow:hidden;padding-top:.12em;
+  font-family:var(--display);font-weight:var(--dweight-alto);
+  font-size:calc(var(--tscale) * clamp(2.2rem,10vw,3.8rem));
+  line-height:1.12;display:block;opacity:0;
+}
+.menu__pie{
+  margin-top:auto;padding-top:2rem;border-top:1px solid var(--line-light);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  font-size:.76rem;letter-spacing:.1em;color:var(--sobre-osc-2);
+}
+
+/* ---------- Cursor ---------- */
+.cursor{position:fixed;top:0;left:0;z-index:8000;pointer-events:none;mix-blend-mode:difference;opacity:0}
+.cursor span{position:absolute;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor__pt{width:6px;height:6px;background:#fff}
+.cursor__ar{width:38px;height:38px;border:1px solid rgba(255,255,255,.55);transition:width .3s var(--ease),height .3s var(--ease),opacity .3s}
+body.cursor-on .cursor{opacity:1}
+body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
+
+/* ---------- Loader ---------- */
+/* Intro · la marca ocupa el ancho de la pantalla y se va rápido.
+   Sin porcentaje ni barra: eran tipografía pequeña llenando un
+   vacío que ahora no existe. */
+.loader{
+  position:fixed;inset:0;z-index:9000;background:var(--ink);color:var(--bone);
+  display:flex;align-items:center;justify-content:center;padding:var(--pad);
+}
+.loader__centro{display:flex;flex-direction:column;align-items:center;gap:clamp(.75rem,1.6vw,1.5rem)}
+/* Máscara de entrada: el logotipo se desliza desde abajo. */
+.loader__linea{display:block;overflow:hidden;line-height:0}
+.loader__logo{display:block;width:min(68vw,620px);height:auto;object-fit:contain}
+.loader__pie{
+  font-size:clamp(.7rem,1.5vw,1rem);font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--verde-alto);
+  text-align:center;
+}
+
+
+/* ---------- Cinta cinética ---------- */
+.ribbon{overflow:hidden;border-block:1px solid var(--line-light);padding:1.1rem 0;background:var(--ink);color:var(--bone)}
+.ribbon__track{display:flex;align-items:center;gap:1.6rem;white-space:nowrap;will-change:transform}
+.ribbon__track span{font-family:var(--display);font-size:calc(var(--tscale) * clamp(1.4rem,3.4vw,2.6rem));line-height:1}
+.ribbon__track i{color:var(--verde-alto);font-style:normal;font-size:1rem}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════════ */
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 var(--pad) clamp(1.5rem,4vw,3rem);color:var(--bone);overflow:hidden;
+}
+.hero__media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero__marco{position:absolute;inset:0;overflow:hidden}
+.hero__marco img{transform:scale(1.08)}
+/* El vídeo cubre el marco y se funde encima del fotograma de
+   respaldo, que ya está pintado: así no hay parpadeo al arrancar. */
+.hero__marco video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s var(--ease);
+}
+.hero__marco video.corriendo{opacity:1}
+/* §20 · velo lo justo para que el texto sea legible, sin lavar la foto */
+.hero__velo{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(26,26,26,.72) 0%,rgba(26,26,26,.40) 38%,rgba(26,26,26,.62) 70%,rgba(26,26,26,.92) 100%);
+}
+.hero__texto{max-width:1000px;margin-bottom:clamp(2rem,6vh,4rem)}
+.hero__titulo{
+  font-family:var(--display);font-weight:var(--dweight);
+  font-size:calc(var(--tscale) * clamp(3.4rem,11vw,10.5rem));
+  line-height:.99;letter-spacing:-.02em;margin:1.25rem 0 2rem;
+}
+.hero__titulo em{color:var(--bone);position:relative}
+.hero__titulo em::after{
+  content:'';position:absolute;left:0;bottom:.1em;width:100%;height:2px;background:var(--verde-alto);
+  transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease);
+}
+.hero__titulo em.subrayado::after{transform:scaleX(1)}
+.hero__meta{display:flex;flex-wrap:wrap;gap:2.5rem;align-items:flex-end;justify-content:space-between}
+.hero__meta p{max-width:36ch;font-size:.96rem;line-height:1.75;color:var(--sobre-osc)}
+.hero__acciones{display:flex;gap:.85rem;flex-wrap:wrap}
+.hero .btn--solido{background:var(--bone);color:var(--ink)}
+.hero .btn--solido:hover{color:var(--bone)}
+.hero__pie{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding-top:1.25rem;border-top:1px solid var(--line-light);
+  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2);
+}
+.pista{display:flex;align-items:center;gap:.7rem}
+.pista i{display:block;width:34px;height:1px;background:currentColor;transform-origin:left;animation:pista 2.4s var(--ease) infinite}
+@keyframes pista{0%,100%{transform:scaleX(.25)}50%{transform:scaleX(1)}}
+
+/* ═══════════════════════════════════════════════════════════════
+   MANIFIESTO
+   ═══════════════════════════════════════════════════════════════ */
+.manif{padding:clamp(4rem,10vh,7rem) var(--pad)}
+/* Bloque ancho y bajo en vez de columna alta: el texto se lee
+   de corrido, centrado, y la sección ocupa menos altura. */
+.manif__t{
+  font-family:var(--display);font-weight:var(--dweight);
+  font-size:calc(var(--tscale) * clamp(1.4rem,2.9vw,2.5rem));
+  line-height:1.28;letter-spacing:-.01em;
+  max-width:46ch;margin:0 auto;text-align:center;
+}
+/* Las comillas van fuera del reparto por palabras del reveal:
+   así no cuentan como palabra ni alteran el escalonado. */
+.manif__t::before{content:'\201C';color:var(--verde);margin-right:.04em}
+.manif__t::after{content:'\201D';color:var(--verde);margin-left:.04em}
+.manif__t .w{display:inline-block;overflow:hidden;vertical-align:top;padding-top:.16em;margin-top:-.16em}
+.manif__t .w>i{display:inline-block;font-style:normal}
+
+/* ═══════════════════════════════════════════════════════════════
+   ESPACIOS · un solo escenario, dos espacios
+   ---------------------------------------------------------------
+   Antes eran dos bloques idénticos apilados (~1600px). Ahora
+   comparten escenario y se alternan: la mitad de alto y la foto
+   ocupa el doble.
+   ═══════════════════════════════════════════════════════════════ */
+.espacios{padding:clamp(5rem,12vh,8rem) var(--pad) clamp(4rem,10vh,7rem)}
+
+.espacio{
+  display:grid;grid-template-columns:1.5fr .8fr;
+  gap:clamp(1.75rem,4vw,3.5rem);align-items:start;
+}
+/* Los dos espacios se apilan; una regla fina los separa sin que
+   la composición de cada uno cambie. */
+.espacio + .espacio{
+  margin-top:clamp(3rem,7vw,5.5rem);
+  padding-top:clamp(3rem,7vw,5.5rem);
+  border-top:1px solid var(--line);
+}
+
+/* Contenedor de la galería del espacio: el formato lo pone .gal */
+.espacio__media{min-width:0}
+.espacio__ficha{padding-top:.5rem}
+.espacio__et{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.espacio__nombre{
+  font-family:var(--display);font-weight:var(--dweight-alto);
+  font-size:calc(var(--tscale) * clamp(2.8rem,6.5vw,5rem));
+  line-height:.98;letter-spacing:.01em;margin:.3rem 0 .5rem;
+}
+/* La capacidad pesa por tipografía, no por una píldora de color */
+.espacio__cap{
+  font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--verde);padding-bottom:1.25rem;margin-bottom:1.25rem;
+  border-bottom:1px solid var(--line);
+}
+.espacio__ficha p.texto{color:var(--ink-2);line-height:1.8;font-size:.94rem;margin-bottom:1.35rem}
+/* Rasgos como lista tipográfica, sin cápsulas ni bordes */
+.espacio__rasgos{display:flex;flex-wrap:wrap;gap:.35rem 0}
+.espacio__rasgos li{
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.espacio__rasgos li:not(:last-child)::after{
+  content:'/';margin:0 .7rem;color:var(--verde);opacity:.55;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GALERÍA · reutilizable (espacios, jardín, banquetera, cristalería)
+   ---------------------------------------------------------------
+   Miniaturas visibles en vez de barras: se VE que hay más fotos.
+   Flechas con fondo real, no zonas transparentes.
+   ═══════════════════════════════════════════════════════════════ */
+.gal{position:relative}
+.gal__marco{
+  position:relative;overflow:hidden;aspect-ratio:3/2;
+  background:var(--paper);cursor:zoom-in;
+}
+.gal--alto .gal__marco{aspect-ratio:4/5}
+/* Variante panorámica · sólo montajes. Mismo componente que el
+   resto del sitio, con un encuadre más ancho y miniaturas
+   apaisadas: las tomas del salón se leen mejor así. */
+.gal--cine .gal__marco{aspect-ratio:16/9}
+.gal--cine .gal__minis button{flex:0 0 clamp(84px,11vw,116px);aspect-ratio:16/9}
+.gal__marco img{
+  position:absolute;inset:0;opacity:0;
+  transition:opacity .55s var(--ease);
+}
+.gal__marco img.activa{opacity:1}
+
+/* Señal de ampliar: siempre visible, no hay que adivinarla */
+.gal__zoom{
+  position:absolute;left:1rem;bottom:1rem;z-index:3;pointer-events:none;
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.5rem .9rem;border-radius:100px;
+  background:rgba(42,42,42,.72);color:var(--bone);
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  transition:background .35s var(--ease);
+}
+.gal__marco:hover .gal__zoom{background:var(--verde)}
+.gal__zoom svg{width:12px;height:12px;flex:none}
+
+/* Flechas visibles */
+.gal__paso{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.92);color:var(--ink);font-size:1rem;
+  transition:background .3s var(--ease),color .3s var(--ease);
+}
+.gal__paso:hover,.gal__paso:focus-visible{background:var(--verde);color:var(--bone)}
+.gal__prev{left:.85rem}
+.gal__next{right:.85rem}
+
+/* Miniaturas: el usuario ve cuántas fotos hay */
+/* Con muchas fotos la tira se desliza en lugar de desbordarse */
+.gal__minis{
+  display:flex;gap:.5rem;margin-top:.7rem;
+  overflow-x:auto;overflow-y:hidden;padding-bottom:.2rem;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.gal__minis::-webkit-scrollbar{display:none}
+.gal__minis button{
+  position:relative;flex:0 0 clamp(54px,7vw,74px);aspect-ratio:1/1;overflow:hidden;
+  opacity:.42;transition:opacity .35s var(--ease);
+}
+.gal__minis button::after{
+  content:'';position:absolute;inset:0;border:2px solid var(--verde);
+  opacity:0;transition:opacity .3s var(--ease);
+}
+.oscuro .gal__minis button::after{border-color:var(--verde-alto)}
+.gal__minis button:hover{opacity:.8}
+.gal__minis button[aria-selected="true"]{opacity:1}
+.gal__minis button[aria-selected="true"]::after{opacity:1}
+.gal__cuenta{
+  margin-left:.4rem;align-self:center;flex:none;padding-left:.4rem;font-size:.64rem;letter-spacing:.2em;
+  color:var(--muted);font-variant-numeric:tabular-nums;
+}
+.oscuro .gal__cuenta{color:var(--sobre-osc-2)}
+
+/* ═══════════════════════════════════════════════════════════════
+   ÍNDICE CON REVELADO · eventos y servicios
+   §43 · el texto NUNCA se mueve: sólo fondo, línea, color e imagen
+   ═══════════════════════════════════════════════════════════════ */
+.indice{position:relative}
+.indice__fila{
+  position:relative;isolation:isolate;display:grid;align-items:center;
+  border-bottom:1px solid var(--line-light);
+  transition:color .45s var(--ease);
+}
+.indice__fila::before{
+  content:'';position:absolute;left:calc(var(--pad) * -1);right:calc(var(--pad) * -1);top:0;bottom:0;
+  background:var(--verde);transform:scaleY(0);transform-origin:bottom;z-index:-1;
+  transition:transform .55s var(--ease);
+}
+/* Resaltado por CSS puro: ya no depende de JavaScript */
+.indice__fila:hover::before,
+.indice__fila:focus-visible::before{transform:scaleY(1);transform-origin:top}
+.indice__fila:hover,
+.indice__fila:focus-visible{color:var(--bone)}
+
+/* Eventos · retícula de tres columnas
+   ---------------------------------------------------------------
+   Veinte categorías en una sola columna medían ~1500px. En tres
+   columnas son siete filas: ~470px. Se conserva el hover, el
+   relleno de fondo y el fondo fotográfico de la sección. */
+.eventos{padding:clamp(5rem,12vh,8rem) var(--pad) clamp(5rem,12vh,8rem)}
+.eventos__lista{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:clamp(1.25rem,3vw,3rem);
+  border-top:1px solid var(--line-light);margin-top:clamp(1.75rem,4vw,2.75rem);
+}
+.ev{
+  grid-template-columns:auto minmax(0,1fr) auto;gap:.85rem;
+  padding:clamp(.7rem,1.4vw,1rem) 0;
+}
+/* El relleno sangra sólo un poco fuera de la celda, no a todo el ancho */
+.ev::before{left:-.7rem;right:-.7rem}
+.ev__n{font-size:.6rem;letter-spacing:.16em;color:var(--verde-alto);font-variant-numeric:tabular-nums}
+/* §44 · display en mayúsculas, con tracking abierto */
+.ev__nombre{
+  font-family:var(--display);font-weight:var(--dweight);
+  font-size:calc(var(--tscale) * clamp(1rem,1.55vw,1.35rem));
+  line-height:1.15;letter-spacing:.03em;text-transform:uppercase;
+}
+.ev__flecha{font-style:normal;font-size:.85rem;opacity:0;transition:opacity .35s var(--ease)}
+.ev:hover .ev__flecha,.ev:focus-visible .ev__flecha{opacity:1}
+/* Las categorías con galería son botones: hay que neutralizar el
+   estilo nativo sin perder la retícula de .indice__fila. */
+button.ev{width:100%;text-align:left;font:inherit;appearance:none}
+/* Marca de galería · siempre visible. En táctil no hay hover que
+   revele la señal, así que no puede depender de él. */
+.ev__fotos{
+  display:inline-flex;align-items:center;gap:.34rem;flex:none;
+  font-size:.58rem;letter-spacing:.14em;color:var(--sobre-osc-2);
+  font-variant-numeric:tabular-nums;transition:color .35s var(--ease);
+}
+.ev__fotos svg{width:11px;height:11px;flex:none}
+.ev:hover .ev__fotos,.ev:focus-visible .ev__fotos{color:var(--bone)}
+.ev__linea{
+  position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--verde-alto);
+  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);
+}
+.ev:hover .ev__linea,.ev:focus-visible .ev__linea{transform:scaleX(1)}
+
+.eventos{position:relative}
+
+/* ═══════════════════════════════════════════════════════════════
+   UNA AMPLIA TRAYECTORIA
+   ---------------------------------------------------------------
+   Antes eran cuatro números en fila: el único bloque con aire de
+   dashboard en un sitio editorial, y repetía datos ya dichos.
+   Ahora las cifras viven dentro de una frase, a escala de titular.
+   ═══════════════════════════════════════════════════════════════ */
+.aval{position:relative;isolation:isolate;overflow:hidden;padding:clamp(5rem,12vh,9rem) var(--pad)}
+/* Cuatro columnas iguales de fondo. Cada celda admite imagen o
+   vídeo sin cambiar el maquetado. */
+.aval__fondo{
+  position:absolute;inset:0;z-index:-1;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+}
+.aval__col{position:relative;overflow:hidden;background:var(--ink)}
+.aval__col img,.aval__col video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+}
+.aval__col video{opacity:0;transition:opacity .8s var(--ease)}
+.aval__col video.corriendo{opacity:1}
+/* Velo: sin él la frase no se lee sobre fotografía clara */
+.aval__fondo::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(26,26,26,.88) 0%,rgba(26,26,26,.80) 45%,rgba(26,26,26,.90) 100%);
+}
+.aval__cuerpo{position:relative;z-index:1}
+.aval__frase{
+  max-width:28ch;line-height:1.16;
+  font-size:calc(var(--tscale) * clamp(1.9rem,4.6vw,3.8rem));
+}
+.aval__n{
+  color:var(--verde-alto);
+  font-size:1.28em;line-height:.8;
+  padding-right:.04em;letter-spacing:-.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICIOS · VITRINA
+   ---------------------------------------------------------------
+   Paneles verticales con la tipografía girada. Es el único eje
+   vertical del sitio: no se parece a ninguna otra sección.
+   El ancho total es constante — se reparte con flex-grow — así
+   que abrir un panel nunca desplaza el contenido de abajo.
+   ═══════════════════════════════════════════════════════════════ */
+.vitrina{padding:clamp(5rem,12vh,9rem) 0 clamp(5rem,12vh,8rem)}
+.vitrina__head{
+  padding:0 var(--pad);display:grid;grid-template-columns:1fr auto;
+  gap:2rem;align-items:end;margin-bottom:clamp(2.5rem,6vw,4rem);
+}
+.vitrina__apoyo{color:var(--sobre-osc-2);max-width:34ch;font-size:.92rem}
+
+.vitrina__panels{
+  display:flex;gap:1px;margin:0 var(--pad);
+  height:min(74vh,640px);background:var(--line-light);
+  contain:layout paint;
+}
+
+.vp{
+  flex:1 1 0;position:relative;overflow:hidden;background:var(--ink);
+  color:var(--bone);display:block;min-width:0;
+  transition:flex-grow .7s var(--ease);
+}
+.vp__foto{position:absolute;inset:0}
+.vp__foto img{
+  opacity:.62;filter:saturate(.8);transform:scale(1.07);
+  transition:opacity .65s var(--ease),filter .65s var(--ease),transform 1s var(--ease);
+}
+/* Velo permanente para que el nombre se lea sobre la foto */
+.vp__velo{
+  position:absolute;inset:0;opacity:1;transition:opacity .55s var(--ease);
+  background:linear-gradient(180deg,rgba(42,42,42,.34) 0%,rgba(42,42,42,.5) 45%,rgba(42,42,42,.88) 100%);
+}
+.vp.activo .vp__velo{
+  background:linear-gradient(180deg,rgba(42,42,42,.12) 0%,rgba(42,42,42,.3) 45%,rgba(42,42,42,.82) 100%);
+}
+/* Filo verde que marca el panel activo */
+.vp::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;z-index:3;
+  background:var(--verde-alto);transform:scaleX(0);transform-origin:left;
+  transition:transform .6s var(--ease);
+}
+
+/* Tipografía girada: se lee de abajo hacia arriba */
+.vp__eje{
+  position:absolute;left:0;bottom:0;z-index:2;
+  padding:1.6rem 1.3rem;display:flex;align-items:center;gap:1.1rem;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+}
+.vp__n{
+  font-size:.64rem;letter-spacing:.24em;color:var(--verde-alto);
+  font-variant-numeric:tabular-nums;flex:none;
+}
+.vp__nombre{
+  font-family:var(--display);font-weight:var(--dweight-alto);
+  font-size:calc(var(--tscale) * clamp(.92rem,1.5vw,1.32rem));
+  letter-spacing:.1em;text-transform:uppercase;line-height:1;white-space:nowrap;
+  color:var(--bone);text-shadow:0 1px 14px rgba(42,42,42,.55);transition:color .5s var(--ease);
+}
+/* El detalle sólo aparece y desaparece: nunca se desplaza */
+.vp__detalle{
+  position:absolute;right:0;bottom:0;z-index:2;
+  padding:2rem;max-width:32ch;
+  opacity:0;pointer-events:none;transition:opacity .45s var(--ease) .1s;
+}
+.vp__detalle p{font-size:.88rem;line-height:1.7;color:var(--sobre-osc);margin-bottom:1rem}
+.vp__ver{
+  font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--verde-alto);display:inline-flex;align-items:center;gap:.5rem;
+}
+
+.vp.activo{flex-grow:3.4}
+.vp.activo::after{transform:scaleX(1)}
+.vp.activo .vp__foto img{opacity:1;filter:none;transform:scale(1)}
+.vp.activo .vp__nombre{color:var(--bone)}
+.vp.activo .vp__detalle{opacity:1;pointer-events:auto}
+.vitrina__panels.hay-activo .vp:not(.activo){flex-grow:.72}
+.vitrina__panels.hay-activo .vp:not(.activo) .vp__nombre{color:var(--sobre-osc-2)}
+
+.vitrina__pista{
+  margin:1.5rem var(--pad) 0;display:flex;align-items:center;gap:.7rem;
+  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2);
+}
+.vitrina__pista i{display:block;width:26px;height:1px;background:currentColor}
+.solo-movil{display:none}
+
+/* ═══════════════════════════════════════════════════════════════
+   BLOQUES DESTACADOS · banquetera, montajes, cristalería, servicio
+   ═══════════════════════════════════════════════════════════════ */
+.destacado{
+  padding:clamp(5rem,12vh,9rem) var(--pad);
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+}
+.destacado--invertido .destacado__media{order:-1}
+.destacado__texto h2{margin-bottom:1.25rem}
+.destacado__texto .sub{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--verde);margin-bottom:1.5rem;
+}
+.oscuro .destacado__texto .sub{color:var(--verde-alto)}
+.destacado__texto p.cuerpo{max-width:46ch;line-height:1.85;margin-bottom:2rem;color:var(--ink-2)}
+.oscuro .destacado__texto p.cuerpo{color:var(--sobre-osc-2)}
+.destacado__media figure{overflow:hidden;aspect-ratio:3/2;cursor:zoom-in}
+
+/* ═══════════════════════════════════════════════════════════════
+   CATÁLOGO CON PESTAÑAS · dentro de cristalería y de mobiliario
+   ---------------------------------------------------------------
+   Va DEBAJO de la galería principal, ocupando las dos columnas:
+   la foto grande de la sección no se toca, esto se suma.
+   Las pestañas son hermanas entre sí — cristalería y plaqué son
+   la misma familia — así que ocultar una no esconde contenido
+   distinto, sólo la otra mitad del mismo catálogo.
+   ═══════════════════════════════════════════════════════════════ */
+.catalogo{
+  grid-column:1/-1;
+  margin-top:clamp(2.5rem,6vw,4rem);
+  padding-top:clamp(1.5rem,3vw,2.25rem);
+  border-top:1px solid var(--line);
+}
+.oscuro .catalogo{border-top-color:var(--line-light)}
+.catalogo__cab{
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+  gap:.75rem 2rem;margin-bottom:clamp(1.25rem,3vw,2rem);
+}
+.catalogo__et{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.catalogo__tabs{display:flex;gap:clamp(1.25rem,3vw,2.5rem)}
+.catalogo__tabs button{
+  position:relative;padding:.35rem 0;
+  font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);transition:color .35s var(--ease);
+}
+/* El subrayado marca la pestaña activa. El texto no se mueve. */
+.catalogo__tabs button::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--verde);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);
+}
+.catalogo__tabs button:hover{color:var(--ink)}
+.catalogo__tabs button[aria-selected="true"]{color:var(--ink)}
+.catalogo__tabs button[aria-selected="true"]::after{transform:scaleX(1)}
+.oscuro .catalogo__tabs button:hover,
+.oscuro .catalogo__tabs button[aria-selected="true"]{color:var(--bone)}
+.oscuro .catalogo__tabs button::after{background:var(--verde-alto)}
+
+.catalogo__panel{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,2vw,1.5rem)}
+.catalogo__panel[hidden]{display:none}
+.catalogo figure{margin:0;cursor:zoom-in}
+.catalogo figure img{
+  aspect-ratio:4/5;object-fit:cover;background:#FFFFFF;
+  transition:opacity .4s var(--ease);
+}
+.catalogo figure:hover img,.catalogo figure:focus-visible img{opacity:.84}
+.catalogo figcaption{
+  margin-top:.6rem;font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);line-height:1.5;
+}
+
+/* Montajes · galería panorámica a todo el ancho de la sección */
+.montajes{padding:clamp(5rem,12vh,9rem) var(--pad)}
+.montajes__head{max-width:760px;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.montajes__gal{max-width:1400px}
+
+/* ═══════════════════════════════════════════════════════════════
+   TESTIMONIOS
+   ═══════════════════════════════════════════════════════════════ */
+.testi{padding:clamp(5rem,12vh,8rem) var(--pad);text-align:center}
+.testi h2{margin-bottom:1.75rem}
+.testi__nota{
+  color:var(--sobre-osc-2);font-size:.72rem;letter-spacing:.2em;
+  text-transform:uppercase;margin:0 auto 1.75rem;
+}
+
+/* Calificación de Google */
+.marca-g{
+  display:inline-flex;align-items:center;gap:clamp(.75rem,2vw,1.35rem);
+  padding:.9rem 1.5rem;border:1px solid var(--line-light);border-radius:100px;
+  margin-bottom:clamp(2rem,5vw,3rem);
+}
+.marca-g__nota{
+  font-family:var(--display);font-weight:var(--dweight-alto);
+  font-size:calc(var(--tscale) * clamp(1.9rem,3.6vw,2.9rem));line-height:1;
+}
+.marca-g__estrellas{display:flex;gap:.18rem;color:var(--verde-alto)}
+.marca-g__estrellas svg{width:15px;height:15px}
+.marca-g__estrellas .vacia{opacity:.28}
+.marca-g__txt{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sobre-osc-2);text-align:left;line-height:1.5;
+}
+
+/* Citas · una a la vez, a escala de titular */
+.citas{position:relative;max-width:28ch;margin:0 auto clamp(1.75rem,4vw,2.5rem)}
+.citas:empty{display:none}
+.cita{
+  position:absolute;inset:0;opacity:0;pointer-events:none;
+  transition:opacity .5s var(--ease);
+}
+.cita.activa{position:relative;opacity:1;pointer-events:auto}
+.cita blockquote{
+  font-family:var(--display);font-weight:var(--dweight);
+  font-size:calc(var(--tscale) * clamp(1.35rem,2.9vw,2.2rem));
+  line-height:1.28;margin-bottom:1.1rem;
+}
+.cita blockquote::before{content:'\201C';color:var(--verde-alto);margin-right:.06em}
+.cita blockquote::after{content:'\201D';color:var(--verde-alto);margin-left:.06em}
+.cita figcaption{
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--sobre-osc-2);
+}
+.citas__mando{
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+  margin-top:clamp(1.25rem,3vw,1.75rem);
+}
+.citas__mando button{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.1);color:var(--bone);
+  transition:background .3s var(--ease);
+}
+.citas__mando button:hover,.citas__mando button:focus-visible{background:var(--verde)}
+.citas__cuenta{
+  font-size:.68rem;letter-spacing:.2em;color:var(--sobre-osc-2);
+  font-variant-numeric:tabular-nums;min-width:4.5em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTACTO · §18
+   ═══════════════════════════════════════════════════════════════ */
+.contacto{
+  padding:clamp(5rem,12vh,9rem) var(--pad) clamp(4rem,8vw,6rem);
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,6vw,5rem);align-items:start;
+}
+.contacto__titulo{
+  font-size:calc(var(--tscale) * clamp(3rem,8vw,6.4rem));line-height:.96;margin-bottom:1.5rem;
+}
+.contacto__intro{color:var(--sobre-osc-2);max-width:40ch;margin-bottom:2.5rem;font-size:.95rem}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 1.75rem}
+.campo{display:flex;flex-direction:column}
+.campo--full{grid-column:1/-1}
+.campo label{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2);margin-bottom:.55rem}
+.campo input,.campo textarea{
+  width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-light);
+  color:var(--bone);font-family:var(--sans);font-size:.95rem;font-weight:300;
+  padding:.6rem 0;border-radius:0;transition:border-color .35s var(--ease);
+}
+.campo textarea{resize:vertical;min-height:66px}
+.campo input::placeholder,.campo textarea::placeholder{color:#A8A8A8;opacity:1}
+.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--verde-alto)}
+/* Selector propio · el <select> nativo no permite limitar la
+   altura de su desplegable; con doce opciones aparecían todas de
+   golpe. Este muestra seis y desplaza el resto. */
+.campo__et{
+  font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--sobre-osc-2);margin-bottom:.55rem;display:block;
+}
+.lista{position:relative}
+.lista__btn{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:transparent;border:0;border-bottom:1px solid var(--line-light);
+  color:var(--bone);font-family:var(--sans);font-size:.95rem;font-weight:300;
+  padding:.6rem 0;text-align:left;transition:border-color .35s var(--ease);
+}
+.lista__btn svg{width:12px;height:8px;flex:none;color:var(--verde-alto);transition:transform .35s var(--ease)}
+.lista__btn[aria-expanded="true"]{border-color:var(--verde-alto)}
+.lista__btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.lista__btn[data-vacio] span{color:#A8A8A8}
+.lista__menu{
+  position:absolute;top:calc(100% + .4rem);left:0;right:0;z-index:60;
+  background:#2A2A2A;border:1px solid var(--line-light);
+  max-height:calc(6 * 2.85rem);   /* seis opciones a la vista */
+  overflow-y:auto;overscroll-behavior:contain;
+}
+.lista__menu::-webkit-scrollbar{width:8px}
+.lista__menu::-webkit-scrollbar-track{background:rgba(255,255,255,.06)}
+.lista__menu::-webkit-scrollbar-thumb{background:var(--verde);border-radius:8px}
+.lista__menu{scrollbar-width:thin;scrollbar-color:var(--verde) rgba(255,255,255,.06)}
+.lista__menu li{
+  padding:.8rem 1rem;font-size:.88rem;color:var(--sobre-osc-2);cursor:pointer;
+  transition:background .2s var(--ease),color .2s var(--ease);
+}
+.lista__menu li:hover,.lista__menu li.marcada{background:var(--verde);color:var(--bone)}
+.lista__menu li[aria-selected="true"]{color:var(--bone);font-weight:500}
+.lista__menu li[aria-selected="true"]::after{content:' ✓';color:var(--verde-alto)}
+.campo.error .lista__btn{border-color:#D08A6A}
+
+.campo input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1);opacity:.5;cursor:pointer}
+.campo.error input{border-color:#D08A6A}
+.campo__err{font-size:.68rem;color:#D08A6A;margin-top:.4rem}
+.form__enviar{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem;margin-top:.5rem}
+.form__nota{font-size:.72rem;color:var(--sobre-osc-2);max-width:34ch;line-height:1.6}
+
+.contacto__lado{display:flex;flex-direction:column;gap:1.25rem}
+/* La marca cierra el bloque de contacto. Ancho completo, sin
+   recorte: es un logotipo, no una fotografía. */
+.contacto__marca img{width:100%;height:auto;object-fit:contain}
+.datos{border-top:1px solid var(--line-light);padding-top:1.5rem;display:grid;gap:1.1rem}
+.datos div{display:grid;gap:.25rem}
+.datos dt{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sobre-osc-2)}
+.datos dd a,.datos dd{font-family:var(--display);font-size:calc(var(--tscale) * clamp(1.15rem,2.2vw,1.6rem));line-height:1.3}
+.datos dd a{position:relative}
+.datos dd a::after{
+  content:'';position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:var(--verde-alto);
+  transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease);
+}
+.datos dd a:hover::after,.datos dd a:focus-visible::after{transform:scaleX(1);transform-origin:left}
+
+/* ═══════════════════════════════════════════════════════════════
+   UBICACIÓN
+   ═══════════════════════════════════════════════════════════════ */
+.ubic{padding:clamp(5rem,12vh,9rem) var(--pad)}
+.ubic__head{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:clamp(2rem,5vw,3rem)}
+.ubic__head p{color:var(--muted);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+.ubic__mapa{
+  position:relative;aspect-ratio:21/9;overflow:hidden;border-radius:2px;
+  background:var(--paper);border:1px solid var(--line);
+}
+.ubic__mapa iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(1) contrast(1.05)}
+.ubic__mapa:hover iframe{filter:none}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════ */
+.footer{background:var(--ink);color:var(--bone);padding:0 var(--pad) 2rem}
+.footer__marca{
+  font-family:var(--display);font-weight:var(--dweight-alto);
+  font-size:calc(var(--tscale) * clamp(3.2rem,15vw,11.5rem));
+  line-height:.95;letter-spacing:.03em;border-bottom:1px solid var(--line-light);padding:.1em 0 .1em;
+}
+.footer__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:2.5rem 0;font-size:.82rem;color:var(--sobre-osc-2)}
+.footer__cols a{display:block;transition:color .3s}
+.footer__cols a:hover{color:var(--verde-alto)}
+.footer__legal{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;
+  border-top:1px solid var(--line-light);font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sobre-osc-2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHTBOX · §41
+   ═══════════════════════════════════════════════════════════════ */
+.visor{
+  position:fixed;inset:0;z-index:8500;display:none;
+  align-items:center;justify-content:center;padding:clamp(1rem,4vw,3rem);
+  background:rgba(26,26,26,.97);
+}
+.visor.abierto{display:flex}
+.visor__fig{position:relative;max-width:min(1100px,92vw);max-height:88vh}
+.visor__fig img{
+  width:auto;height:auto;max-width:min(1100px,92vw);max-height:82vh;object-fit:contain;
+}
+.visor__pie{
+  margin-top:.9rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sobre-osc-2);text-align:center;
+}
+/* La X: alto contraste, área de toque generosa */
+.visor__x{
+  position:fixed;top:clamp(1rem,3vw,2rem);right:clamp(1rem,3vw,2rem);z-index:2;
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bone);color:var(--ink);
+  transition:background .3s var(--ease),transform .3s var(--ease);
+}
+.visor__x:hover,.visor__x:focus-visible{background:var(--verde-alto);transform:rotate(90deg)}
+.visor__x svg{width:18px;height:18px}
+.visor__paso{
+  position:fixed;top:50%;transform:translateY(-50%);z-index:2;
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.12);color:var(--bone);
+  transition:background .3s var(--ease);
+}
+.visor__paso:hover,.visor__paso:focus-visible{background:var(--verde)}
+.visor__prev{left:clamp(.5rem,2vw,1.5rem)}
+.visor__next{right:clamp(.5rem,2vw,1.5rem)}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE · §27
+   Revisado en 1920 · 1440 · 1280 · 1024 · 768 · 430 · 390 · 375
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ---- 1280px: la nav empieza a apretarse ---- */
+@media (max-width:1280px){
+  .nav__links{gap:1.35rem}
+  .nav__links a{font-size:.68rem;letter-spacing:.12em}
+  .vp__detalle{max-width:26ch;padding:1.5rem}
+}
+
+/* ---- 1024px: tablet ---- */
+@media (max-width:1024px){
+  :root{--nav-h:68px}
+  .nav__links{display:none}
+  .nav__menu{display:block}
+  .nav__cta{padding:.8rem 1.4rem;font-size:.66rem}
+
+  .espacio{grid-template-columns:1fr;gap:1.75rem}
+
+  .destacado,.destacado--invertido{grid-template-columns:1fr;gap:2rem}
+  .destacado__media,.destacado--invertido .destacado__media{order:-1}
+
+  .eventos__lista{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contacto{grid-template-columns:1fr;gap:2.5rem}
+  .ubic__head{grid-template-columns:1fr;gap:1rem;align-items:start}
+
+  .vitrina__head{grid-template-columns:1fr;gap:1rem;align-items:start}
+  /* Sin hover: filmstrip con scroll-snap. Se conserva el eje
+     vertical, no se degrada a un acordeón como otras secciones. */
+  .vitrina__panels{
+    height:66svh;min-height:420px;gap:.5rem;margin:0;padding:0 var(--pad);
+    background:none;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .vitrina__panels::-webkit-scrollbar{display:none}
+  .vp{flex:0 0 min(76%,320px);scroll-snap-align:center;transition:none}
+  .vp,.vitrina__panels.hay-activo .vp:not(.activo){flex-grow:0}
+  .vp__foto img{opacity:.95;filter:none;transform:none}
+  .vp__velo{opacity:1}
+  .vp__nombre,.vitrina__panels.hay-activo .vp:not(.activo) .vp__nombre{color:var(--bone)}
+  .vp__detalle{opacity:1;pointer-events:auto;left:3.6rem;right:0;max-width:none;padding:1.25rem}
+  .vp::after{transform:scaleX(1)}
+  .solo-desktop{display:none}
+  .solo-movil{display:inline}
+
+
+  .ubic__mapa{aspect-ratio:16/9}
+}
+
+/* ---- 768px y abajo: móvil ---- */
+@media (max-width:768px){
+  body{font-size:15px}
+  .cursor{display:none}
+  /* Sin hover no hay fondo fotográfico: no se monta ninguna escucha */
+
+  .hero{min-height:92svh}
+  .hero__meta{flex-direction:column;align-items:flex-start;gap:1.75rem}
+  .hero__acciones{width:100%}
+  .hero__acciones .btn{flex:1;min-width:150px}
+  .hero__pie span:last-child{display:none}
+
+  .manif__t{max-width:none}
+
+  .espacio__rasgos li{font-size:.62rem}
+  .espacio__rasgos li:not(:last-child)::after{margin:0 .5rem}
+  .gal__minis button{flex:0 0 58px}
+  .gal__paso{width:38px;height:38px}
+  .gal__prev{left:.5rem}
+  .gal__next{right:.5rem}
+  .gal__zoom{left:.6rem;bottom:.6rem;padding:.42rem .7rem;font-size:.56rem}
+
+  .catalogo__panel{gap:.55rem}
+  .catalogo figcaption{font-size:.58rem;letter-spacing:.08em;margin-top:.45rem}
+  .catalogo__tabs{gap:1.5rem}
+  .catalogo__tabs button{font-size:.68rem;letter-spacing:.16em}
+
+  .eventos__lista{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.1rem;margin-top:1.25rem}
+  .ev{grid-template-columns:auto minmax(0,1fr) auto;gap:.5rem;padding:.65rem 0}
+  .ev__flecha{display:none}
+  .ev__fotos{gap:.24rem;font-size:.54rem;letter-spacing:.1em}
+  .ev__fotos svg{width:10px;height:10px}
+  .ev__nombre{font-size:calc(var(--tscale) * clamp(.88rem,3.4vw,1.05rem));letter-spacing:.02em}
+  .ev__n{font-size:.55rem}
+
+  .aval__frase{max-width:none}
+
+  .vp{flex:0 0 min(82%,300px)}
+  .vp__nombre{font-size:calc(var(--tscale) * .82rem);letter-spacing:.08em}
+  .vp__detalle p{font-size:.82rem}
+
+
+  .form{grid-template-columns:1fr;gap:1.35rem}
+  .campo--full,.campo{grid-column:1/-1}
+  .form__enviar .btn{width:100%}
+
+  .footer__cols{grid-template-columns:1fr;gap:1.5rem}
+  .visor__x{width:48px;height:48px}
+  .visor__paso{width:44px;height:44px}
+}
+
+/* ---- 430px y abajo: iPhone Pro Max y menores ---- */
+@media (max-width:430px){
+  .nav__cta{padding:.72rem 1.1rem;font-size:.62rem;letter-spacing:.12em}
+  .nav__logo{font-size:1.45rem}
+  .espacio__cap{font-size:.66rem;letter-spacing:.16em}
+  .gal__marco{aspect-ratio:4/5}
+  .gal__minis button{flex:0 0 50px}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   REDUCED MOTION · §26
+   La página sigue siendo completamente usable y navegable.
+   ═══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
+  }
+  html{scroll-behavior:auto}
+  .cursor{display:none}
+  .hero__marco img{transform:none}
+  .hero__titulo em::after{transform:scaleX(1)}
+  .ribbon__track,.ticker__track{transform:none!important}
+  .indice__fila::before{transition:none}
+  .vp{transition:none}
+  .vp__foto img{opacity:.9;filter:none;transform:none}
+  .vp__velo{opacity:1}
+}
+
+</style>
+</head>
+<body>
+<a class="salta" href="#contenido">Saltar al contenido</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__pt"></span><span class="cursor__ar"></span></div>
+
+<div class="loader" id="loader">
+  <div class="loader__centro">
+    <span class="loader__linea"><img class="loader__logo" id="loaderLogo" data-marca alt=""></span>
+    <span class="loader__pie" data-marca-pie>Centro de eventos · Tuxtla Gutiérrez</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <a href="#inicio" class="nav__logo" id="navLogo" aria-label="MOZÉ · inicio" data-iman></a>
+  <nav class="nav__links" aria-label="Principal">
+    <a href="#espacio">Espacios</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#montajes">Montajes</a>
+    <a href="#ubicacion">Ubicación</a>
+  </nav>
+  <a href="#contacto" class="nav__cta" data-iman>Agenda una visita</a>
+  <button class="nav__menu" id="navMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Menú">
+    <a href="#espacio">Espacios</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#montajes">Montajes</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#contacto">Agenda una visita</a>
+  </nav>
+  <div class="menu__pie">
+    <a data-tel data-tel-txt href="#">961 146 5809</a>
+    <a data-wa href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  </div>
+</div>
+
+<main id="contenido">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero__media">
+      <div class="hero__marco">
+        <img id="heroPoster" src="FOTOS/hero-poster.jpg" alt="Recorrido por las instalaciones de MOZÉ" fetchpriority="high" decoding="async">
+        <video id="heroVideo" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+      </div>
+      <div class="hero__velo"></div>
+    </div>
+    <div class="hero__texto">
+      <p class="eyebrow" data-h="1"><span>Tuxtla Gutiérrez · Chiapas</span></p>
+      <h1 class="hero__titulo">
+        <span class="line"><span data-h="2">Comparte</span></span>
+        <span class="line"><span data-h="2">tu <em>Sueño.</em></span></span>
+      </h1>
+      <div class="hero__meta">
+        <p data-h="3">Dos Salones, un Jardín, versatilidad para cualquier tipo de evento.</p>
+        <div class="hero__acciones" data-h="4">
+  
+          <a href="#espacio" class="btn btn--linea" data-iman>Conoce los espacios</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__pie">
+      <span class="pista" data-h="4"><i></i>Desliza</span>
+      <span data-h="4">13 años en el mercado</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ MANIFIESTO ═══════════ -->
+  <section class="manif">
+    <p class="rotulo rotulo--centro">En un mismo lugar</p>
+    <h2 class="manif__t" data-split>En MOZÉ nos gusta tratar tus eventos como si fueran nuestros también. Estaremos cada momento para revisar cada detalle del espacio, la comida y nuestros servicios de primera calidad</h2>
+  </section>
+
+  <!-- ═══════════ ESPACIOS ═══════════ -->
+  <section class="espacios" id="espacio" aria-labelledby="t-espacios">
+    <p class="rotulo">Los espacios</p>
+    <h2 id="t-espacios" class="oculto">Los espacios de MOZÉ</h2>
+    <div id="espaciosPanel"></div>
+  </section>
+
+  <!-- ═══════════ JARDÍN ═══════════ -->
+  <section class="destacado papel" id="jardin" aria-labelledby="t-jardin">
+    <div class="destacado__texto">
+      <p class="rotulo">Jardín</p>
+      <h2 id="t-jardin" data-fade>Un espacio abierto<br>y fresco.</h2>
+      <p class="cuerpo" data-fade>Extensa área con césped, perfecta para ceremonias o fiestas veraniegas, conectada con el Salón completo para combinaciones de montajes increíbles.</p>
+      <a href="#contacto" class="btn btn--verde" data-fade data-iman>Agenda una visita</a>
+    </div>
+    <div class="destacado__media" id="jardinGaleria" data-reveal></div>
+  </section>
+
+  <!-- ═══════════ EVENTOS ═══════════ -->
+  <section class="eventos oscuro" id="eventos" aria-labelledby="t-eventos">
+    <p class="rotulo rotulo--claro">Eventos</p>
+    <h2 id="t-eventos" data-fade>Distintas maneras<br>de usar nuestros espacios:</h2>
+    <div class="eventos__lista indice" id="eventosLista" data-stagger></div>
+  </section>
+
+  <!-- ═══════════ UNA AMPLIA TRAYECTORIA ═══════════ -->
+  <section class="aval oscuro" aria-labelledby="t-aval">
+    <div class="aval__fondo" id="avalFondo" aria-hidden="true"></div>
+    <div class="aval__cuerpo">
+      <p class="rotulo rotulo--claro">Una amplia trayectoria</p>
+      <h2 id="t-aval" class="aval__frase" data-fade></h2>
+    </div>
+  </section>
+
+  <!-- ═══════════ SERVICIOS · VITRINA ═══════════ -->
+  <section class="vitrina oscuro" id="servicios" aria-labelledby="t-servicios">
+    <div class="vitrina__head">
+      <div>
+        <p class="rotulo rotulo--claro">Servicios</p>
+        <h2 id="t-servicios" data-fade>En un mismo<br>lugar.</h2>
+      </div>
+      <p class="vitrina__apoyo" data-fade>En MOZÉ nos interesa poder ofrecerte excelentes opciones:</p>
+    </div>
+    <div class="vitrina__panels" id="vitrina"></div>
+    <p class="vitrina__pista" aria-hidden="true"><i></i><span class="solo-desktop">Recorre los paneles</span><span class="solo-movil">Desliza para ver todos</span></p>
+  </section>
+
+  <!-- ═══════════ BANQUETERA ═══════════ -->
+  <section class="destacado" id="banquetera" aria-labelledby="t-banq">
+    <div class="destacado__texto">
+      <p class="rotulo">Banquetera</p>
+      <h2 id="t-banq" data-fade>Banquetera<br>propia.</h2>
+      <p class="cuerpo" data-fade>Contamos con chefs profesionales cuyas opciones se adecuan a tu paladar.</p>
+      <a href="#contacto" class="btn btn--verde" data-fade data-iman>Agenda tu prueba de menú</a>
+    </div>
+    <div class="destacado__media" id="banqueteraGaleria" data-reveal></div>
+  </section>
+
+  <!-- ═══════════ MONTAJES ═══════════ -->
+  <section class="montajes papel" id="montajes" aria-labelledby="t-mont">
+    <div class="montajes__head">
+      <p class="rotulo">Montajes</p>
+      <h2 id="t-mont" data-fade>Montajes<br>espectaculares.</h2>
+      <p class="cuerpo" data-fade style="margin-top:1.25rem;max-width:44ch;color:var(--ink-2)">Capacidad y facilidades para realizar los montajes que mejor se acomoden a lo que imaginaste.</p>
+    </div>
+    <div class="montajes__gal" id="montajesGaleria" data-reveal></div>
+  </section>
+
+  <!-- ═══════════ CRISTALERÍA ═══════════ -->
+  <section class="destacado destacado--invertido" id="cristaleria" aria-labelledby="t-cris">
+    <div class="destacado__texto">
+      <p class="rotulo">Cristalería</p>
+      <h2 id="t-cris" data-fade>Cristalería<br>y plaqué.</h2>
+      <p class="sub" data-fade>Opciones versátiles y elegantes</p>
+      <p class="cuerpo" data-fade>Aliados con Table Set te ofrecemos una amplia variedad de mesas y sillas para completar el montaje.</p>
+      <a href="#contacto" class="btn btn--verde" data-fade data-iman>Solicitar catálogo</a>
+    </div>
+    <div class="destacado__media" id="cristaleriaGaleria" data-reveal></div>
+    <div class="catalogo" id="catCristaleria" data-fade></div>
+  </section>
+
+  <!-- ═══════════ MOBILIARIO DE LUJO ═══════════ -->
+  <section class="destacado papel" id="mobiliario" aria-labelledby="t-mob">
+    <div class="destacado__texto">
+      <p class="rotulo">Mobiliario</p>
+      <h2 id="t-mob" data-fade>Mobiliario<br>de lujo.</h2>
+      <p class="sub" data-fade>Piezas de diseño para tu montaje</p>
+      <p class="cuerpo" data-fade>Sillones, mesas y sillas fuera de catálogo para los montajes que se salen de lo común, disponibles aquí mismo.</p>
+      <a href="#contacto" class="btn btn--verde" data-fade data-iman>Solicitar catálogo</a>
+    </div>
+    <div class="destacado__media" id="mobiliarioGaleria" data-reveal></div>
+    <div class="catalogo" id="catMobiliario" data-fade></div>
+  </section>
+
+  <!-- ═══════════ SERVICIO PROFESIONAL ═══════════ -->
+  <section class="destacado destacado--invertido oscuro" aria-labelledby="t-serv">
+    <div class="destacado__texto">
+      <p class="rotulo rotulo--claro">Servicio</p>
+      <h2 id="t-serv" data-fade>Servicio por<br>profesionales.</h2>
+      <p class="cuerpo" data-fade>Expertos en servicio y atención al cliente a disposición de tus invitados.</p>
+    </div>
+    <div class="destacado__media" data-reveal>
+      <figure data-lightbox><img src="FOTOS/servicio.jpg" alt="Mesero sirviendo durante un evento en MOZÉ" loading="lazy" decoding="async"></figure>
+    </div>
+  </section>
+
+  <!-- ═══════════ CINTA ═══════════ -->
+  <div class="ribbon" data-marquee data-speed="26" data-dir="-1" aria-hidden="true">
+    <div class="ribbon__track">
+      <span>MOZÉ</span><i>·</i><span>Salón &amp; jardín</span><i>·</i><span>Banquetera propia</span><i>·</i><span>Tuxtla Gutiérrez</span><i>·</i>
+    </div>
+  </div>
+
+  <!-- ═══════════ TESTIMONIOS ═══════════ -->
+  <section class="testi oscuro" aria-labelledby="t-testi">
+    <p class="rotulo rotulo--claro" style="justify-content:center">Testimonios</p>
+    <h2 id="t-testi" data-fade>Lo que dicen<br>quienes ya celebraron.</h2>
+    <div class="marca-g" id="marcaGoogle" data-fade></div>
+    <div class="citas" id="citas"></div>
+    <p class="testi__nota" data-fade>Publicadas en Google, sin editar.</p>
+    <a class="btn btn--linea btn--grande" id="linkResenas" href="#" target="_blank" rel="noopener noreferrer" data-fade data-iman>Leerlas en Google</a>
+  </section>
+
+  <!-- ═══════════ CONTACTO ═══════════ -->
+  <section class="contacto oscuro" id="contacto" aria-labelledby="t-contacto">
+    <div>
+      <p class="rotulo rotulo--claro">Contacto</p>
+      <h2 id="t-contacto" class="contacto__titulo">Tu evento<br>empieza <em>aquí:</em></h2>
+      <p class="contacto__intro">Cuéntanos qué tienes en mente. Te respondemos con disponibilidad y una cotización, sin compromiso.</p>
+
+      <form class="form" id="form" novalidate>
+        <div class="campo">
+          <label for="f-nombre">Nombre</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="campo">
+          <label for="f-tel">Teléfono</label>
+          <input id="f-tel" name="telefono" type="tel" autocomplete="tel" placeholder="961 000 0000" required>
+        </div>
+        <div class="campo">
+          <label for="f-email">Email <span style="text-transform:none;letter-spacing:0">(opcional)</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com">
+        </div>
+        <div class="campo">
+          <span class="campo__et" id="f-tipo-et">Tipo de evento</span>
+          <div class="lista" id="listaTipo">
+            <button type="button" class="lista__btn" id="f-tipo-btn"
+                    aria-haspopup="listbox" aria-expanded="false"
+                    aria-labelledby="f-tipo-et f-tipo-btn">
+              <span data-valor>Elige una opción</span>
+              <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+            <ul class="lista__menu" id="f-tipo-menu" role="listbox" aria-labelledby="f-tipo-et" tabindex="-1" hidden></ul>
+            <input type="hidden" id="f-tipo" name="tipo">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="f-fecha">Fecha tentativa</label>
+          <input id="f-fecha" name="fecha" type="date">
+        </div>
+        <div class="campo">
+          <label for="f-inv">Invitados aprox.</label>
+          <input id="f-inv" name="invitados" type="number" min="1" max="800" placeholder="150">
+        </div>
+        <div class="campo campo--full">
+          <label for="f-msg">Mensaje</label>
+          <textarea id="f-msg" name="mensaje" rows="2" placeholder="Cuéntanos sobre tu evento…"></textarea>
+        </div>
+        <div class="form__enviar">
+          <button type="submit" class="btn btn--verde btn--grande" data-iman>Enviar por WhatsApp</button>
+          <p class="form__nota" id="formEstado" role="status" aria-live="polite">Se abre WhatsApp con tus datos ya escritos. Tú pulsas enviar.</p>
+        </div>
+      </form>
+    </div>
+
+    <aside class="contacto__lado">
+      <div class="contacto__marca" id="contactoMarca"></div>
+      <dl class="datos">
+        <div><dt>Teléfono</dt><dd><a data-tel data-tel-txt href="#">961 146 5809</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a data-wa href="#" target="_blank" rel="noopener noreferrer">Escríbenos</a></dd></div>
+        <div id="datoEmail"><dt>Email</dt><dd></dd></div>
+        <div id="datoDir"><dt>Dirección</dt><dd></dd></div>
+        <div id="datoHoras"><dt>Horarios</dt><dd></dd></div>
+        <div><dt>Instagram</dt><dd><a data-ig href="#" target="_blank" rel="noopener noreferrer">@mozecentrodeeventos</a></dd></div>
+      </dl>
+    </aside>
+  </section>
+
+  <!-- ═══════════ UBICACIÓN ═══════════ -->
+  <section class="ubic" id="ubicacion" aria-labelledby="t-ubic">
+    <div class="ubic__head">
+      <div>
+        <p class="rotulo">Ubicación</p>
+        <h2 id="t-ubic" data-fade>Cerca de las mejores<br>áreas de la ciudad.</h2>
+      </div>
+      <a class="btn btn--linea" id="comoLlegar" href="#" target="_blank" rel="noopener noreferrer" data-iman>Cómo llegar</a>
+    </div>
+    <div class="ubic__mapa" id="mapaMarco" data-reveal></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__marca">MOZÉ</div>
+  <div class="footer__cols">
+    <div>
+      <p>Centro de eventos</p>
+      <p>Tuxtla Gutiérrez, Chiapas</p>
+    </div>
+    <div>
+      <a data-tel data-tel-txt href="#">961 146 5809</a>
+      <a data-wa href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a data-ig href="#" target="_blank" rel="noopener noreferrer">@mozecentrodeeventos</a>
+    </div>
+    <div>
+      <p>Salón completo · JAS · Jardín</p>
+      <p>Banquetera y montajes</p>
+    </div>
+  </div>
+  <div class="footer__legal">
+    <span>© <span id="anio"></span> MOZÉ Centro de Eventos</span>
+    <a href="#inicio" data-iman>Volver arriba ↑</a>
+  </div>
+</footer>
+
+<div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Imagen ampliada" aria-hidden="true">
+  <button class="visor__x" id="visorX" aria-label="Cerrar imagen ampliada">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="visor__paso visor__prev" id="visorPrev" aria-label="Imagen anterior">←</button>
+  <button class="visor__paso visor__next" id="visorNext" aria-label="Imagen siguiente">→</button>
+  <figure class="visor__fig">
+    <img id="visorImg" alt="">
+    <figcaption class="visor__pie" id="visorPie"></figcaption>
+  </figure>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   MOZÉ · MOTOR
+   ═══════════════════════════════════════════════════════════════ */
+
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
+
+const QUIETO = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINO   = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+let abrirVisor = null;   // lo publica lightbox(); lo usa eventosGaleria()
+const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+
+/* ---------------------------------------------------------------
+   1 · Contenido generado desde los datos
+--------------------------------------------------------------- */
+function pintarEspacios() {
+  const cont = $('#espaciosPanel');
+  if (!cont) return;
+
+  // Los dos espacios se muestran uno tras otro: cada uno conserva
+  // su propia composición, sin pestañas de por medio.
+  cont.innerHTML = SITE.espacios.map((e, i) => `
+    <article class="espacio" id="${esc(e.id)}" aria-labelledby="nom-${esc(e.id)}">
+      <div class="espacio__media">
+        ${galeria(e.fotos, e.nombre, { prioritaria: i === 0 })}
+      </div>
+      <div class="espacio__ficha">
+        <p class="espacio__et">${esc(e.etiqueta)}</p>
+        <h3 class="espacio__nombre" id="nom-${esc(e.id)}">${esc(e.nombre)}</h3>
+        <p class="espacio__cap">${esc(e.capacidad)}</p>
+        <p class="texto">${esc(e.texto)}</p>
+        <ul class="espacio__rasgos">
+          ${e.rasgos.map(r => `<li>${esc(r)}</li>`).join('')}
+        </ul>
+      </div>
+    </article>`).join('');
+}
+
+/* Galería reutilizable · espacios, jardín, banquetera, cristalería
+   Miniaturas visibles, flechas reales y señal de ampliar.        */
+function galeria(fotos, titulo, { alto = false, cine = false, prioritaria = false } = {}) {
+  const unica = fotos.length < 2;
+
+  const imgs = fotos.map((f, i) => `
+        <img src="${esc(f.src)}" alt="${esc(f.alt)}" class="${i === 0 ? 'activa' : ''}"
+             ${prioritaria && i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`).join('');
+
+  const flechas = unica ? '' : `
+          <button type="button" class="gal__paso gal__prev" data-paso="-1" aria-label="Foto anterior">&#8592;</button>
+          <button type="button" class="gal__paso gal__next" data-paso="1" aria-label="Foto siguiente">&#8594;</button>`;
+
+  const minis = unica ? '' : `
+        <div class="gal__minis" role="tablist" aria-label="Fotos de ${esc(titulo)}">
+          ${fotos.map((f, i) => `
+          <button type="button" role="tab" aria-selected="${i === 0}" aria-label="Ver foto ${i + 1}: ${esc(f.alt)}">
+            <img src="${esc(f.src)}" alt="" loading="lazy" decoding="async">
+          </button>`).join('')}
+          <span class="gal__cuenta"><span data-actual>01</span> / ${String(fotos.length).padStart(2, '0')}</span>
+        </div>`;
+
+  return `
+      <div class="gal${alto ? ' gal--alto' : ''}${cine ? ' gal--cine' : ''}" data-gal aria-roledescription="carrusel" aria-label="${esc(titulo)}">
+        <div class="gal__marco" data-lightbox-grupo>
+          ${imgs}
+          <span class="gal__zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/>
+            </svg>Ampliar
+          </span>
+          ${flechas}
+        </div>
+        ${minis}
+      </div>`;
+}
+
+function pintarJardin() {
+  const c = $('#jardinGaleria');
+  if (c) c.innerHTML = galeria(SITE.jardin, 'el jardín');
+}
+
+function pintarBanquetera() {
+  const c = $('#banqueteraGaleria');
+  if (c) c.innerHTML = galeria(SITE.banquetera, 'la banquetera');
+}
+
+function pintarCristaleria() {
+  const c = $('#cristaleriaGaleria');
+  if (c) c.innerHTML = galeria(SITE.cristaleria, 'cristalería y plaqué', { alto: true });
+}
+
+function pintarMobiliario() {
+  const c = $('#mobiliarioGaleria');
+  if (c) c.innerHTML = galeria(SITE.mobiliario, 'mobiliario de lujo', { alto: true });
+}
+
+function pintarMontajes() {
+  const c = $('#montajesGaleria');
+  if (c) c.innerHTML = galeria(SITE.montajes, 'montajes espectaculares', { cine: true });
+}
+
+/* Icono de la marca de galería. Siempre visible: en táctil no hay
+   hover que revele nada, así que la señal no puede depender de él. */
+const ICONO_FOTO =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">' +
+  '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/>' +
+  '<path d="M21 16l-5-5-6 6"/></svg>';
+
+/* Catálogo con pestañas · cristalería/plaqué y manteles/sillas
+   ---------------------------------------------------------------
+   Un solo componente para los dos. Los paneles inactivos usan el
+   atributo 'hidden', así que ni los lee un lector de pantalla ni
+   entran en el orden de tabulación. */
+function pintarCatalogos() {
+  (SITE.catalogos || []).forEach(cat => {
+    const c = $('#' + cat.id);
+    if (!c || !cat.grupos || !cat.grupos.length) return;
+
+    const tabs = cat.grupos.map((g, i) => `
+        <button type="button" role="tab" id="${cat.id}-t${i}"
+                aria-controls="${cat.id}-p${i}" aria-selected="${i === 0}"
+                tabindex="${i === 0 ? 0 : -1}">${esc(g.titulo)}</button>`).join('');
+
+    const paneles = cat.grupos.map((g, i) => `
+      <div class="catalogo__panel" role="tabpanel" id="${cat.id}-p${i}"
+           aria-labelledby="${cat.id}-t${i}"${i === 0 ? '' : ' hidden'}>
+        ${g.piezas.map(pz => `
+        <figure data-lightbox>
+          <img src="${esc(pz.src)}" alt="${esc(pz.alt)}" loading="lazy" decoding="async">
+          <figcaption>${esc(pz.nombre)}</figcaption>
+        </figure>`).join('')}
+      </div>`).join('');
+
+    c.innerHTML = `
+      <div class="catalogo__cab">
+        ${cat.etiqueta ? `<p class="catalogo__et">${esc(cat.etiqueta)}</p>` : ''}
+        <div class="catalogo__tabs" role="tablist" aria-label="${esc(cat.aria || cat.id)}">${tabs}</div>
+      </div>
+      ${paneles}`;
+
+    const bs = $$('[role="tab"]', c);
+    const ps = $$('.catalogo__panel', c);
+
+    const ir = k => {
+      bs.forEach((b, j) => {
+        b.setAttribute('aria-selected', j === k);
+        b.tabIndex = j === k ? 0 : -1;
+      });
+      ps.forEach((pn, j) => { pn.hidden = j !== k; });
+      if (!QUIETO) {
+        gsap.fromTo($$('figure', ps[k]),
+          { y: 14, opacity: 0 },
+          { y: 0, opacity: 1, duration: .55, stagger: .06, ease: 'expo.out' });
+      }
+    };
+
+    bs.forEach((b, k) => {
+      b.addEventListener('click', () => ir(k));
+      b.addEventListener('keydown', e => {
+        let n = null;
+        if (e.key === 'ArrowRight') n = (k + 1) % bs.length;
+        if (e.key === 'ArrowLeft')  n = (k - 1 + bs.length) % bs.length;
+        if (e.key === 'Home')       n = 0;
+        if (e.key === 'End')        n = bs.length - 1;
+        if (n === null) return;
+        e.preventDefault(); ir(n); bs[n].focus();
+      });
+    });
+  });
+}
+
+function pintarEventos() {
+  const c = $('#eventosLista');
+  if (!c) return;
+
+  c.innerHTML = TIPOS_EVENTO.map((e, i) => {
+    const n = e.fotos ? e.fotos.length : 0;
+    const marca = n
+      ? `<span class="ev__fotos" aria-hidden="true">${ICONO_FOTO}${String(n).padStart(2, '0')}</span>`
+      : '<i class="ev__flecha" aria-hidden="true">→</i>';
+    const cuerpo = `
+      <span class="ev__n">${String(i + 1).padStart(2, '0')}</span>
+      <span class="ev__nombre">${esc(e.nombre)}</span>
+      ${marca}
+      <span class="ev__linea" aria-hidden="true"></span>`;
+
+    // Con fotos es un botón que abre el visor; sin fotos, un enlace
+    // al formulario, que es lo único útil que puede ofrecer.
+    return n
+      ? `<button type="button" class="indice__fila ev" data-evento="${i}"
+                 aria-label="Ver ${n} fotos de ${esc(e.nombre)}">${cuerpo}</button>`
+      : `<a class="indice__fila ev" href="#contacto">${cuerpo}</a>`;
+  }).join('');
+}
+
+/* Cada categoría con fotos abre su galería en el visor, igual que
+   las galerías de los espacios. Sin hover: pulsación, y nada más. */
+function eventosGaleria() {
+  $$('#eventosLista [data-evento]').forEach(fila => {
+    const e = TIPOS_EVENTO[+fila.dataset.evento];
+    if (!e || !e.fotos) return;
+    fila.addEventListener('click', () => abrirVisor && abrirVisor(e.fotos, 0, fila));
+  });
+}
+
+function pintarVitrina() {
+  const c = $('#vitrina');
+  if (!c) return;
+
+  c.innerHTML = SERVICIOS.map((s, i) => {
+    const tag = s.ancla ? 'a' : 'div';
+    const attrs = s.ancla
+      ? ` href="${esc(s.ancla)}"`
+      : ' tabindex="0" role="button"';
+    return `
+    <${tag} class="vp" data-i="${i}"${attrs} aria-expanded="${i === 0}">
+      <div class="vp__foto"><img src="${esc(s.foto)}" alt="${esc(s.alt)}" loading="lazy" decoding="async"></div>
+      <div class="vp__velo"></div>
+      <div class="vp__eje">
+        <span class="vp__n">${esc(s.n)}</span>
+        <span class="vp__nombre">${esc(s.nombre)}</span>
+      </div>
+      <div class="vp__detalle">
+        <p>${esc(s.texto)}</p>
+        ${s.ancla ? '<span class="vp__ver">Ver más &rarr;</span>' : ''}
+      </div>
+    </${tag}>`;
+  }).join('');
+}
+
+function pintarAvalFondo() {
+  const c = $('#avalFondo');
+  if (!c || !SITE.avalColumnas) return;
+
+  // El vídeo sólo entra en pantallas amplias, sin ahorro de datos
+  // y sin movimiento reducido: cuatro decodificadores a la vez
+  // pesan en CPU, aunque el archivo sea pequeño.
+  const ahorro = navigator.connection && (navigator.connection.saveData ||
+                 /2g/.test(navigator.connection.effectiveType || ''));
+  const permiteVideo = !QUIETO && !ahorro && window.innerWidth >= 1100;
+
+  c.innerHTML = SITE.avalColumnas.map(col => {
+    const conVideo = permiteVideo && col.video;
+    return `<div class="aval__col">
+        <img src="${esc(col.img)}" alt="" loading="lazy" decoding="async">
+        ${conVideo ? `<video src="${esc(col.video)}" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>` : ''}
+      </div>`;
+  }).join('');
+
+  const videos = $$('video', c);
+  if (!videos.length) return;
+
+  // Sólo se cargan y reproducen mientras la sección se ve
+  ScrollTrigger.create({
+    trigger: '.aval', start: 'top bottom', end: 'bottom top',
+    onToggle: s => {
+      videos.forEach(v => {
+        if (s.isActive) {
+          if (!v.dataset.listo) { v.dataset.listo = '1'; v.load(); }
+          v.play().then(() => v.classList.add('corriendo')).catch(() => {});
+        } else v.pause();
+      });
+    }
+  });
+}
+
+function pintarAval() {
+  const c = $('#t-aval');
+  if (!c) return;
+  const cif = SITE.cifras;
+  // Las cifras salen de SITE.cifras: no se repiten en el markup.
+  const n = v => `<span class="num aval__n" data-count="${v}">0</span>`;
+  c.innerHTML =
+    `Más de ${n(cif.anios)} años realizando eventos en Tuxtla Gutiérrez, ` +
+    `${n(cif.espacios)} espacios versátiles con cupo de ` +
+    `${n(cif.cupoMinimo)} a ${n(cif.capacidad)} personas y estacionamiento propio.`;
+}
+
+function pintarOpcionesForm() {
+  const menu = $('#f-tipo-menu');
+  const btn  = $('#f-tipo-btn');
+  const campo = $('#f-tipo');
+  if (!menu || !btn || !campo) return;
+
+  // Orden alfabético real, respetando los acentos del español
+  const ord = [...OPCIONES_FORM].sort((a, b) => a.localeCompare(b, 'es'));
+  menu.innerHTML = ord.map((o, i) => `
+    <li role="option" id="opt-${i}" aria-selected="false" data-valor="${esc(o)}">${esc(o)}</li>`).join('');
+
+  const opciones = $$('li', menu);
+  const etiqueta = $('[data-valor]', btn);
+  btn.dataset.vacio = '';
+  let abierto = false, marcada = -1;
+
+  const marcar = k => {
+    marcada = k;
+    opciones.forEach((o, j) => o.classList.toggle('marcada', j === k));
+    if (k >= 0) {
+      opciones[k].scrollIntoView({ block: 'nearest' });
+      menu.setAttribute('aria-activedescendant', opciones[k].id);
+    }
+  };
+
+  const abrir = () => {
+    abierto = true;
+    menu.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    marcar(Math.max(0, ord.indexOf(campo.value)));
+  };
+
+  const cerrar = (devolverFoco = true) => {
+    abierto = false;
+    menu.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    menu.removeAttribute('aria-activedescendant');
+    if (devolverFoco) btn.focus();
+  };
+
+  const elegir = k => {
+    const v = ord[k];
+    campo.value = v;
+    etiqueta.textContent = v;
+    delete btn.dataset.vacio;
+    opciones.forEach((o, j) => o.setAttribute('aria-selected', j === k));
+    campo.closest('.campo').classList.remove('error');
+    $('.campo__err', campo.closest('.campo'))?.remove();
+    cerrar();
+  };
+
+  btn.addEventListener('click', () => abierto ? cerrar() : abrir());
+  opciones.forEach((o, k) => {
+    o.addEventListener('click', () => elegir(k));
+    o.addEventListener('pointerenter', () => marcar(k));
+  });
+
+  btn.addEventListener('keydown', e => {
+    if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) { e.preventDefault(); abrir(); }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!abierto) return;
+    if (e.key === 'Escape')    { e.preventDefault(); cerrar(); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); marcar((marcada + 1) % ord.length); }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); marcar((marcada - 1 + ord.length) % ord.length); }
+    if (e.key === 'Home')      { e.preventDefault(); marcar(0); }
+    if (e.key === 'End')       { e.preventDefault(); marcar(ord.length - 1); }
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (marcada >= 0) elegir(marcada); }
+    if (e.key === 'Tab') cerrar(false);
+  });
+
+  document.addEventListener('pointerdown', e => {
+    if (abierto && !e.target.closest('#listaTipo')) cerrar(false);
+  });
+}
+
+function pintarResenas() {
+  // ── Calificación ──
+  const marca = $('#marcaGoogle');
+  if (marca) {
+    const nota  = SITE.googleRating;
+    const total = SITE.googleTotal;
+    if (!nota) {
+      marca.remove();
+    } else {
+      const llenas = Math.round(parseFloat(nota));
+      const estrella = llena => `<svg viewBox="0 0 24 24" fill="currentColor" class="${llena ? '' : 'vacia'}" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>`;
+      marca.innerHTML = `
+        <span class="marca-g__nota">${esc(nota)}</span>
+        <span class="marca-g__txt">
+          <span class="marca-g__estrellas" role="img" aria-label="${esc(nota)} de 5 estrellas">
+            ${[1,2,3,4,5].map(k => estrella(k <= llenas)).join('')}
+          </span>
+          ${total ? `en Google · ${esc(total)} reseñas` : 'en Google'}
+        </span>`;
+    }
+  }
+
+  // ── Citas · sólo si hay reseñas reales transcritas ──
+  const cont = $('#citas');
+  if (!cont) return;
+  if (typeof RESENAS === 'undefined' || !RESENAS.length) return;
+
+  cont.innerHTML = RESENAS.map((r, i) => `
+    <figure class="cita${i === 0 ? ' activa' : ''}">
+      <blockquote>${esc(r.texto)}</blockquote>
+      <figcaption>${esc(r.autor)}${r.fecha ? ' · ' + esc(r.fecha) : ''}</figcaption>
+    </figure>`).join('') + (RESENAS.length < 2 ? '' : `
+    <div class="citas__mando">
+      <button type="button" data-cita="-1" aria-label="Reseña anterior">&#8592;</button>
+      <span class="citas__cuenta"><span data-cita-actual>01</span> / ${String(RESENAS.length).padStart(2, '0')}</span>
+      <button type="button" data-cita="1" aria-label="Reseña siguiente">&#8594;</button>
+    </div>`);
+
+  const citas = $$('.cita', cont);
+  if (citas.length < 2) return;
+  const cuenta = $('[data-cita-actual]', cont);
+  let i = 0;
+  const ir = n => {
+    i = (n + citas.length) % citas.length;
+    citas.forEach((c, k) => c.classList.toggle('activa', k === i));
+    cuenta.textContent = String(i + 1).padStart(2, '0');
+  };
+  $$('[data-cita]', cont).forEach(b =>
+    b.addEventListener('click', () => ir(i + +b.dataset.cita)));
+}
+
+function pintarContactoMarca() {
+  const c = $('#contactoMarca');
+  const m = SITE.marca;
+  if (!c) return;
+  if (!m) { c.remove(); return; }
+  c.innerHTML = `<img src="${esc(m.src)}" alt="${esc(m.alt)}" loading="lazy" decoding="async">`;
+}
+
+/* ---------------------------------------------------------------
+   2 · Datos de contacto · sólo se muestra lo que existe
+--------------------------------------------------------------- */
+function hidratar() {
+  const tel = SITE.telefono;
+  $$('[data-tel]').forEach(a => { a.href = 'tel:' + tel; });
+  $$('[data-tel-txt]').forEach(a => { a.textContent = formatoTel(tel); });
+
+  const wa = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.waMensaje)}`;
+  $$('[data-wa]').forEach(a => { a.href = wa; });
+
+  $$('[data-ig]').forEach(a => { a.href = `https://instagram.com/${SITE.instagram}`; });
+
+  // Filas opcionales: si el dato está vacío, la fila no existe
+  campoOpcional('#datoEmail',  SITE.email,     v => `<a href="mailto:${esc(v)}">${esc(v)}</a>`);
+  campoOpcional('#datoDir',    SITE.direccion, v => esc(v));
+  campoOpcional('#datoHoras',  SITE.horarios,  v => esc(v));
+
+  // Mapa sin API key: embed propio o consulta simple
+  const marco = $('#mapaMarco');
+  if (marco) {
+    const url = SITE.mapaEmbed ||
+      `https://www.google.com/maps?q=${encodeURIComponent(SITE.mapaBusqueda)}&output=embed`;
+    marco.innerHTML =
+      `<iframe src="${esc(url)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa con la ubicación de MOZÉ"></iframe>`;
+  }
+  const comoLlegar = $('#comoLlegar');
+  if (comoLlegar) comoLlegar.href =
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.mapaBusqueda)}`;
+
+  // Reseñas: enlace propio si existe; si no, la ficha del negocio en Maps
+  const rev = $('#linkResenas');
+  if (rev) rev.href = SITE.googleReviews ||
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.mapaBusqueda)}`;
+
+  // Barra: versión blanca sobre transparente, va sobre el vídeo
+  const nav = $('#navLogo');
+  if (nav && SITE.logo) nav.innerHTML =
+    `<img src="${esc(SITE.logo.src)}" alt="${esc(SITE.logo.alt)}" fetchpriority="high" decoding="async">`;
+
+  // Intro: versión a color, la misma que cierra el contacto
+  const ldr = $('#loaderLogo');
+  if (ldr && SITE.marca) { ldr.src = SITE.marca.src; ldr.alt = ''; }
+
+  const anio = $('#anio');
+  if (anio) anio.textContent = new Date().getFullYear();
+}
+
+function campoOpcional(sel, valor, render) {
+  const el = $(sel);
+  if (!el) return;
+  if (!valor) { el.remove(); return; }
+  const dd = $('dd', el);
+  if (dd) dd.innerHTML = render(valor);
+}
+
+function formatoTel(t) {
+  const d = t.replace(/\D/g, '').slice(-10);
+  return `${d.slice(0,3)} ${d.slice(3,6)} ${d.slice(6)}`;
+}
+
+/* ---------------------------------------------------------------
+   2b · Vídeo de fondo del hero
+   ---------------------------------------------------------------
+   Sólo se descarga cuando tiene sentido: pantalla suficientemente
+   ancha, sin ahorro de datos y sin preferencia de movimiento
+   reducido. Si algo falla queda el fotograma, que es idéntico al
+   primer cuadro, así que nadie ve un hueco.
+--------------------------------------------------------------- */
+function heroVideo() {
+  const v = $('#heroVideo');
+  if (!v || !SITE.video) return;
+
+  const ahorro = navigator.connection && (navigator.connection.saveData ||
+                 /2g/.test(navigator.connection.effectiveType || ''));
+  const angosto = window.innerWidth < (SITE.video.anchoMinimo || 700);
+
+  if (QUIETO || ahorro || angosto) { v.remove(); return; }
+
+  // Safari mira la PROPIEDAD muted, no sólo el atributo del markup:
+  // sin esto trata el vídeo como si tuviera sonido y bloquea el
+  // arranque automático.
+  v.muted = true;
+  v.defaultMuted = true;
+  v.playsInline = true;
+
+  // preload='auto' es obligatorio aquí. El markup trae preload='none'
+  // para no descargar nada cuando el vídeo no se va a usar; pero si se
+  // deja en 'none' el navegador se detiene en los metadatos y el evento
+  // 'canplay' NUNCA llega, así que el arranque nunca ocurría.
+  v.preload = 'auto';
+
+  // Pantallas medianas reciben la versión ligera
+  v.src = window.innerWidth < 1100 ? SITE.video.movil : SITE.video.escritorio;
+  v.load();
+
+  const visible = () => v.classList.add('corriendo');
+  const arrancar = () => {
+    const p = v.play();
+    if (p && p.then) p.then(visible).catch(() => {});   // se reintenta abajo
+    else visible();
+  };
+
+  // Se intenta por varias vías porque cada navegador dispara unas u
+  // otras según cómo haya decidido precargar.
+  ['loadeddata', 'canplay', 'canplaythrough'].forEach(ev =>
+    v.addEventListener(ev, arrancar));
+  arrancar();
+
+  // Red de seguridad: si el navegador bloqueó el arranque automático,
+  // el primer gesto de la persona lo desbloquea.
+  ['pointerdown', 'touchstart', 'keydown'].forEach(ev =>
+    window.addEventListener(ev, arrancar, { once: true, passive: true }));
+
+  // Sólo se descarta si de verdad no hay nada que reproducir. Antes
+  // un fallo pasajero borraba el vídeo para siempre.
+  v.addEventListener('error', () => { if (!v.videoWidth) v.remove(); });
+
+  // Fuera de pantalla no gasta batería ni decodificación
+  ScrollTrigger.create({
+    trigger: '.hero', start: 'top bottom', end: 'bottom top',
+    onToggle: s => { s.isActive ? arrancar() : v.pause(); }
+  });
+}
+
+/* ---------------------------------------------------------------
+   3 · Hero · §38 · se anima UNA sola vez, al cargar la página.
+   No hay ScrollTrigger en la entrada, así que volver al hero
+   nunca reinicia la animación.
+--------------------------------------------------------------- */
+let heroYaAnimado = false;
+
+function arranque() {
+  const loader = $('#loader');
+
+  const entradaHero = () => {
+    if (heroYaAnimado) return;   // candado: una vez por carga de página
+    heroYaAnimado = true;
+
+    gsap.timeline({ defaults: { ease: 'power3.out' } })
+      .fromTo('.hero__marco',
+        { clipPath: 'inset(16% 11% 16% 11%)' },
+        { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'expo.inOut' }, 0)
+      .fromTo('.hero__marco img', { scale: 1.24 }, { scale: 1.08, duration: 1.6, ease: 'expo.out' }, 0)
+      .fromTo('[data-h="1"] span', { yPercent: 132 }, { yPercent: 0, duration: .85 }, .35)
+      .fromTo('[data-h="2"]', { yPercent: 130 }, { yPercent: 0, duration: 1, stagger: .08 }, .45)
+      .fromTo('[data-h="3"]', { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: .8 }, .85)
+      .fromTo('[data-h="4"]', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: .7, stagger: .09 }, .95)
+      .add(() => $('.hero__titulo em')?.classList.add('subrayado'), 1.25);
+  };
+
+  if (QUIETO) {
+    loader.remove();
+    heroYaAnimado = true;
+    $('.hero__titulo em')?.classList.add('subrayado');
+    gsap.set('[data-h="1"] span,[data-h="2"],[data-h="3"],[data-h="4"]', { clearProps: 'all' });
+    return;
+  }
+
+  // Entrada corta: la marca sube, respira un instante y la cortina
+  // se va hacia arriba dejando ver el hero. Total ~2.1s.
+  gsap.timeline()
+    .fromTo('[data-marca]', { yPercent: 125 },
+      { yPercent: 0, duration: 1, ease: 'expo.out' })
+    .fromTo('[data-marca-pie]', { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: .7, ease: 'power3.out' }, '-=.5')
+    .to('.loader__centro', { y: -26, opacity: 0, duration: .55, ease: 'power2.in' }, '+=.35')
+    .to(loader, {
+      clipPath: 'inset(0% 0% 100% 0%)', duration: .9, ease: 'expo.inOut',
+      onComplete() { loader.remove(); ScrollTrigger.refresh(); }
+    }, '-=.25')
+    .add(entradaHero, '-=.7');
+}
+
+/* ---------------------------------------------------------------
+   4 · Cursor y botones magnéticos
+--------------------------------------------------------------- */
+function punteroFX() {
+  if (!FINO || QUIETO) return;
+  const pt = $('.cursor__pt'), ar = $('.cursor__ar');
+  document.body.classList.add('cursor-on');
+
+  const xp = gsap.quickTo(pt, 'x', { duration: .12, ease: 'power3' });
+  const yp = gsap.quickTo(pt, 'y', { duration: .12, ease: 'power3' });
+  const xa = gsap.quickTo(ar, 'x', { duration: .45, ease: 'power3' });
+  const ya = gsap.quickTo(ar, 'y', { duration: .45, ease: 'power3' });
+
+  window.addEventListener('pointermove', e => {
+    xp(e.clientX); yp(e.clientY); xa(e.clientX); ya(e.clientY);
+  }, { passive: true });
+
+  document.addEventListener('pointerover', e => {
+    document.body.classList.toggle('cursor-hot',
+      !!e.target.closest('a,button,input,select,textarea,[data-lightbox],[data-lightbox-grupo]'));
+  }, { passive: true });
+
+  $$('[data-iman]').forEach(el => {
+    const x = gsap.quickTo(el, 'x', { duration: .5, ease: 'elastic.out(1,.4)' });
+    const y = gsap.quickTo(el, 'y', { duration: .5, ease: 'elastic.out(1,.4)' });
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      x((e.clientX - (r.left + r.width / 2)) * .3);
+      y((e.clientY - (r.top + r.height / 2)) * .4);
+    });
+    el.addEventListener('pointerleave', () => { x(0); y(0); });
+  });
+}
+
+/* ---------------------------------------------------------------
+   5 · Navegación
+--------------------------------------------------------------- */
+function navegacion() {
+  const nav  = $('#nav');
+  const btn  = $('#navMenu');
+  const menu = $('#menu');
+  const links = $$('.nav__links a');
+  let abierto = false;
+
+  ScrollTrigger.create({ start: 'top -70', onUpdate: s => nav.classList.toggle('solida', s.scroll() > 70) });
+
+  const tl = gsap.timeline({ paused: true })
+    .to(menu, { clipPath: 'inset(0 0 0% 0)', duration: .8, ease: 'expo.inOut' })
+    .fromTo('.menu a', { yPercent: 124, opacity: 0 },
+      { yPercent: 0, opacity: 1, duration: .65, stagger: .055, ease: 'expo.out' }, '-=.4');
+
+  const alternar = f => {
+    abierto = f ?? !abierto;
+    btn.classList.toggle('abierto', abierto);
+    btn.setAttribute('aria-expanded', abierto);
+    menu.classList.toggle('abierto', abierto);
+    menu.setAttribute('aria-hidden', !abierto);
+    document.documentElement.classList.toggle('is-locked', abierto);
+    abierto ? tl.play() : tl.reverse();
+  };
+
+  btn.addEventListener('click', () => alternar());
+  $$('.menu a').forEach(a => a.addEventListener('click', () => alternar(false)));
+  window.addEventListener('keydown', e => { if (e.key === 'Escape' && abierto) alternar(false); });
+
+  $$('main section[id]').forEach(sec => {
+    ScrollTrigger.create({
+      trigger: sec, start: 'top 45%', end: 'bottom 45%',
+      onToggle: s => {
+        if (!s.isActive) return;
+        links.forEach(l => l.classList.toggle('activo', l.getAttribute('href') === '#' + sec.id));
+      }
+    });
+  });
+}
+
+/* ---------------------------------------------------------------
+   6 · Reveals · transform, opacity y clip-path únicamente
+--------------------------------------------------------------- */
+function reveals() {
+  if (QUIETO) return;
+
+  const man = $('[data-split]');
+  if (man) {
+    man.innerHTML = man.textContent.trim().split(/\s+/)
+      .map(w => `<span class="w"><i>${w}</i></span>`).join(' ');
+    gsap.from(man.querySelectorAll('i'), {
+      scrollTrigger: { trigger: man, start: 'top 74%', once: true },
+      yPercent: 124, opacity: 0, duration: .9, stagger: .028, ease: 'expo.out'
+    });
+  }
+
+  $$('[data-reveal]').forEach(el => {
+    gsap.fromTo(el,
+      { clipPath: 'inset(0% 0% 100% 0%)' },
+      { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'expo.inOut',
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+  });
+
+  $$('section').forEach(sec => {
+    const items = $$('[data-fade]', sec);
+    if (!items.length) return;
+    gsap.from(items, {
+      scrollTrigger: { trigger: sec, start: 'top 74%', once: true },
+      y: 30, opacity: 0, duration: .95, stagger: .07, ease: 'expo.out'
+    });
+  });
+
+  $$('[data-stagger]').forEach(lista => {
+    gsap.from($$(':scope > *', lista), {
+      scrollTrigger: { trigger: lista, start: 'top 82%', once: true },
+      y: 22, opacity: 0, duration: .8, stagger: .035, ease: 'expo.out'
+    });
+  });
+
+  // Sin parallax en el hero: cualquier efecto atado al scroll se
+  // deshace al subir, y eso es justo lo que no queremos. El hero
+  // se queda en su estado final después de la entrada inicial.
+}
+
+/* ---------------------------------------------------------------
+   7 · Contadores
+--------------------------------------------------------------- */
+function contadores() {
+  $$('.num[data-count]').forEach(el => {
+    const meta = +el.dataset.count;
+    const suf  = el.dataset.sufijo || '';
+    const o = { v: 0 };
+    ScrollTrigger.create({
+      trigger: el, start: 'top 88%', once: true,
+      onEnter() {
+        if (QUIETO) { el.textContent = meta.toLocaleString('es-MX') + suf; return; }
+        gsap.to(o, {
+          v: meta, duration: 1.8, ease: 'power2.out',
+          onUpdate() { el.textContent = Math.round(o.v).toLocaleString('es-MX') + suf; }
+        });
+      }
+    });
+  });
+}
+
+/* ---------------------------------------------------------------
+   8 · Galería stories · mouse, touch y teclado
+--------------------------------------------------------------- */
+function galerias() {
+  $$('[data-gal]').forEach(raiz => {
+    const imgs   = $$('.gal__marco img', raiz);
+    const minis  = $$('.gal__minis button', raiz);
+    const cuenta = $('[data-actual]', raiz);
+    if (imgs.length < 2) return;
+    let i = 0;
+
+    const ir = n => {
+      i = (n + imgs.length) % imgs.length;
+      imgs.forEach((im, k) => im.classList.toggle('activa', k === i));
+      minis.forEach((b, k) => b.setAttribute('aria-selected', k === i));
+      if (cuenta) cuenta.textContent = String(i + 1).padStart(2, '0');
+    };
+
+    minis.forEach((b, k) => b.addEventListener('click', () => ir(k)));
+    $$('[data-paso]', raiz).forEach(b =>
+      b.addEventListener('click', ev => { ev.stopPropagation(); ir(i + +b.dataset.paso); }));
+
+    raiz.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { ir(i + 1); e.preventDefault(); }
+      if (e.key === 'ArrowLeft')  { ir(i - 1); e.preventDefault(); }
+    });
+
+    // Swipe
+    let x0 = null;
+    const marco = $('.gal__marco', raiz);
+    marco.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+    marco.addEventListener('touchend', e => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 45) ir(i + (dx < 0 ? 1 : -1));
+      x0 = null;
+    }, { passive: true });
+
+    raiz._idx = () => i;
+  });
+}
+
+/* ---------------------------------------------------------------
+   9 · Lightbox · §41 · X visible, ESC, flechas, foco atrapado
+--------------------------------------------------------------- */
+function lightbox() {
+  const visor = $('#visor');
+  const img   = $('#visorImg');
+  const pie   = $('#visorPie');
+  const cerrar= $('#visorX');
+  if (!visor) return;
+
+  let grupo = [], pos = 0, origen = null, ultimoFoco = null;
+
+  const pintar = () => {
+    const f = grupo[pos];
+    img.src = f.src; img.alt = f.alt;
+    pie.textContent = `${String(pos + 1).padStart(2, '0')} / ${String(grupo.length).padStart(2, '0')} — ${f.alt}`;
+    $('#visorPrev').hidden = $('#visorNext').hidden = grupo.length < 2;
+  };
+
+  const abrir = (lista, idx, el) => {
+    grupo = lista; pos = idx; origen = el;
+    ultimoFoco = document.activeElement;
+    pintar();
+    visor.classList.add('abierto');
+    visor.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('is-locked');
+    cerrar.focus();
+
+    if (QUIETO) return;
+    // Transición desde la miniatura, no un modal genérico
+    const r = el.getBoundingClientRect();
+    const rf = img.getBoundingClientRect();
+    gsap.fromTo(visor, { opacity: 0 }, { opacity: 1, duration: .3, ease: 'power2.out' });
+    gsap.fromTo(img, {
+      x: r.left + r.width / 2 - (rf.left + rf.width / 2),
+      y: r.top + r.height / 2 - (rf.top + rf.height / 2),
+      scale: Math.max(.18, r.width / Math.max(rf.width, 1))
+    }, { x: 0, y: 0, scale: 1, duration: .6, ease: 'expo.out' });
+  };
+
+  const cerrarVisor = () => {
+    const fin = () => {
+      visor.classList.remove('abierto');
+      visor.setAttribute('aria-hidden', 'true');
+      document.documentElement.classList.remove('is-locked');
+      ultimoFoco?.focus();
+    };
+    if (QUIETO || !origen) return fin();
+    const r = origen.getBoundingClientRect();
+    const rf = img.getBoundingClientRect();
+    gsap.to(img, {
+      x: r.left + r.width / 2 - (rf.left + rf.width / 2),
+      y: r.top + r.height / 2 - (rf.top + rf.height / 2),
+      scale: Math.max(.18, r.width / Math.max(rf.width, 1)),
+      duration: .42, ease: 'power3.in'
+    });
+    gsap.to(visor, { opacity: 0, duration: .32, delay: .1, onComplete() { fin(); gsap.set(visor, { opacity: 1 }); } });
+  };
+
+  const paso = d => { pos = (pos + d + grupo.length) % grupo.length; pintar(); };
+
+  // Deslizar para cambiar de foto dentro del visor
+  let vx = null;
+  const fig = $('.visor__fig', visor);
+  fig.addEventListener('touchstart', e => { vx = e.touches[0].clientX; }, { passive: true });
+  fig.addEventListener('touchend', e => {
+    if (vx === null) return;
+    const dx = e.changedTouches[0].clientX - vx;
+    if (Math.abs(dx) > 45 && grupo.length > 1) paso(dx < 0 ? 1 : -1);
+    vx = null;
+  }, { passive: true });
+
+  abrirVisor = abrir;   // queda disponible para la sección de eventos
+
+  // Foto suelta
+  $$('[data-lightbox]').forEach(fig => {
+    const im = $('img', fig);
+    if (!im) return;
+    fig.setAttribute('tabindex', '0');
+    fig.setAttribute('role', 'button');
+    fig.setAttribute('aria-label', `Ampliar: ${im.alt}`);
+    const lanzar = () => abrir([{ src: im.src, alt: im.alt }], 0, im);
+    fig.addEventListener('click', lanzar);
+    fig.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lanzar(); }
+    });
+  });
+
+  // Galería stories completa
+  $$('[data-lightbox-grupo]').forEach(marco => {
+    const raiz = marco.closest('[data-gal]');
+    const ims  = $$('img', marco);
+    marco.setAttribute('tabindex', '0');
+    marco.setAttribute('role', 'button');
+    marco.setAttribute('aria-label', 'Ampliar la foto');
+    const lanzar = () => {
+      const idx = raiz?._idx ? raiz._idx() : 0;
+      abrir(ims.map(x => ({ src: x.src, alt: x.alt })), idx, ims[idx]);
+    };
+    marco.addEventListener('click', e => { if (!e.target.closest('[data-paso]')) lanzar(); });
+    marco.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lanzar(); }
+    });
+  });
+
+  cerrar.addEventListener('click', cerrarVisor);
+  $('#visorPrev').addEventListener('click', () => paso(-1));
+  $('#visorNext').addEventListener('click', () => paso(1));
+  visor.addEventListener('click', e => { if (e.target === visor) cerrarVisor(); });
+
+  window.addEventListener('keydown', e => {
+    if (!visor.classList.contains('abierto')) return;
+    if (e.key === 'Escape')     cerrarVisor();
+    if (e.key === 'ArrowRight') paso(1);
+    if (e.key === 'ArrowLeft')  paso(-1);
+    if (e.key === 'Tab') {       // foco atrapado dentro del visor
+      const foco = $$('button:not([hidden])', visor);
+      const pri = foco[0], ult = foco[foco.length - 1];
+      if (e.shiftKey && document.activeElement === pri) { ult.focus(); e.preventDefault(); }
+      else if (!e.shiftKey && document.activeElement === ult) { pri.focus(); e.preventDefault(); }
+    }
+  });
+}
+
+/* ---------------------------------------------------------------
+   10 · Índice con revelado · §43
+   El texto no se mueve nunca. Sólo cambian el relleno de la fila,
+   la línea, el color y la fotografía de fondo de la sección.
+--------------------------------------------------------------- */
+/* ---------------------------------------------------------------
+   10b · Vitrina de servicios
+   ---------------------------------------------------------------
+   Escritorio: el panel bajo el puntero o con foco se ensancha y
+   los demás ceden espacio. El ancho total no cambia, así que no
+   hay reflow del documento.
+   Móvil: filmstrip con scroll-snap. Todos los paneles quedan
+   abiertos y se recorren deslizando; nada depende del hover.
+--------------------------------------------------------------- */
+function vitrina() {
+  const cont = $('#vitrina');
+  if (!cont) return;
+  const paneles = $$('.vp', cont);
+  if (!paneles.length) return;
+
+  const activar = p => {
+    paneles.forEach(x => {
+      const on = x === p;
+      x.classList.toggle('activo', on);
+      x.setAttribute('aria-expanded', on);
+    });
+    cont.classList.toggle('hay-activo', !!p);
+  };
+
+  const chico = window.matchMedia('(max-width: 900px)');
+
+  const montarEscritorio = () => {
+    activar(paneles[0]);              // nunca se ve vacía
+    paneles.forEach(p => {
+      p.addEventListener('pointerenter', () => activar(p));
+      p.addEventListener('focus', () => activar(p));
+    });
+    // Al salir de la vitrina vuelve al primero, no a la nada
+    cont.addEventListener('pointerleave', () => activar(paneles[0]));
+
+    // Flechas para recorrerla con el teclado
+    cont.addEventListener('keydown', e => {
+      const i = paneles.indexOf(document.activeElement);
+      if (i < 0) return;
+      let n = null;
+      if (e.key === 'ArrowRight') n = (i + 1) % paneles.length;
+      if (e.key === 'ArrowLeft')  n = (i - 1 + paneles.length) % paneles.length;
+      if (e.key === 'Home')       n = 0;
+      if (e.key === 'End')        n = paneles.length - 1;
+      if (n === null) return;
+      e.preventDefault();
+      paneles[n].focus();
+    });
+  };
+
+  if (!chico.matches && !QUIETO) montarEscritorio();
+
+  // Si se cruza el umbral, se limpian los estados de escritorio
+  chico.addEventListener('change', ev => {
+    if (ev.matches) { activar(null); paneles.forEach(p => p.setAttribute('aria-expanded', 'true')); }
+    else if (!QUIETO) activar(paneles[0]);
+  });
+
+  if (chico.matches || QUIETO) paneles.forEach(p => p.setAttribute('aria-expanded', 'true'));
+}
+
+/* ---------------------------------------------------------------
+   11 · Marquesina de la cinta
+--------------------------------------------------------------- */
+const MARQ = [];
+
+function rellenar(track, minimo) {
+  const semilla = track.innerHTML;
+  if (!semilla.trim()) return 0;
+  let g = 0;
+  while (track.scrollWidth < minimo && g++ < 14) track.insertAdjacentHTML('beforeend', semilla);
+  track.insertAdjacentHTML('beforeend', track.innerHTML);
+  return track.scrollWidth / 2;
+}
+
+function marquesinas() {
+  if (QUIETO) return;
+  $$('[data-marquee]').forEach(el => {
+    const track = $('.ribbon__track', el);
+    if (!track) return;
+    const mitad = rellenar(track, window.innerWidth * 1.5);
+    if (!mitad) return;
+    const m = { track, mitad, vel: +el.dataset.speed || 24, dir: +el.dataset.dir || 1,
+                x: 0, vivo: false, set: gsap.quickSetter(track, 'x', 'px') };
+    ScrollTrigger.create({ trigger: el, start: 'top bottom', end: 'bottom top',
+      onToggle: s => { m.vivo = s.isActive; } });
+    MARQ.push(m);
+  });
+  if (!MARQ.length) return;
+
+  let empuje = 0;
+  ScrollTrigger.create({
+    onUpdate: s => {
+      // Sólo la magnitud: subir acelera igual que bajar, pero
+      // nunca invierte el sentido de la cinta.
+      empuje = gsap.utils.clamp(0, 8, Math.abs(s.getVelocity()) / 280);
+    }
+  });
+
+  gsap.ticker.add(() => {
+    empuje = gsap.utils.interpolate(empuje, 0, .045);
+    const dt = gsap.ticker.deltaRatio();
+    for (const m of MARQ) {
+      if (!m.vivo) continue;
+      m.x -= (m.vel / 60 * dt) * m.dir * (1 + empuje);
+      if (m.x <= -m.mitad) m.x += m.mitad;
+      else if (m.x > 0) m.x -= m.mitad;
+      m.set(m.x);
+    }
+  });
+
+  let rt;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => MARQ.forEach(m => { m.mitad = m.track.scrollWidth / 2; }), 250);
+  });
+}
+
+/* ---------------------------------------------------------------
+   12 · Formulario · §46-48
+   NO simula envíos. Arma el mensaje y lo entrega a WhatsApp,
+   que es un canal real. El usuario ve el texto y pulsa enviar.
+   Mientras no exista backend, no se afirma que algo se envió.
+--------------------------------------------------------------- */
+function formulario() {
+  const form = $('#form');
+  if (!form) return;
+  const estado = $('#formEstado');
+
+  const marcar = (campo, malo, msg) => {
+    const cont = campo.closest('.campo');
+    cont.classList.toggle('error', malo);
+    let e = $('.campo__err', cont);
+    if (malo) {
+      if (!e) { e = document.createElement('p'); e.className = 'campo__err'; cont.appendChild(e); }
+      e.textContent = msg;
+      campo.setAttribute('aria-invalid', 'true');
+    } else { e?.remove(); campo.removeAttribute('aria-invalid'); }
+  };
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true, primero = null;
+
+    const pruebas = [
+      ['#f-nombre', v => v.trim().length > 1, 'Escribe tu nombre'],
+      ['#f-tel',    v => v.replace(/\D/g, '').length >= 10, 'Necesitamos 10 dígitos'],
+      ['#f-tipo',   v => v !== '', 'Elige el tipo de evento']
+    ];
+    const mail = $('#f-email');
+    if (mail.value.trim()) pruebas.push(['#f-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), 'Revisa el correo']);
+
+    pruebas.forEach(([sel, test, msg]) => {
+      const c = $(sel), malo = !test(c.value);
+      marcar(c, malo, msg);
+      if (malo) { ok = false; primero = primero || c; }
+    });
+
+    if (!ok) {
+      estado.textContent = 'Faltan datos por corregir.';
+      // El campo del tipo es oculto: se enfoca su botón visible
+      (primero.id === 'f-tipo' ? $('#f-tipo-btn') : primero).focus();
+      return;
+    }
+
+    const d = new FormData(form);
+    const linea = (et, v) => v ? `\n${et}: ${v}` : '';
+    const texto =
+      'Hola, quiero información para un evento en MOZÉ.' +
+      linea('Nombre', d.get('nombre')) +
+      linea('Teléfono', d.get('telefono')) +
+      linea('Email', d.get('email')) +
+      linea('Tipo de evento', d.get('tipo')) +
+      linea('Fecha', d.get('fecha')) +
+      linea('Invitados', d.get('invitados')) +
+      linea('Mensaje', d.get('mensaje'));
+
+    window.open(`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+    estado.textContent = 'Se abrió WhatsApp con tus datos ya escritos. Pulsa enviar ahí para que nos llegue.';
+  });
+
+  $$('.campo input,.campo textarea').forEach(c => {
+    c.addEventListener('input', () => marcar(c, false, ''));
+  });
+}
+
+/* ---------------------------------------------------------------
+   13 · Arranque
+--------------------------------------------------------------- */
+window.addEventListener('DOMContentLoaded', () => {
+  pintarEspacios();
+  pintarJardin();
+  pintarBanquetera();
+  pintarMontajes();
+  pintarCristaleria();
+  pintarMobiliario();
+  pintarCatalogos();
+  pintarEventos();
+  pintarVitrina();
+  pintarAvalFondo();
+  pintarAval();
+  pintarOpcionesForm();
+  pintarResenas();
+  pintarContactoMarca();
+  hidratar();
+
+  navegacion();
+  heroVideo();
+  punteroFX();
+  reveals();
+  contadores();
+  galerias();
+  lightbox();
+  eventosGaleria();
+  vitrina();
+  formulario();
+  arranque();
+
+  const iniMarq = () => { marquesinas(); ScrollTrigger.refresh(); };
+  document.fonts?.ready ? document.fonts.ready.then(iniMarq)
+                        : window.addEventListener('load', iniMarq);
+
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+  let rt;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt); rt = setTimeout(() => ScrollTrigger.refresh(), 220);
+  });
+});
+
+</script>
+</body>
+</html>
 <link rel="canonical" href="https://mozecentrodeeventos.com/">
 
 <meta property="og:type" content="website">
