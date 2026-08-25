@@ -172,8 +172,10 @@ const SITE = {
      principal: la foto grande no se toca, esto se suma.
      Añadir un grupo = añadir una pestaña. Añadir una pieza =
      añadir una línea. No hay que tocar el maquetado.
-     Los nombres de las piezas son descriptivos: sustitúyelos por
-     los del catálogo real cuando el cliente los pase.
+     Los nombres de las piezas ya no se imprimen bajo la foto: la
+     retícula es sólo imagen. El nombre se sigue usando como pie
+     al ampliar y como referencia al editar, así que conviene
+     mantenerlo al día.
 
      'formato' cambia el recorte de la ficha (4:5 por omisión).  */
   catalogos: [
@@ -365,7 +367,7 @@ const TIPOS_EVENTO = [
 const SERVICIOS = [
   { n: '01', nombre: 'BANQUETES',
     texto: 'Prueba de menú: preparamos una degustación antes del gran día, con opciones para niños y opciones gourmet.',
-    foto: 'FOTOS/filete.JPEG',
+    foto: 'FOTOS/filete.jpeg',
     alt: 'Servicio de banquete durante un evento en MOZÉ',
     ancla: '#banquetera' },
   { n: '02', nombre: 'MONTAJES ESPECTACULARES',
@@ -399,17 +401,47 @@ const SERVICIOS = [
 
 /* Reseñas de Google, transcritas a mano.
    ---------------------------------------------------------------
-   CÓMO LLENARLAS: abre tu ficha de Google Maps, elige 3 o 4
-   reseñas reales y cópialas tal cual, sin editar el texto.
+   Alimentan DOS sitios: la sección de testimonios y la cinta que
+   pasa girando bajo el bloque de servicio.
+
+   CÓMO LLENARLAS: abre tu ficha de Google Maps, elige reseñas
+   reales y cópialas tal cual, sin editar el texto.
    Usa el nombre tal como aparece publicado.
 
-   Mientras el arreglo esté vacío la sección muestra sólo la
-   calificación y el botón a Google. No se inventa ninguna.
+     texto — la reseña completa. Se ve en testimonios.
+     autor — el nombre publicado.
+     fecha — opcional.
+     frase — opcional. El trozo corto que gira en la cinta. Debe
+             ser palabra por palabra de la reseña, no un resumen:
+             lo que se muestra entre comillas y con nombre tiene
+             que ser lo que la persona escribió. Si se omite y la
+             reseña es corta, se usa completa; si es larga, esa
+             reseña simplemente no sale en la cinta.
+
+   Mientras el arreglo esté vacío, testimonios muestra sólo la
+   calificación y la cinta se queda con las frases de marca.
+   No se inventa ninguna reseña. 
 
    const RESENAS = [
-     { texto: 'Texto exacto de la reseña.', autor: 'Nombre Apellido', fecha: 'marzo 2025' }
+     { texto: 'Texto exacto y completo de la reseña.',
+       frase: 'Increíble',
+       autor: 'Nombre Apellido',
+       fecha: 'marzo 2025' }
    ];                                                              */
-const RESENAS = [];
+const RESENAS = [
+{ texto: 'Exelente lugar, amplio y muy bien decorado, amplio estacionamiento, con muy buenas instalaciones',
+       frase: 'Exelente lugar',
+       autor: 'Alfredo Carrillo',
+      },
+       { texto: 'Beautiful place to have events',
+       frase: 'Beatiful',
+       autor: 'Kenneth Davis',
+       },
+       { texto: 'Es un lujo que vale totalmente la pena vivir, de los mejores salones de eventos ',
+       frase: 'Maravilloso y recomendable',
+       autor: 'Alfredo Carrillo',
+      }
+];
 
 /* Opciones del formulario · salen de TIPOS_EVENTO, así que la
    lista nunca se desincroniza de la sección de eventos.
@@ -683,6 +715,13 @@ body.cursor-hot .cursor__ar{width:62px;height:62px;opacity:.35}
 .ribbon__track{display:flex;align-items:center;gap:1.6rem;white-space:nowrap;will-change:transform}
 .ribbon__track span{font-family:var(--display);font-size:calc(var(--tscale) * clamp(1.4rem,3.4vw,2.6rem));line-height:1}
 .ribbon__track i{color:var(--verde-alto);font-style:normal;font-size:1rem}
+/* La cita va en la display; quien la firma, en la sans y más chica:
+   se distingue de un vistazo qué es reseña y qué es nombre. */
+.ribbon__track .ribbon__autor{
+  font-family:var(--sans);font-weight:400;
+  font-size:clamp(.66rem,1.1vw,.8rem);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--verde-alto);
+}
 
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1140,10 +1179,6 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
   transition:opacity .4s var(--ease);
 }
 .catalogo figure:hover img,.catalogo figure:focus-visible img{opacity:.84}
-.catalogo figcaption{
-  margin-top:.6rem;font-size:.66rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--muted);line-height:1.5;
-}
 
 /* Montajes · galería panorámica a todo el ancho de la sección */
 .montajes{padding:clamp(5rem,12vh,9rem) var(--pad)}
@@ -1440,7 +1475,6 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
 
   .catalogo__panel{gap:.55rem}
   .catalogo--ancho .catalogo__panel{--cols:2}
-  .catalogo figcaption{font-size:.58rem;letter-spacing:.08em;margin-top:.45rem}
   .catalogo__tabs{display:flex;flex-wrap:wrap;gap:.4rem 1.35rem}
   .catalogo__tabs button{font-size:.7rem;letter-spacing:.16em}
 
@@ -1685,8 +1719,8 @@ button.ev{width:100%;text-align:left;font:inherit;appearance:none}
 
   <!-- ═══════════ CINTA ═══════════ -->
   <div class="ribbon" data-marquee data-speed="26" data-dir="-1" aria-hidden="true">
-    <div class="ribbon__track">
-      <span>MOZÉ</span><i>·</i><span>Salón &amp; jardín</span><i>·</i><span>Banquetera propia</span><i>·</i><span>Tuxtla Gutiérrez</span><i>·</i>
+    <div class="ribbon__track" id="cinta">
+      <span>MOZÉ</span><i>·</i><span>Salón &amp; jardín</span><i>·</i><span>Banquetes</span><i>·</i><span>Tuxtla Gutiérrez</span><i>·</i>
     </div>
   </div>
 
@@ -1961,7 +1995,6 @@ function pintarCatalogos() {
         ${g.piezas.map(pz => `
         <figure data-lightbox>
           <img src="${esc(pz.src)}" alt="${esc(pz.alt)}" data-pie="${esc(pz.nombre)}" loading="lazy" decoding="async">
-          <figcaption>${esc(pz.nombre)}</figcaption>
         </figure>`).join('')}
       </div>`).join('');
 
@@ -2236,6 +2269,30 @@ function pintarResenas() {
   };
   $$('[data-cita]', cont).forEach(b =>
     b.addEventListener('click', () => ir(i + +b.dataset.cita)));
+}
+
+/* Cinta giratoria · reseñas de Google si las hay.
+   ---------------------------------------------------------------
+   Sin reseñas transcritas se queda el texto de marca que ya trae
+   el markup: la cinta nunca se ve vacía y nunca se inventa nada. */
+function pintarCinta() {
+  const track = $('#cinta');
+  if (!track) return;
+
+  const citas = (typeof RESENAS === 'undefined' ? [] : RESENAS)
+    .map(r => ({
+      // Sólo texto literal: la frase corta o la reseña entera si cabe
+      frase: r.frase || (r.texto && r.texto.length <= 70 ? r.texto : ''),
+      autor: r.autor
+    }))
+    .filter(r => r.frase && r.autor);
+
+  if (!citas.length) return;   // se queda la cinta de marca
+
+  track.innerHTML = citas.map(r =>
+    `<span>&#8220;${esc(r.frase)}&#8221;</span><i>&#183;</i>` +
+    `<span class="ribbon__autor">${esc(r.autor)}</span><i>&#183;</i>`
+  ).join('');
 }
 
 function pintarContactoMarca() {
@@ -2937,6 +2994,7 @@ window.addEventListener('DOMContentLoaded', () => {
   pintarAval();
   pintarOpcionesForm();
   pintarResenas();
+  pintarCinta();
   pintarContactoMarca();
   hidratar();
 
